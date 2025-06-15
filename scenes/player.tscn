@@ -1,7 +1,7 @@
 [gd_scene load_steps=15 format=3 uid="uid://dajn4ssj34ym7"]
 
 [ext_resource type="Texture2D" uid="uid://ctceup0mncabg" path="res://assets/MC_Knight/Colour1/NoOutline/120x80_PNGSheets/_Idle.png" id="1_3vyb7"]
-[ext_resource type="Script" uid="uid://cpflpngtll6v8" path="res://scenes/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://bx0ol81g2cbll" path="res://scripts/player.gd" id="1_g2els"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_g2els"]
 atlas = ExtResource("1_3vyb7")
@@ -93,7 +93,7 @@ position = Vector2(4, -40)
 sprite_frames = SubResource("SpriteFrames_3v2ag")
 animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.982048
+frame_progress = 0.793777
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, -18)
