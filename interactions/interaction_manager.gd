@@ -23,6 +23,7 @@ func _process(delta):
 		label.global_position = active_areas[0].global_position
 		label.global_position.y -= 36
 		label.global_position.x -= label.size.x / 2
+		label.show()
 	else:
 		label.hide()
 		
