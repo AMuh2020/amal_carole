@@ -1,5 +1,6 @@
-[gd_scene load_steps=14 format=3 uid="uid://cuun4pxiwolqj"]
+[gd_scene load_steps=15 format=3 uid="uid://cuun4pxiwolqj"]
 
+[ext_resource type="Script" uid="uid://cojw15bqnf7su" path="res://scripts/samurai_player.gd" id="1_go2xg"]
 [ext_resource type="Texture2D" uid="uid://by08urtakwtnt" path="res://assets/FREE_Samurai 2D Pixel Art v1.2/Sprites/IDLE.png" id="1_wtcfe"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0e48y"]
@@ -84,6 +85,7 @@ animations = [{
 radius = 6.0
 
 [node name="SamuraiPlayer" type="CharacterBody2D"]
+script = ExtResource("1_go2xg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -33)
