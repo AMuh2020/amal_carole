@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://b3uv44krnvdog"]
+
+[ext_resource type="Script" uid="uid://b7dga1kcid0ef" path="res://interactions/interaction_manager.gd" id="1_kapv5"]
+[ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="2_jgmyy"]
+
+[node name="InteractionManager" type="Node2D"]
+script = ExtResource("1_kapv5")
+
+[node name="Label" type="Label" parent="."]
+z_index = 20
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -62.5
+offset_right = 62.5
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_fonts/font = ExtResource("2_jgmyy")
+text = "[E] TO INTERACT"
+horizontal_alignment = 1
+vertical_alignment = 1
