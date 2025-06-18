@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=4 uid="uid://cpr7ftjp8lfv"]
+[gd_scene load_steps=6 format=3 uid="uid://cpr7ftjp8lfv"]
 
 [ext_resource type="PackedScene" uid="uid://cuun4pxiwolqj" path="res://scenes/samurai_player.tscn" id="2_j5whl"]
+[ext_resource type="PackedScene" uid="uid://clv2qhvnt4ks1" path="res://scenes/sand_blocks.tscn" id="3_7cdb1"]
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="3_hiknq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5whl"]
@@ -173,7 +174,7 @@ sources/0 = SubResource("TileSetAtlasSource_j5whl")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAD9/wAAAAACAAAAAAD+/wAAAAACAAAAAAAAAAAAAAACAAAAAAABAAAAAAACAAAAAAACAAAAAAACAAAAAAD9/wEAAAACAAEAAAD+/wEAAAACAAEAAAD//wEAAAACAAEAAAABAAEAAAACAAEAAAACAAEAAAACAAEAAAACAAIAAAACAAEAAAACAAQAAAACAAEAAAABAAQAAAACAAEAAAAAAAQAAAACAAEAAAD+/wQAAAACAAEAAAD9/wQAAAACAAEAAAD9/wIAAAACAAEAAAAAAAIAAAACAAEAAAABAAIAAAACAAEAAAABAAMAAAACAAEAAAAAAAMAAAACAAEAAAD//wMAAAACAAEAAAD+/wMAAAACAAEAAAADAAAAAAACAAIAAAD+/wIAAAACAAEAAAAEAAAAAAAJAAEAAAAFAAAAAAAKAAEAAAAGAAAAAAALAAEAAAD//wAAAAACAAIAAAADAAEAAAACAAEAAAADAAIAAAACAAEAAAADAAMAAAACAAEAAAADAAQAAAACAAEAAAD9/wMAAAADAAEAAAD//wQAAAADAAEAAAAAAAEAAAADAAEAAAD//wIAAAADAAAAAAACAAMAAAADAAAAAAAHAAAAAAACAAAAAAAIAAAAAAACAAIAAAAIAAQAAAADAAEAAAAHAAIAAAADAAAAAAAHAAEAAAACAAEAAAAIAAEAAAACAAEAAAAIAAIAAAACAAEAAAAIAAMAAAACAAEAAAAHAAMAAAACAAEAAAAHAAQAAAACAAEAAAACAP//AAADAAgAAAACAP7/AAADAAcAAAD+////AAADAAgAAAD8/wAAAAACAAIAAAD7/wAAAAACAAIAAAD7/wEAAAADAAEAAAD7/wIAAAADAAEAAAD8/wIAAAACAAEAAAD7/wQAAAADAAAAAAD7/wMAAAACAAEAAAD8/wMAAAACAAEAAAD8/wQAAAACAAEAAAD8/wEAAAADAAAAAAD6/wAAAAACAAAAAAD5/wAAAAACAAAAAAD4/wAAAAACAAAAAAD3/wAAAAACAAAAAAD3/wMAAAADAAEAAAD4/wEAAAADAAEAAAD5/wMAAAADAAAAAAD4/wQAAAADAAAAAAD3/wEAAAACAAEAAAD3/wIAAAACAAEAAAD4/wIAAAACAAEAAAD5/wIAAAACAAEAAAD5/wEAAAACAAEAAAD6/wEAAAACAAEAAAD6/wIAAAACAAEAAAD6/wMAAAACAAEAAAD6/wQAAAACAAEAAAD5/wQAAAACAAEAAAD4/wMAAAACAAEAAAD3/wQAAAACAAEAAAD+//3/AAACAAQAAAACAPz/AAACAAQAAAA=")
+tile_map_data = PackedByteArray(0, 0, 2, 0, 255, 255, 0, 0, 3, 0, 8, 0, 0, 0, 2, 0, 254, 255, 0, 0, 3, 0, 7, 0, 0, 0, 254, 255, 255, 255, 0, 0, 3, 0, 8, 0, 0, 0, 254, 255, 253, 255, 0, 0, 2, 0, 4, 0, 0, 0, 2, 0, 252, 255, 0, 0, 2, 0, 4, 0, 0, 0)
 tile_set = SubResource("TileSet_pxj5x")
 
 [node name="SamuraiPlayer" parent="." instance=ExtResource("2_j5whl")]
@@ -181,3 +182,15 @@ tile_set = SubResource("TileSet_pxj5x")
 [node name="Camera2D" type="Camera2D" parent="SamuraiPlayer"]
 zoom = Vector2(4, 4)
 position_smoothing_enabled = true
+
+[node name="SandBlocks" parent="." instance=ExtResource("3_7cdb1")]
+position = Vector2(0, 8)
+
+[node name="SandBlocks2" parent="." instance=ExtResource("3_7cdb1")]
+position = Vector2(16, 8)
+
+[node name="SandBlocks3" parent="." instance=ExtResource("3_7cdb1")]
+position = Vector2(-16, 8)
+
+[node name="SandBlocks4" parent="." instance=ExtResource("3_7cdb1")]
+position = Vector2(32, 8)
