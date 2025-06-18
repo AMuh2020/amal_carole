@@ -8,18 +8,17 @@ func _ready():
 	area.connect("body_exited", Callable(self, "_on_body_exited"))
 	timer.connect("timeout", Callable(self, "_on_timer_timeout"))
 
-var player_on_block := false
+# Remove this variable since we don't need to track if the player stays
+# var player_on_block := false
 
 func _on_body_entered(body):
-	if body.is_in_group("player"):  # Make sure your player node is in "player" group
-		player_on_block = true
-		timer.start()
+	if body.is_in_group("player"):  # Ensure your player node is in "player" group
+		timer.start()  # Start the timer immediately when player steps on the block
 
 func _on_body_exited(body):
 	if body.is_in_group("player"):
-		player_on_block = false
-		timer.stop()
+		# No need to stop the timer; it will run for 3 seconds regardless
+		pass
 
 func _on_timer_timeout():
-	if player_on_block:
-		queue_free()  # Remove the block if player stayed for 3 seconds
+	queue_free()  # Remove the block after 3 seconds
