@@ -7,6 +7,7 @@ const CROUCH_SPEED_MULTIPLIER = 0.5
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var idle_shape: CollisionShape2D = $CollisionShape2DIdle
 @onready var crouch_shape: CollisionShape2D = $CollisionShape2DCrouch
+@onready var timer: Timer = $Timer
 
 var is_attacking: bool = false
 var is_crouching: bool = false
@@ -15,6 +16,7 @@ var previous_crouch_state: bool = false
 
 func _play_animation(anim_name: String) -> void:
 	if current_animation != anim_name:
+		print("Playing animation: ", anim_name)
 		animated_sprite.play(anim_name)
 		current_animation = anim_name
 		
@@ -36,7 +38,8 @@ func _physics_process(delta: float) -> void:
 		is_attacking = true
 		_play_animation("attack")
 		$AnimatedSprite2D/AttackArea/CollisionShape2D.disabled = false
-	
+		timer.start(0.5)
+		
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_crouching and not is_attacking:
 		velocity.y = JUMP_VELOCITY
 		_play_animation("jump")
@@ -51,6 +54,7 @@ func _physics_process(delta: float) -> void:
 		animated_sprite.scale.x = -1
 
 	if is_attacking:
+		#print('still attacking')
 		velocity.x = 0
 	else:
 		if is_crouching:
@@ -81,7 +85,15 @@ func _physics_process(delta: float) -> void:
 
 
 func _on_animated_sprite_2d_animation_finished() -> void:
+	print("animation finished: ", animated_sprite.animation)
 	if animated_sprite.animation == "attack":
 		print("attack animation cleared")
 		$AnimatedSprite2D/AttackArea/CollisionShape2D.disabled = true
 		is_attacking = false
+
+
+func _on_timer_timeout() -> void:
+	if is_attacking:
+		print("Failsafe reset triggered")
+		is_attacking = false
+		$AnimatedSprite2D/AttackArea/CollisionShape2D.disabled = true # Replace with function body.
