@@ -1,61 +1,75 @@
 extends CharacterBody2D
 
-
-const SPEED = 200.0
+const SPEED = 400
 const JUMP_VELOCITY = -400.0
-#var attacking = false
+const CROUCH_SPEED_MULTIPLIER = 0.5
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var idle_shape: CollisionShape2D = $CollisionShape2DIdle
+@onready var crouch_shape: CollisionShape2D = $CollisionShape2DCrouch
 
 var is_attacking: bool = false
+var is_crouching: bool = false
+var current_animation: String = ""
+var previous_crouch_state: bool = false
+
+func _play_animation(anim_name: String) -> void:
+	if current_animation != anim_name:
+		animated_sprite.play(anim_name)
+		current_animation = anim_name
 
 func _physics_process(delta: float) -> void:
-	# Add the gravity.
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-	
-	# player attack - kinda complex cant get it to work right along with other
-	# along with idle, ill watch vid to do this properly was just experimenting here
-	if Input.is_action_just_pressed("attack"):
-		#attacking = true
-		animated_sprite.play("attack")
+
+	is_crouching = Input.is_action_pressed("crouch") and is_on_floor()
+
+	# Switch active collision shape only if crouch state changed
+	if is_crouching != previous_crouch_state:
+		idle_shape.disabled = is_crouching
+		crouch_shape.disabled = not is_crouching
+		previous_crouch_state = is_crouching
+
+	if Input.is_action_just_pressed("attack") and not is_attacking:
 		is_attacking = true
-		await animated_sprite.animation_finished
-		is_attacking = false
-	
-	# Handle jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
+		_play_animation("attack")
+
+	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_crouching and not is_attacking:
 		velocity.y = JUMP_VELOCITY
-		animated_sprite.play("jump")
-	
-	# Get the input direction and handle the movement/deceleration.
-	# As good practice, you should replace UI actions with custom gameplay actions.
+		_play_animation("jump")
+
 	var direction := Input.get_axis("move_left", "move_right")
-	
-	# make sure an attack isn't happening
-	if not is_attacking:
-		# then check for floor (on floor animations happen here), if not on floor its jump animations
-		if is_on_floor():
-			if direction == 0:
-				animated_sprite.play("idle")
-				pass
-			else:
-				animated_sprite.play("run")
-		else:
-			if velocity.y < 0:
-				animated_sprite.play("jump")
-			elif velocity.y > 0:
-				animated_sprite.play("jump_falling")
-		
-		if direction > 0:
-			animated_sprite.flip_h = false
-		elif direction < 0:
-			animated_sprite.flip_h = true
-	
-	
-	if direction:
-		#print(direction)
-		velocity.x = direction * SPEED
+
+	if direction > 0:
+		animated_sprite.flip_h = false
+	elif direction < 0:
+		animated_sprite.flip_h = true
+
+	if is_attacking:
+		velocity.x = 0
 	else:
-		velocity.x = move_toward(velocity.x, 0, SPEED)
+		if is_crouching:
+			if direction == 0:
+				_play_animation("crouch")
+				velocity.x = 0
+			else:
+				_play_animation("crouch_walk")
+				velocity.x = direction * SPEED * CROUCH_SPEED_MULTIPLIER
+		else:
+			if is_on_floor():
+				if direction == 0:
+					_play_animation("idle")
+				else:
+					_play_animation("run")
+			else:
+				if velocity.y < 0:
+					_play_animation("jump")
+				else:
+					_play_animation("jump_falling")
+
+			if direction != 0:
+				velocity.x = direction * SPEED
+			else:
+				velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()

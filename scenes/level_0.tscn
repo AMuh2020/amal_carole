@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_rerym"]
 [ext_resource type="PackedScene" uid="uid://c6lwpthns7ndf" path="res://scenes/potion.tscn" id="3_rerym"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_uijja"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_rerym"]
 texture = ExtResource("2_rerym")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -168,7 +168,7 @@ texture = ExtResource("2_rerym")
 
 [sub_resource type="TileSet" id="TileSet_5nv5w"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_uijja")
+sources/0 = SubResource("TileSetAtlasSource_rerym")
 
 [node name="Level_0" type="Node2D"]
 
