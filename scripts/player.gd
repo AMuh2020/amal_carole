@@ -5,14 +5,13 @@ const JUMP_VELOCITY = -400.0
 const CROUCH_SPEED_MULTIPLIER = 0.5
 
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
-@onready var cshape = $CollisionShape2D
+@onready var idle_shape: CollisionShape2D = $CollisionShape2DIdle
+@onready var crouch_shape: CollisionShape2D = $CollisionShape2DCrouch
 
 var is_attacking: bool = false
 var is_crouching: bool = false
 var current_animation: String = ""
-
-var idle_cshape = preload("res://resources/player_idle_cshape.tres")
-var crouch_cshape = preload("res://resources/player_crouch_cshape.tres")
+var previous_crouch_state: bool = false
 
 func _play_animation(anim_name: String) -> void:
 	if current_animation != anim_name:
@@ -24,6 +23,12 @@ func _physics_process(delta: float) -> void:
 		velocity += get_gravity() * delta
 
 	is_crouching = Input.is_action_pressed("crouch") and is_on_floor()
+
+	# Switch active collision shape only if crouch state changed
+	if is_crouching != previous_crouch_state:
+		idle_shape.disabled = is_crouching
+		crouch_shape.disabled = not is_crouching
+		previous_crouch_state = is_crouching
 
 	if Input.is_action_just_pressed("attack") and not is_attacking:
 		is_attacking = true
@@ -68,14 +73,3 @@ func _physics_process(delta: float) -> void:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
-
-func crouch():
-	if is_crouching:
-		is_crouching = true
-		cshape.shape = crouch_cshape
-
-func idle():
-	if is_crouching == false:
-		return
-	is_crouching = false
-	cshape.shape = idle_cshape
