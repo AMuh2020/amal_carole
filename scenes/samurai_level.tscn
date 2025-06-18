@@ -194,3 +194,27 @@ position = Vector2(-16, 8)
 
 [node name="SandBlocks4" parent="." instance=ExtResource("3_7cdb1")]
 position = Vector2(32, 8)
+
+[node name="SandBlocks5" parent="." instance=ExtResource("3_7cdb1")]
+position = Vector2(64, 8)
+
+[node name="SandBlocks6" parent="." instance=ExtResource("3_7cdb1")]
+position = Vector2(48, 8)
+
+[node name="SandBlocks7" parent="." instance=ExtResource("3_7cdb1")]
+position = Vector2(-96, 8)
+
+[node name="SandBlocks8" parent="." instance=ExtResource("3_7cdb1")]
+position = Vector2(-80, 8)
+
+[node name="SandBlocks9" parent="." instance=ExtResource("3_7cdb1")]
+position = Vector2(-112, 8)
+
+[node name="SandBlocks10" parent="." instance=ExtResource("3_7cdb1")]
+position = Vector2(-64, 8)
+
+[node name="SandBlocks11" parent="." instance=ExtResource("3_7cdb1")]
+position = Vector2(-32, 8)
+
+[node name="SandBlocks12" parent="." instance=ExtResource("3_7cdb1")]
+position = Vector2(-48, 8)
