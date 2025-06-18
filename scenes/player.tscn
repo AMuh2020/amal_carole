@@ -1,4 +1,4 @@
-[gd_scene load_steps=62 format=3 uid="uid://dajn4ssj34ym7"]
+[gd_scene load_steps=63 format=3 uid="uid://dajn4ssj34ym7"]
 
 [ext_resource type="Texture2D" uid="uid://ctceup0mncabg" path="res://assets/MC_Knight/Colour1/NoOutline/120x80_PNGSheets/_Idle.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bx0ol81g2cbll" path="res://scripts/player.gd" id="1_g2els"]
@@ -395,6 +395,9 @@ animations = [{
 "speed": 15.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3v2ag"]
+size = Vector2(27, 23)
+
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4r1p"]
 size = Vector2(14, 35)
 
@@ -408,8 +411,17 @@ script = ExtResource("1_g2els")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(4, -40)
 sprite_frames = SubResource("SpriteFrames_3v2ag")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
+frame = 3
+frame_progress = 1.0
+
+[node name="AttackArea" type="Area2D" parent="AnimatedSprite2D" groups=["sword"]]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/AttackArea"]
+position = Vector2(39.5, 24.5)
+shape = SubResource("RectangleShape2D_3v2ag")
+disabled = true
 
 [node name="CollisionShape2DIdle" type="CollisionShape2D" parent="."]
 position = Vector2(-1, -17.5)
@@ -419,3 +431,5 @@ shape = SubResource("RectangleShape2D_y4r1p")
 position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_d2wvv")
 disabled = true
+
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

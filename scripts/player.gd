@@ -17,6 +17,7 @@ func _play_animation(anim_name: String) -> void:
 	if current_animation != anim_name:
 		animated_sprite.play(anim_name)
 		current_animation = anim_name
+		
 
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
@@ -31,9 +32,11 @@ func _physics_process(delta: float) -> void:
 		previous_crouch_state = is_crouching
 
 	if Input.is_action_just_pressed("attack") and not is_attacking:
+		#print("attack pressed")
 		is_attacking = true
 		_play_animation("attack")
-
+		$AnimatedSprite2D/AttackArea/CollisionShape2D.disabled = false
+	
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_crouching and not is_attacking:
 		velocity.y = JUMP_VELOCITY
 		_play_animation("jump")
@@ -41,9 +44,11 @@ func _physics_process(delta: float) -> void:
 	var direction := Input.get_axis("move_left", "move_right")
 
 	if direction > 0:
-		animated_sprite.flip_h = false
+		#animated_sprite.flip_h = false
+		animated_sprite.scale.x = 1
 	elif direction < 0:
-		animated_sprite.flip_h = true
+		#animated_sprite.flip_h = true
+		animated_sprite.scale.x = -1
 
 	if is_attacking:
 		velocity.x = 0
@@ -73,3 +78,10 @@ func _physics_process(delta: float) -> void:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
 
 	move_and_slide()
+
+
+func _on_animated_sprite_2d_animation_finished() -> void:
+	if animated_sprite.animation == "attack":
+		print("attack animation cleared")
+		$AnimatedSprite2D/AttackArea/CollisionShape2D.disabled = true
+		is_attacking = false
