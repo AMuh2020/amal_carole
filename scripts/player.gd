@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 		#print("attack pressed")
 		is_attacking = true
 		_play_animation("attack")
-		$AnimatedSprite2D/AttackArea/CollisionShape2D.disabled = false
+		$AnimatedSprite2D/PlayerAttackArea/CollisionShape2D.disabled = false
 		timer.start(0.5)
 		
 	if Input.is_action_just_pressed("jump") and is_on_floor() and not is_crouching and not is_attacking:
@@ -108,7 +108,7 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	#print("animation finished: ", animated_sprite.animation)
 	if animated_sprite.animation == "attack":
 		#print("attack animation cleared")
-		$AnimatedSprite2D/AttackArea/CollisionShape2D.disabled = true
+		$AnimatedSprite2D/PlayerAttackArea/CollisionShape2D.disabled = true
 		is_attacking = false
 
 
@@ -116,7 +116,7 @@ func _on_timer_timeout() -> void:
 	if is_attacking:
 		print("Failsafe reset triggered")
 		is_attacking = false
-		$AnimatedSprite2D/AttackArea/CollisionShape2D.disabled = true # Replace with function body.
+		$AnimatedSprite2D/PlayerAttackArea/CollisionShape2D.disabled = true # Replace with function body.
 
 
 func _on_attack_area_area_entered(area: Area2D) -> void:
@@ -124,3 +124,4 @@ func _on_attack_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy") and is_attacking:
 		var enemy = area.get_parent()
 		print(str(enemy))
+		enemy.take_damage(12)

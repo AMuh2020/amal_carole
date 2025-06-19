@@ -506,6 +506,7 @@ radius = 84.0
 
 [node name="SkeletonEnemy" type="CharacterBody2D"]
 collision_layer = 4
+collision_mask = 5
 script = ExtResource("1_h4wr6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -517,7 +518,7 @@ offset = Vector2(4, 0)
 
 [node name="AttackDetection" type="Area2D" parent="AnimatedSprite2D"]
 scale = Vector2(0.769231, 0.769231)
-collision_layer = 0
+collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/AttackDetection"]
@@ -540,7 +541,7 @@ position = Vector2(0, 5)
 target_position = Vector2(-28, 0)
 
 [node name="SkeletonHitbox" type="Area2D" parent="." groups=["enemy"]]
-collision_layer = 0
+collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="SkeletonHitbox"]
@@ -569,8 +570,8 @@ one_shot = true
 [node name="WalkDurationTimer" type="Timer" parent="."]
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_AnimatedSprite2D_animation_finished"]
-[connection signal="area_entered" from="AnimatedSprite2D/AttackDetection" to="." method="_on_skeleton_damage_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/AttackDetection" to="." method="_on_AttackDetection_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite2D/AttackDetection" to="." method="_on_skeleton_damage_area_entered"]
 [connection signal="area_exited" from="AnimatedSprite2D/AttackDetection" to="." method="_on_skeleton_damage_area_exited"]
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]
 [connection signal="area_entered" from="SkeletonHitbox" to="." method="_on_skeleton_hitbox_area_entered"]

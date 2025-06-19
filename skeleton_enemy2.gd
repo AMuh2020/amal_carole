@@ -21,6 +21,8 @@ extends CharacterBody2D
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D # Reference to the enemy's sprite for flipping.
 @onready var attack_cooldown_timer: Timer = Timer.new() # Timer to control attack frequency.
 @onready var attack_detection_area: Area2D = $AnimatedSprite2D/AttackDetection # Area2D for detecting attack range.
+@onready var attack_damage_timer: Timer = Timer.new() # Timer for when to apply attack damage
+
 # --- State Management ---
 enum State { IDLE, WALKING, CHASING, ATTACKING, TAKING_DAMAGE, DEAD } # Define the possible states for the enemy.
 var current_state: State = State.IDLE # The current state of the enemy.
@@ -50,6 +52,10 @@ func _ready() -> void:
 	attack_cooldown_timer.wait_time = attack_cooldown
 	attack_cooldown_timer.timeout.connect(Callable(self, "_on_AttackCooldownTimer_timeout"))
 	# --- MODIFICATION END ---
+	
+	add_child(attack_damage_timer)
+	attack_damage_timer.one_shot = true # It should only fire once per attack
+	attack_damage_timer.timeout.connect(Callable(self, "_on_AttackDamageTimer_timeout"))
 	# Ensure raycasts are enabled from the start.
 	ray_cast_right.enabled = true
 	ray_cast_left.enabled = true
@@ -67,7 +73,7 @@ func _physics_process(delta: float) -> void:
 		return # Exit early, no further processing needed
 
 	# Stop horizontal movement when taking damage or attacking
-	if current_state == State.TAKING_DAMAGE or current_state == State.ATTACKING:
+	if current_state == State.ATTACKING:
 		velocity.x = 0
 	# Apply gravity to the enemy.
 	_apply_gravity(delta)
@@ -165,6 +171,8 @@ func _change_state(new_state: State) -> void:
 			# Stop chasing related movement. Play attack animation.
 			velocity.x = 0
 			_play_animation("attack")
+			attack_damage_timer.wait_time = 0.5 # Set your 'X' seconds here (e.g., 0.5 seconds into the animation)
+			attack_damage_timer.start()
 			# Attack cooldown timer starts when the attack animation finishes
 			print("Enemy State: ATTACKING!")
 		State.TAKING_DAMAGE:
@@ -287,6 +295,7 @@ func _die() -> void:
 func _on_Detection_area_entered(area: Area2D) -> void:
 	#print("ENEMY", str(area))
 	if area.is_in_group("player"):
+		print("from detection entered")
 		player_detected = true
 		# --- MODIFICATION START ---
 		# Get a reference to the player's root node (assuming hitbox is a child)
@@ -320,6 +329,18 @@ func _on_Detection_body_exited(body: Node2D) -> void:
 		if not player_detected:
 			_change_state(State.IDLE) # Revert to idle after player leaves.
 
+func _on_AttackDamageTimer_timeout() -> void:
+	# This function is called when the specified X seconds for damage application pass.
+	if current_state == State.ATTACKING: # Only apply damage if still in attacking state
+		if is_instance_valid(player_node) and attack_detection_area.overlaps_area(player_node.get_node("PlayerHitbox")):
+			if player_node.has_method("take_damage"):
+				player_node.take_damage(attack_damage)
+				print("Enemy attacked player for ", attack_damage, " damage (timed)!")
+			else:
+				push_warning("Player node does not have a 'take_damage' method!")
+	# The state change logic (e.g., back to CHASING/IDLE) will still be handled
+	# by _on_AnimatedSprite2D_animation_finished when the *animation* completes.
+
 # Called when the WalkDurationTimer times out.
 func _on_WalkDurationTimer_timeout() -> void:
 	# If the player is still not detected, transition to idle.
@@ -345,13 +366,26 @@ func _on_IdleDurationTimer_timeout() -> void:
 # Called when an Area2D (e.g., player's hitbox) enters the AttackDetection area.
 func _on_AttackDetection_area_entered(area: Area2D) -> void:
 	# Only try to attack if currently chasing, player is in hitbox, and cooldown is ready.
-	if current_state == State.CHASING and area.is_in_group("player_hitbox") and attack_cooldown_timer.is_stopped():
+	if current_state == State.CHASING and area.is_in_group("player") and attack_cooldown_timer.is_stopped():
 		_change_state(State.ATTACKING)
+	pass
 
 # Called when the AnimatedSprite2D finishes playing an animation.
 func _on_AnimatedSprite2D_animation_finished() -> void:
 	match current_state:
 		State.ATTACKING:
+			print("attacking  animation")
+			# Damage application is now handled by _on_AttackDamageTimer_timeout()
+			# No need to call player.take_damage() here anymore.
+
+			# After attack animation, if player is still detected, go back to chasing.
+			# Otherwise, go back to idle/roaming.
+			if player_detected:
+				_change_state(State.CHASING)
+			else:
+				_change_state(last_roaming_state) # Or State.IDLE
+			attack_cooldown_timer.start() # Start cooldown after attack
+
 			# After attack animation, if player is still detected, go back to chasing.
 			# Otherwise, go back to idle/roaming.
 			if player_detected:
