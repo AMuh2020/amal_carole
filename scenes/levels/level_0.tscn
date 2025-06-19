@@ -1,6 +1,6 @@
-[gd_scene load_steps=9 format=4 uid="uid://ov1q18vqje0l"]
+[gd_scene load_steps=9 format=4 uid="uid://cp5ddcy0vh7rf"]
 
-[ext_resource type="PackedScene" uid="uid://dajn4ssj34ym7" path="res://scenes/players_and_enemies/player.tscn" id="1_xy1qu"]
+[ext_resource type="PackedScene" uid="uid://ciotouojb2y8v" path="res://scenes/players_and_enemies/player.tscn" id="1_xy1qu"]
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_jjvta"]
 [ext_resource type="PackedScene" uid="uid://c6lwpthns7ndf" path="res://scenes/potion.tscn" id="3_3mnpy"]
 [ext_resource type="PackedScene" uid="uid://b6wo2kc5kppxl" path="res://scenes/kill_zone.tscn" id="4_6ayib"]
