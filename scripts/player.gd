@@ -14,6 +14,8 @@ var is_crouching: bool = false
 var current_animation: String = ""
 var previous_crouch_state: bool = false
 
+var health: int = 3
+
 func _play_animation(anim_name: String) -> void:
 	if current_animation != anim_name:
 		#print("Playing animation: ", anim_name)
@@ -24,7 +26,9 @@ func _play_animation(anim_name: String) -> void:
 func _physics_process(delta: float) -> void:
 	if not is_on_floor():
 		velocity += get_gravity() * delta
-
+		velocity.x = 0
+	#Global.skeletonDamageZone = $AnimatedSprite2D/SkeletonDamage
+	
 	is_crouching = Input.is_action_pressed("crouch") and is_on_floor()
 
 	# Switch active collision shape only if crouch state changed
@@ -80,14 +84,30 @@ func _physics_process(delta: float) -> void:
 				velocity.x = direction * SPEED
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
-
+	check_hitbox()
 	move_and_slide()
 
+func check_hitbox():
+	var hitbox_areas = $PlayerHitbox.get_overlapping_areas()
+	var damage: int
+	#print(str(hitbox_areas))
+	if hitbox_areas:
+		var hitbox = hitbox_areas.front()
+		#print(str(hitbox))
+		if hitbox.get_parent().get_parent() is SkeltonEnemy:
+			#print("Hit by skeleton")
+			#take_damage(1)
+			pass
+
+func take_damage(damage):
+	if health > 0:
+		health -= damage
+	print("player health", str(health))
 
 func _on_animated_sprite_2d_animation_finished() -> void:
-	print("animation finished: ", animated_sprite.animation)
+	#print("animation finished: ", animated_sprite.animation)
 	if animated_sprite.animation == "attack":
-		print("attack animation cleared")
+		#print("attack animation cleared")
 		$AnimatedSprite2D/AttackArea/CollisionShape2D.disabled = true
 		is_attacking = false
 
@@ -97,3 +117,10 @@ func _on_timer_timeout() -> void:
 		print("Failsafe reset triggered")
 		is_attacking = false
 		$AnimatedSprite2D/AttackArea/CollisionShape2D.disabled = true # Replace with function body.
+
+
+func _on_attack_area_area_entered(area: Area2D) -> void:
+	print(str(area))
+	if area.is_in_group("enemy") and is_attacking:
+		var enemy = area.get_parent()
+		print(str(enemy))
