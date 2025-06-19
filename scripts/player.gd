@@ -16,7 +16,7 @@ var previous_crouch_state: bool = false
 
 func _play_animation(anim_name: String) -> void:
 	if current_animation != anim_name:
-		print("Playing animation: ", anim_name)
+		#print("Playing animation: ", anim_name)
 		animated_sprite.play(anim_name)
 		current_animation = anim_name
 		
