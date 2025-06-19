@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://dn1071flmioco"]
 
-[ext_resource type="PackedScene" uid="uid://dajn4ssj34ym7" path="res://scenes/player.tscn" id="1_bswci"]
-[ext_resource type="PackedScene" uid="uid://bvkquk144ij2p" path="res://scenes/skeleton_enemy.tscn" id="1_rus8k"]
+[ext_resource type="PackedScene" uid="uid://dajn4ssj34ym7" path="res://scenes/players_and_enemies/player.tscn" id="1_bswci"]
+[ext_resource type="PackedScene" uid="uid://bvkquk144ij2p" path="res://scenes/players_and_enemies/skeleton_enemy.tscn" id="1_rus8k"]
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_rus8k"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
