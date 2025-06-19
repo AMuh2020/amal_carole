@@ -1,6 +1,6 @@
 [gd_scene load_steps=77 format=3 uid="uid://bvkquk144ij2p"]
 
-[ext_resource type="Script" uid="uid://ciohjltecql03" path="res://skeleton_enemy2.gd" id="1_h4wr6"]
+[ext_resource type="Script" uid="uid://ciohjltecql03" path="res://scripts/skeleton_enemy2.gd" id="1_h4wr6"]
 [ext_resource type="Texture2D" uid="uid://bhwgt4x6bvcq7" path="res://assets/Skeleton/Sprite Sheets/Skeleton Idle.png" id="1_rv2i1"]
 [ext_resource type="Texture2D" uid="uid://cl3cf7ca2ljm5" path="res://assets/Skeleton/Sprite Sheets/Skeleton Dead.png" id="2_0t2vl"]
 [ext_resource type="Texture2D" uid="uid://cesvgumns0mps" path="res://assets/Skeleton/Sprite Sheets/Skeleton Attack.png" id="2_h4wr6"]

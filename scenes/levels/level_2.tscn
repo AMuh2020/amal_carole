@@ -1,11 +1,11 @@
 [gd_scene load_steps=6 format=4 uid="uid://cpr7ftjp8lfv"]
 
-[ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_rus8k"]
-[ext_resource type="PackedScene" uid="uid://cuun4pxiwolqj" path="res://scenes/samurai_player.tscn" id="2_5xbjy"]
-[ext_resource type="PackedScene" uid="uid://clv2qhvnt4ks1" path="res://scenes/sand_blocks.tscn" id="3_4nkto"]
+[ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_ra442"]
+[ext_resource type="PackedScene" uid="uid://cuun4pxiwolqj" path="res://scenes/players_and_enemies/samurai_player.tscn" id="2_fiq81"]
+[ext_resource type="PackedScene" uid="uid://clv2qhvnt4ks1" path="res://scenes/sand_blocks.tscn" id="3_l37oo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5whl"]
-texture = ExtResource("1_rus8k")
+texture = ExtResource("1_ra442")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -184,74 +184,73 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAACAP//AAADAAgAAAACAP7/AAADAAcAAAACAPz/AAACAAQAAAABAP//AAAIAAQAAAD8////AAADAAgAAAD8//3/AAACAAQAAAA=")
 tile_set = SubResource("TileSet_pxj5x")
 
-[node name="SamuraiPlayer" parent="." instance=ExtResource("2_5xbjy")]
+[node name="SamuraiPlayer" parent="Node2D" instance=ExtResource("2_fiq81")]
 
-[node name="Camera2D" type="Camera2D" parent="SamuraiPlayer"]
+[node name="Camera2D" type="Camera2D" parent="Node2D/SamuraiPlayer"]
 zoom = Vector2(4, 4)
-position_smoothing_enabled = true
 
-[node name="SandBlocks" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(-24, 8)
 
-[node name="SandBlocks2" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks2" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(-8, 8)
 
-[node name="SandBlocks3" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks3" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(-40, 8)
 
-[node name="SandBlocks4" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks4" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(8, 8)
 
-[node name="SandBlocks5" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks5" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(40, 8)
 
-[node name="SandBlocks6" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks6" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(24, 8)
 
-[node name="SandBlocks8" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks8" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(-104, 8)
 
-[node name="SandBlocks10" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks10" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(-88, 8)
 
-[node name="SandBlocks11" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks11" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(-56, 8)
 
-[node name="SandBlocks12" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks12" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(-72, 8)
 
-[node name="SandBlocks13" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks13" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(168, 8)
 
-[node name="SandBlocks14" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks14" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(184, 8)
 
-[node name="SandBlocks15" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks15" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(152, 8)
 
-[node name="SandBlocks16" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks16" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(200, 8)
 
-[node name="SandBlocks17" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks17" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(232, 8)
 
-[node name="SandBlocks18" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks18" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(216, 8)
 
-[node name="SandBlocks19" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks19" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(72, 8)
 
-[node name="SandBlocks20" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks20" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(88, 8)
 
-[node name="SandBlocks21" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks21" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(56, 8)
 
-[node name="SandBlocks22" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks22" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(104, 8)
 
-[node name="SandBlocks23" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks23" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(136, 8)
 
-[node name="SandBlocks24" parent="." instance=ExtResource("3_4nkto")]
+[node name="SandBlocks24" parent="." instance=ExtResource("3_l37oo")]
 position = Vector2(120, 8)
