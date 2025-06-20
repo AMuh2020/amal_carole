@@ -1,7 +1,9 @@
 extends CharacterBody2D
 
+
+
 ## Constants
-const SPEED = 500.0
+@export var SPEED = 200.0
 const JUMP_VELOCITY = -330.0
 const CROUCH_SPEED_MULTIPLIER = 0.5
 const GRAVITY = 980 # Define a gravity constant for consistency
@@ -88,17 +90,18 @@ func _input(event: InputEvent) -> void:
 func transition_to_state(new_state: PlayerState) -> void:
 	if current_state == new_state:
 		return # No need to transition if already in this state
-
+	
 	# Exit logic for the old state (if any)
 	match current_state:
 		PlayerState.ATTACKING:
+			print("PLAYER: OLD STATE ATTACK EXIITING")
 			_exit_attacking_state()
 		PlayerState.DEATH:
 			_exit_death_state()
 		# Add any other exit logic here if needed
-
+	print("PLAYER: old state: ", PlayerState.keys()[current_state])
 	current_state = new_state
-	#print("Transitioned to state: ", PlayerState.keys()[current_state]) # For debugging
+	print("PLAYER: Transitioned to state: ", PlayerState.keys()[current_state]) # For debugging
 
 	# Enter logic for the new state
 	match current_state:
@@ -138,7 +141,9 @@ func _on_animated_sprite_2d_animation_finished() -> void:
 	# Handle animation finished events relevant to the current state
 	match current_state:
 		PlayerState.ATTACKING:
+			
 			if animated_sprite.animation == "attack":
+				print("PLAYER: transitioned back to idle")
 				transition_to_state(PlayerState.IDLE) # Go back to idle after attack anim
 
 func _on_attack_timer_timeout() -> void:
@@ -241,12 +246,17 @@ func handle_crouching_physics(delta: float) -> void:
 		velocity.x = 0
 
 func _enter_attacking_state() -> void:
+	print("PLAYER: ENTERING ATTACK")
 	_play_animation("attack")
+	print("PLAYER: ATTACK ANIMATION COMPLETE")
 	attack_collision_shape.disabled = false
+	print("PLAYER: COLLISION SHAPE DISABLED")
 	attack_timer.start(0.5) # Assuming your attack animation lasts 0.5 seconds
+	print("PLAYER: ATTACK TIMER STARTED")
 	velocity.x = 0 # Stop movement during attack
 
 func _exit_attacking_state() -> void:
+	print("PLAYER: EXITING ATTACK")
 	attack_collision_shape.disabled = true
 	if attack_timer.time_left > 0: # Stop timer if it's still running
 		attack_timer.stop()
@@ -260,7 +270,7 @@ func handle_attacking_physics(delta: float) -> void:
 
 func _enter_jumping_state() -> void:
 	velocity.y = JUMP_VELOCITY
-	print("enter jumping")
+	print("PLAYER: enter jumping")
 	_play_animation("jump")
 
 func handle_jumping_input(event: InputEvent) -> void:

@@ -13,6 +13,7 @@ var is_attacking: bool = false
 var is_crouching: bool = false
 var current_animation: String = ""
 var previous_crouch_state: bool = false
+var is_dead = false
 
 var health: int = 3
 
@@ -61,6 +62,14 @@ func _physics_process(delta: float) -> void:
 		#print('still attacking')
 		velocity.x = 0
 	else:
+		if is_dead:
+			print("Player is dead")
+			set_collision_mask_value(3, false)
+			_play_animation("death")
+			is_dead = false
+			await get_tree().create_timer(3).timeout
+			get_tree().reload_current_scene()
+			return
 		if is_crouching:
 			if direction == 0:
 				_play_animation("crouch")
@@ -84,9 +93,10 @@ func _physics_process(delta: float) -> void:
 				velocity.x = direction * SPEED
 			else:
 				velocity.x = move_toward(velocity.x, 0, SPEED)
-	check_hitbox()
+	#check_hitbox()
 	move_and_slide()
 
+# Not being used, skeleton applies the damage through a function
 func check_hitbox():
 	var hitbox_areas = $PlayerHitbox.get_overlapping_areas()
 	var damage: int
@@ -102,7 +112,12 @@ func check_hitbox():
 func take_damage(damage):
 	if health > 0:
 		health -= damage
-	print("player health", str(health))
+		print("player taken ", str(damage))
+	if health < 0:
+		print("player died x1")
+		is_dead = true
+		print("player died")
+	print("player health: ", str(health))
 
 func _on_animated_sprite_2d_animation_finished() -> void:
 	#print("animation finished: ", animated_sprite.animation)

@@ -1,10 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://h0dg0j1q4t5t"]
+[gd_scene load_steps=6 format=4 uid="uid://duc7rjeylcpk8"]
 
-[ext_resource type="PackedScene" uid="uid://ciotouojb2y8v" path="res://scenes/players_and_enemies/player.tscn" id="2_x42e6"]
-[ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="3_6761a"]
+[ext_resource type="PackedScene" uid="uid://jg383sevgif8" path="res://scenes/players_and_enemies/skeleton_enemy.tscn" id="1_jp5fc"]
+[ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_4ptlp"]
+[ext_resource type="PackedScene" uid="uid://mn1b5goqhlul" path="res://scenes/players_and_enemies/samurai_player.tscn" id="3_ycf23"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
-texture = ExtResource("3_6761a")
+texture = ExtResource("2_4ptlp")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 1:0/0 = 0
@@ -171,14 +172,26 @@ sources/0 = SubResource("TileSetAtlasSource_hbghi")
 
 [node name="Level_1" type="Node2D"]
 
+[node name="SkeletonEnemy" parent="." instance=ExtResource("1_jp5fc")]
+position = Vector2(179, -3)
+
+[node name="SkeletonEnemy2" parent="." instance=ExtResource("1_jp5fc")]
+position = Vector2(644, -102)
+
+[node name="SkeletonEnemy3" parent="." instance=ExtResource("1_jp5fc")]
+position = Vector2(504, 1)
+
+[node name="SkeletonEnemy4" parent="." instance=ExtResource("1_jp5fc")]
+position = Vector2(346, -71)
+
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray(0, 0, 255, 255, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0, 2, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0, 0)
+tile_map_data = PackedByteArray("AAAAAAMAAAABAAAAAAABAAMAAAABAAAAAAACAAMAAAABAAAAAAD//wMAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAAFAAMAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAMAAAABAAAAAAAFAAAAAAABAAAAAAAFAAEAAAABAAAAAAAFAAIAAAABAAAAAAAJAAMAAAABAAAAAAAKAAMAAAABAAAAAAALAAMAAAABAAAAAAAMAAMAAAABAAAAAAANAAMAAAABAAAAAAAOAAMAAAABAAAAAAAPAAMAAAABAAAAAAAQAAMAAAABAAAAAAARAAMAAAABAAAAAAASAAMAAAABAAAAAAATAAMAAAABAAAAAAAUAAMAAAABAAAAAAAVAAMAAAABAAAAAAAWAAMAAAABAAAAAAAXAAMAAAABAAAAAAAYAAMAAAABAAAAAAAZAAMAAAABAAAAAAAaAAMAAAABAAAAAAAbAAMAAAABAAAAAAAcAAMAAAABAAAAAAAdAAMAAAABAAAAAAAeAAMAAAABAAAAAAAfAAMAAAABAAAAAAAgAAMAAAABAAAAAAAhAAMAAAABAAAAAAAiAAMAAAABAAAAAAAjAAMAAAABAAAAAAAkAAMAAAABAAAAAAAlAAMAAAABAAAAAAAmAAMAAAABAAAAAAAnAAMAAAABAAAAAAAoAAMAAAABAAAAAAApAAMAAAABAAAAAAAqAAMAAAABAAAAAAArAAMAAAABAAAAAAAsAAMAAAABAAAAAAAtAAMAAAABAAAAAAAtAAIAAAABAAAAAAAtAAEAAAABAAAAAAAtAAAAAAABAAAAAAAtAP//AAABAAAAAAAtAP7/AAABAAAAAAA=")
 tile_set = SubResource("TileSet_hn12h")
 
-[node name="Player" parent="." instance=ExtResource("2_x42e6")]
+[node name="Samurai" parent="." instance=ExtResource("3_ycf23")]
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
+[node name="Camera2D" type="Camera2D" parent="Samurai"]
 position = Vector2(-16, -41)
 zoom = Vector2(2, 2)
 limit_bottom = 530

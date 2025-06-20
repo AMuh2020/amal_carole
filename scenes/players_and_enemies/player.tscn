@@ -1,7 +1,7 @@
 [gd_scene load_steps=64 format=3 uid="uid://ciotouojb2y8v"]
 
 [ext_resource type="Texture2D" uid="uid://ctceup0mncabg" path="res://assets/MC_Knight/Colour1/NoOutline/120x80_PNGSheets/_Idle.png" id="1_3vyb7"]
-[ext_resource type="Script" uid="uid://bx0ol81g2cbll" path="res://scripts/player.gd" id="1_g2els"]
+[ext_resource type="Script" uid="uid://bv4aecilrl6wk" path="res://scripts/player2.gd" id="1_y6ler"]
 [ext_resource type="Texture2D" uid="uid://b8i0fm3hq8swp" path="res://assets/MC_Knight/Colour1/NoOutline/120x80_PNGSheets/_Attack.png" id="2_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://ca0l165mhk3yp" path="res://assets/MC_Knight/Colour1/NoOutline/120x80_PNGSheets/_Jump.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://ygsuufp0mqfd" path="res://assets/MC_Knight/Colour1/NoOutline/120x80_PNGSheets/_Run.png" id="3_qhqgy"]
@@ -287,9 +287,9 @@ animations = [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_2gdjj")
 }],
-"loop": true,
+"loop": false,
 "name": &"death",
-"speed": 5.0
+"speed": 10.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -411,13 +411,15 @@ size = Vector2(20, 24)
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 collision_layer = 2
 collision_mask = 5
-script = ExtResource("1_g2els")
+script = ExtResource("1_y6ler")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -40)
 sprite_frames = SubResource("SpriteFrames_3v2ag")
-animation = &"idle"
+animation = &"attack"
 autoplay = "idle"
+frame = 3
+frame_progress = 1.0
 offset = Vector2(5, 0)
 
 [node name="PlayerAttackArea" type="Area2D" parent="AnimatedSprite2D" groups=["sword"]]
@@ -460,3 +462,4 @@ shape = SubResource("RectangleShape2D_y4r1p")
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="AnimatedSprite2D/PlayerAttackArea" to="." method="_on_attack_area_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_attack_timer_timeout"]

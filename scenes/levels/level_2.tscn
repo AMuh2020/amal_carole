@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=4 uid="uid://cpr7ftjp8lfv"]
 
+[ext_resource type="PackedScene" uid="uid://mn1b5goqhlul" path="res://scenes/players_and_enemies/samurai_player.tscn" id="1_fiq81"]
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_ra442"]
-[ext_resource type="PackedScene" uid="uid://cuun4pxiwolqj" path="res://scenes/players_and_enemies/samurai_player.tscn" id="2_fiq81"]
 [ext_resource type="PackedScene" uid="uid://clv2qhvnt4ks1" path="res://scenes/sand_blocks.tscn" id="3_l37oo"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5whl"]
@@ -184,9 +184,11 @@ use_parent_material = true
 tile_map_data = PackedByteArray("AAACAP//AAADAAgAAAACAP7/AAADAAcAAAACAPz/AAACAAQAAAABAP//AAAIAAQAAAD8////AAADAAgAAAD8//3/AAACAAQAAAA=")
 tile_set = SubResource("TileSet_pxj5x")
 
-[node name="SamuraiPlayer" parent="Node2D" instance=ExtResource("2_fiq81")]
+[node name="Player" parent="Node2D" instance=ExtResource("1_fiq81")]
+collision_layer = 3
+SPEED = 500.0
 
-[node name="Camera2D" type="Camera2D" parent="Node2D/SamuraiPlayer"]
+[node name="Camera2D" type="Camera2D" parent="Node2D/Player"]
 zoom = Vector2(4, 4)
 
 [node name="SandBlocks" parent="." instance=ExtResource("3_l37oo")]
