@@ -1,7 +1,10 @@
-[gd_scene load_steps=6 format=4 uid="uid://duc7rjeylcpk8"]
+[gd_scene load_steps=9 format=4 uid="uid://duc7rjeylcpk8"]
 
 [ext_resource type="PackedScene" uid="uid://jg383sevgif8" path="res://scenes/players_and_enemies/skeleton_enemy.tscn" id="1_jp5fc"]
+[ext_resource type="Script" uid="uid://cobdmviitwtr7" path="res://scripts/enemy_group.gd" id="1_ycf23"]
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_4ptlp"]
+[ext_resource type="PackedScene" uid="uid://ct20g567hani0" path="res://scenes/miscellaneous/RoamWall.tscn" id="2_uh3ll"]
+[ext_resource type="PackedScene" uid="uid://bxvhaj3mlidwf" path="res://scenes/miscellaneous/door.tscn" id="3_4ptlp"]
 [ext_resource type="PackedScene" uid="uid://mn1b5goqhlul" path="res://scenes/players_and_enemies/samurai_player.tscn" id="3_ycf23"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
@@ -172,24 +175,35 @@ sources/0 = SubResource("TileSetAtlasSource_hbghi")
 
 [node name="Level_1" type="Node2D"]
 
-[node name="SkeletonEnemy" parent="." instance=ExtResource("1_jp5fc")]
-position = Vector2(179, -3)
+[node name="Enemy Group" type="Node" parent="."]
+script = ExtResource("1_ycf23")
 
-[node name="SkeletonEnemy2" parent="." instance=ExtResource("1_jp5fc")]
-position = Vector2(644, -102)
+[node name="RoamWall" parent="Enemy Group" instance=ExtResource("2_uh3ll")]
+position = Vector2(114, -3)
 
-[node name="SkeletonEnemy3" parent="." instance=ExtResource("1_jp5fc")]
-position = Vector2(504, 1)
+[node name="enemies" type="Node" parent="Enemy Group"]
 
-[node name="SkeletonEnemy4" parent="." instance=ExtResource("1_jp5fc")]
-position = Vector2(346, -71)
+[node name="SkeletonEnemy" parent="Enemy Group/enemies" instance=ExtResource("1_jp5fc")]
+position = Vector2(659, 24)
+
+[node name="SkeletonEnemy2" parent="Enemy Group/enemies" instance=ExtResource("1_jp5fc")]
+position = Vector2(274, 23)
+
+[node name="SkeletonEnemy3" parent="Enemy Group/enemies" instance=ExtResource("1_jp5fc")]
+position = Vector2(161, 23)
+
+[node name="Door" parent="Enemy Group" instance=ExtResource("3_4ptlp")]
+position = Vector2(703, 0)
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 use_parent_material = true
-tile_map_data = PackedByteArray("AAAAAAMAAAABAAAAAAABAAMAAAABAAAAAAACAAMAAAABAAAAAAD//wMAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAAFAAMAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAMAAAABAAAAAAAFAAAAAAABAAAAAAAFAAEAAAABAAAAAAAFAAIAAAABAAAAAAAJAAMAAAABAAAAAAAKAAMAAAABAAAAAAALAAMAAAABAAAAAAAMAAMAAAABAAAAAAANAAMAAAABAAAAAAAOAAMAAAABAAAAAAAPAAMAAAABAAAAAAAQAAMAAAABAAAAAAARAAMAAAABAAAAAAASAAMAAAABAAAAAAATAAMAAAABAAAAAAAUAAMAAAABAAAAAAAVAAMAAAABAAAAAAAWAAMAAAABAAAAAAAXAAMAAAABAAAAAAAYAAMAAAABAAAAAAAZAAMAAAABAAAAAAAaAAMAAAABAAAAAAAbAAMAAAABAAAAAAAcAAMAAAABAAAAAAAdAAMAAAABAAAAAAAeAAMAAAABAAAAAAAfAAMAAAABAAAAAAAgAAMAAAABAAAAAAAhAAMAAAABAAAAAAAiAAMAAAABAAAAAAAjAAMAAAABAAAAAAAkAAMAAAABAAAAAAAlAAMAAAABAAAAAAAmAAMAAAABAAAAAAAnAAMAAAABAAAAAAAoAAMAAAABAAAAAAApAAMAAAABAAAAAAAqAAMAAAABAAAAAAArAAMAAAABAAAAAAAsAAMAAAABAAAAAAAtAAMAAAABAAAAAAAtAAIAAAABAAAAAAAtAAEAAAABAAAAAAAtAAAAAAABAAAAAAAtAP//AAABAAAAAAAtAP7/AAABAAAAAAA=")
+position = Vector2(1, 0)
+tile_map_data = PackedByteArray("AAAAAAMAAAABAAAAAAABAAMAAAABAAAAAAACAAMAAAABAAAAAAD//wMAAAABAAAAAAADAAMAAAABAAAAAAAEAAMAAAABAAAAAAAFAAMAAAABAAAAAAAGAAMAAAABAAAAAAAHAAMAAAABAAAAAAAIAAMAAAABAAAAAAAJAAMAAAABAAAAAAAKAAMAAAABAAAAAAALAAMAAAABAAAAAAAMAAMAAAABAAAAAAANAAMAAAABAAAAAAAOAAMAAAABAAAAAAAPAAMAAAABAAAAAAAQAAMAAAABAAAAAAARAAMAAAABAAAAAAASAAMAAAABAAAAAAATAAMAAAABAAAAAAAUAAMAAAABAAAAAAAVAAMAAAABAAAAAAAWAAMAAAABAAAAAAAXAAMAAAABAAAAAAAYAAMAAAABAAAAAAAZAAMAAAABAAAAAAAaAAMAAAABAAAAAAAbAAMAAAABAAAAAAAcAAMAAAABAAAAAAAdAAMAAAABAAAAAAAeAAMAAAABAAAAAAAfAAMAAAABAAAAAAAgAAMAAAABAAAAAAAhAAMAAAABAAAAAAAiAAMAAAABAAAAAAAjAAMAAAABAAAAAAAkAAMAAAABAAAAAAAlAAMAAAABAAAAAAAmAAMAAAABAAAAAAAnAAMAAAABAAAAAAAoAAMAAAABAAAAAAApAAMAAAABAAAAAAAqAAMAAAABAAAAAAArAAMAAAABAAAAAAAsAAMAAAABAAAAAAAtAAMAAAABAAAAAAAtAP7/AAABAAAAAAD+/wMAAAABAAAAAAD9/wMAAAABAAAAAAD8/wMAAAABAAAAAAD7/wMAAAABAAAAAAD6/wMAAAABAAAAAAD5/wMAAAABAAAAAAD4/wMAAAABAAAAAAD3/wMAAAABAAAAAAD2/wMAAAABAAAAAAD1/wMAAAABAAAAAAD0/wMAAAABAAAAAADy/wMAAAABAAAAAADz/wMAAAABAAAAAADx/wMAAAABAAAAAAD1////AAABAAAAAAD2////AAABAAAAAAD3////AAABAAAAAADy/wAAAAABAAAAAADz/wAAAAABAAAAAAD0/wAAAAABAAAAAAApAP7/AAABAAEAAAAqAP7/AAABAAEAAAArAP7/AAABAAEAAAAsAP7/AAABAAEAAAApAP3/AAABAAEAAAAqAP3/AAABAAEAAAArAP3/AAABAAEAAAAsAP3/AAABAAEAAAAtAP3/AAABAAEAAAAtAPz/AAABAAEAAAAsAPz/AAABAAEAAAArAPz/AAABAAEAAAAqAPz/AAABAAEAAAApAPz/AAABAAEAAAAuAAMAAAABAAEAAAAvAAMAAAABAAEAAAAwAAMAAAABAAEAAAAxAAMAAAABAAEAAAAyAAMAAAABAAEAAAAzAAMAAAABAAEAAAA0AAMAAAABAAEAAAA=")
 tile_set = SubResource("TileSet_hn12h")
 
 [node name="Samurai" parent="." instance=ExtResource("3_ycf23")]
+position = Vector2(24, 45)
+collision_mask = 7
 
 [node name="Camera2D" type="Camera2D" parent="Samurai"]
 position = Vector2(-16, -41)

@@ -505,7 +505,8 @@ height = 32.0
 radius = 84.0
 
 [node name="SkeletonEnemy" type="CharacterBody2D"]
-collision_layer = 4
+collision_layer = 2
+collision_mask = 9
 script = ExtResource("1_h4wr6")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
@@ -534,10 +535,12 @@ autostart = true
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(0, 5)
 target_position = Vector2(28, 0)
+collision_mask = 8
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(0, 5)
 target_position = Vector2(-28, 0)
+collision_mask = 8
 
 [node name="SkeletonHitbox" type="Area2D" parent="." groups=["enemy"]]
 collision_layer = 4

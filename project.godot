@@ -65,6 +65,7 @@ crouch={
 
 2d_physics/layer_2="PLAYER LAYER"
 2d_physics/layer_3="enemy layer"
+2d_physics/layer_4="roamLayer"
 
 [rendering]
 
