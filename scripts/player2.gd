@@ -17,7 +17,7 @@ const GRAVITY = 980 # Define a gravity constant for consistency
 
 ## Player Properties
 var current_health: int = 3
-var max_health: int = 10
+var max_health: int = 30
 var current_animation: String = ""
 var previous_crouch_state: bool = false # Still useful for collision shape switching
 var collectible_count = 0
