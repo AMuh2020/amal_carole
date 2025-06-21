@@ -20,7 +20,7 @@ var current_health: int = 3
 var max_health: int = 10
 var current_animation: String = ""
 var previous_crouch_state: bool = false # Still useful for collision shape switching
-
+var collectible_count = 0
 ## Player States Enum
 
 enum PlayerState {
@@ -144,6 +144,12 @@ func heal(amount: int) -> void:
 	# Add any visual effects (particles), sound effects, or UI updates here.
 	if current_health >= max_health:
 		print("Player is at full health!")
+
+func pickup_collectible() -> void:
+	print("picked it up")
+	collectible_count += 1
+	#if collectible_count >= level.collectible:
+		#something something
 
 ## Signal Connections
 func _on_animated_sprite_2d_animation_finished() -> void:
