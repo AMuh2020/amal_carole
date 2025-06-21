@@ -501,8 +501,8 @@ height = 32.0
 radius = 8.0
 height = 32.0
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_h4wr6"]
-radius = 84.0
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_2q3an"]
+size = Vector2(168, 61)
 
 [node name="SkeletonEnemy" type="CharacterBody2D"]
 collision_layer = 2
@@ -534,12 +534,12 @@ autostart = true
 
 [node name="RayCastRight" type="RayCast2D" parent="."]
 position = Vector2(0, 5)
-target_position = Vector2(28, 0)
+target_position = Vector2(23, 0)
 collision_mask = 8
 
 [node name="RayCastLeft" type="RayCast2D" parent="."]
 position = Vector2(0, 5)
-target_position = Vector2(-28, 0)
+target_position = Vector2(-23, 0)
 collision_mask = 8
 
 [node name="SkeletonHitbox" type="Area2D" parent="." groups=["enemy"]]
@@ -555,7 +555,8 @@ collision_layer = 0
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
-shape = SubResource("CircleShape2D_h4wr6")
+position = Vector2(0, -6.5)
+shape = SubResource("RectangleShape2D_2q3an")
 
 [node name="IdleTimer" type="Timer" parent="."]
 one_shot = true
