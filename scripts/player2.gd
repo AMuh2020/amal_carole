@@ -16,7 +16,8 @@ const GRAVITY = 980 # Define a gravity constant for consistency
 @onready var attack_collision_shape: CollisionShape2D = $AnimatedSprite2D/PlayerAttackArea/CollisionShape2D
 
 ## Player Properties
-var health: int = 3
+var current_health: int = 3
+var max_health: int = 10
 var current_animation: String = ""
 var previous_crouch_state: bool = false # Still useful for collision shape switching
 
@@ -37,6 +38,7 @@ var current_state: PlayerState = PlayerState.IDLE
 func _ready() -> void:
 	# Set initial state
 	transition_to_state(PlayerState.IDLE)
+	current_health = max_health
 
 func _physics_process(delta: float) -> void:
 	# Apply gravity if not on floor
@@ -128,13 +130,20 @@ func _play_animation(anim_name: String) -> void:
 
 ## Damage Handling
 func take_damage(damage: int) -> void:
-	if health > 0:
-		health -= damage
+	if current_health > 0:
+		current_health -= damage
 		print("Player taken ", str(damage))
-	if health <= 0:
+	if current_health <= 0:
 		print("Player died!")
 		transition_to_state(PlayerState.DEATH)
-	print("Player health: ", str(health))
+	print("Player health: ", str(current_health))
+
+func heal(amount: int) -> void:
+	current_health = min(current_health + amount, max_health) # Heal, but don't exceed max_health
+	print("PLAYER: healed for ", amount, " health. Current health: ", current_health)
+	# Add any visual effects (particles), sound effects, or UI updates here.
+	if current_health >= max_health:
+		print("Player is at full health!")
 
 ## Signal Connections
 func _on_animated_sprite_2d_animation_finished() -> void:

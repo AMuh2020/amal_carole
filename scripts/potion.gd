@@ -9,3 +9,7 @@ func _ready() -> void:
 	
 func _on_interact():
 	print("drinking potions")
+	#get player to drink potion
+	var player = get_tree().get_first_node_in_group("player")
+	player.heal(10)
+	queue_free()

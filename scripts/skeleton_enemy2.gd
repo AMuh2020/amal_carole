@@ -9,7 +9,7 @@ extends CharacterBody2D
 @export var walk_times: Array[float] = [2.0, 3.0, 4.0] # Possible durations for walking state.
 @export var idle_times: Array[float] = [1.0, 1.5, 2.0] # Possible durations for idle state.
 @export var max_health: int = 30 # Maximum health of the enemy.
-@export var attack_damage: int = 10 # Damage dealt by the enemy's attack.
+@export var attack_damage: int = 5 # Damage dealt by the enemy's attack.
 @export var attack_cooldown: float = 1.0 # Time between attacks.
 
 # --- Node References (Set in _ready) ---

@@ -4,17 +4,17 @@
 [ext_resource type="Texture2D" uid="uid://bnc6hx47hu34e" path="res://assets/32rogues/items.png" id="2_3mc24"]
 [ext_resource type="PackedScene" uid="uid://cy030b4jued0g" path="res://interactions/interaction_area/interaction_area.tscn" id="3_8kk5y"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_18ay0"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_t5fwm"]
 atlas = ExtResource("2_3mc24")
-region = Rect2(128, 608, 32, 32)
+region = Rect2(32, 608, 32, 32)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_l3y02"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_18ay0")
+"texture": SubResource("AtlasTexture_t5fwm")
 }],
-"loop": true,
+"loop": false,
 "name": &"default",
 "speed": 5.0
 }]

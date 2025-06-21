@@ -1,53 +1,53 @@
 [gd_scene load_steps=16 format=3 uid="uid://5ggx23nu2ij1"]
 
-[ext_resource type="Texture2D" uid="uid://bm7c5cpqq4vxb" path="res://assets/brackeys_platformer_assets/sprites/coin.png" id="1_d5gmh"]
+[ext_resource type="Texture2D" uid="uid://bm7c5cpqq4vxb" path="res://assets/brackeys_platformer_assets/sprites/coin.png" id="1_7qpmk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0t63x"]
-atlas = ExtResource("1_d5gmh")
+atlas = ExtResource("1_7qpmk")
 region = Rect2(0, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v7riw"]
-atlas = ExtResource("1_d5gmh")
+atlas = ExtResource("1_7qpmk")
 region = Rect2(16, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_pdq0q"]
-atlas = ExtResource("1_d5gmh")
+atlas = ExtResource("1_7qpmk")
 region = Rect2(32, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_w14il"]
-atlas = ExtResource("1_d5gmh")
+atlas = ExtResource("1_7qpmk")
 region = Rect2(48, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_h4etq"]
-atlas = ExtResource("1_d5gmh")
+atlas = ExtResource("1_7qpmk")
 region = Rect2(64, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_o4fra"]
-atlas = ExtResource("1_d5gmh")
+atlas = ExtResource("1_7qpmk")
 region = Rect2(80, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_te2np"]
-atlas = ExtResource("1_d5gmh")
+atlas = ExtResource("1_7qpmk")
 region = Rect2(96, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_m1j4n"]
-atlas = ExtResource("1_d5gmh")
+atlas = ExtResource("1_7qpmk")
 region = Rect2(112, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_v1mwu"]
-atlas = ExtResource("1_d5gmh")
+atlas = ExtResource("1_7qpmk")
 region = Rect2(128, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_uf4yh"]
-atlas = ExtResource("1_d5gmh")
+atlas = ExtResource("1_7qpmk")
 region = Rect2(144, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ciu18"]
-atlas = ExtResource("1_d5gmh")
+atlas = ExtResource("1_7qpmk")
 region = Rect2(160, 0, 16, 16)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ybu58"]
-atlas = ExtResource("1_d5gmh")
+atlas = ExtResource("1_7qpmk")
 region = Rect2(176, 0, 16, 16)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_s5w7y"]
