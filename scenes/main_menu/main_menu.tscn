@@ -241,7 +241,7 @@ rotation = -3.14159
 rotates = false
 
 [node name="MainMenuPlayer2" parent="Background/Player2Path/PathFollow2D2" instance=ExtResource("6_thkx5")]
-position = Vector2(-8.00003, 1.71661e-05)
+position = Vector2(-3.00003, -0.999995)
 rotation = 3.11018
 script = ExtResource("7_x2yjq")
 

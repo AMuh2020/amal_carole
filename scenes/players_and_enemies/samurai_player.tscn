@@ -268,14 +268,13 @@ animations = [{
 size = Vector2(34, 23)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_47qqc"]
-size = Vector2(17, 44)
+size = Vector2(13, 32)
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y4r1p"]
-radius = 6.0
-height = 40.0
+radius = 4.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
-size = Vector2(17, 40)
+size = Vector2(13, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4r1p"]
 size = Vector2(14, 35)
@@ -286,11 +285,12 @@ collision_mask = 5
 script = ExtResource("1_thsyj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(2, -22)
+position = Vector2(0, -12)
+scale = Vector2(0.5, 0.557)
 sprite_frames = SubResource("SpriteFrames_voi80")
-animation = &"attack"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.281803
+frame_progress = 0.528682
 
 [node name="PlayerAttackArea" type="Area2D" parent="AnimatedSprite2D" groups=["sword"]]
 position = Vector2(0, -7)
@@ -303,16 +303,16 @@ shape = SubResource("RectangleShape2D_3v2ag")
 disabled = true
 
 [node name="CollisionShape2DIdle" type="CollisionShape2D" parent="."]
-position = Vector2(2.5, -22)
+position = Vector2(0.5, -16)
 shape = SubResource("RectangleShape2D_47qqc")
 
 [node name="ExperimentWithCapsule" type="CollisionShape2D" parent="."]
-position = Vector2(2, -20)
+position = Vector2(1, -15)
 shape = SubResource("CapsuleShape2D_y4r1p")
 disabled = true
 
 [node name="CollisionShape2DCrouch" type="CollisionShape2D" parent="."]
-position = Vector2(1.5, -20)
+position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_d2wvv")
 disabled = true
 
