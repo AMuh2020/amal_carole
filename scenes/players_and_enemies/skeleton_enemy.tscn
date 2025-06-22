@@ -568,7 +568,8 @@ shape = SubResource("RectangleShape2D_2q3an")
 [node name="IdleTimer" type="Timer" parent="."]
 one_shot = true
 
-[node name="AttackTimer" type="Timer" parent="."]
+[node name="AttackDamageTimer" type="Timer" parent="."]
+wait_time = 0.5
 one_shot = true
 
 [node name="AttackCooldownTimer" type="Timer" parent="."]
@@ -600,8 +601,7 @@ script = ExtResource("7_5qlil")
 [connection signal="area_exited" from="Detection" to="." method="_on_detection_area_exited"]
 [connection signal="area_exited" from="Detection" to="." method="_on_Detection_area_exited"]
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]
-[connection signal="timeout" from="AttackTimer" to="." method="_on_attack_timer_timeout"]
-[connection signal="timeout" from="AttackCooldownTimer" to="." method="_on_attack_cooldown_timer_timeout"]
+[connection signal="timeout" from="AttackDamageTimer" to="." method="_on_AttackDamageTimer_timeout"]
 [connection signal="timeout" from="AttackCooldownTimer" to="." method="_on_AttackCooldownTimer_timeout"]
 [connection signal="timeout" from="IdleDurationTimer" to="." method="_on_IdleDurationTimer_timeout"]
 [connection signal="timeout" from="WalkDurationTimer" to="." method="_on_WalkDurationTimer_timeout"]
