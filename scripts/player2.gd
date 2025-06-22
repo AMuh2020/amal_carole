@@ -268,7 +268,8 @@ func handle_crouching_physics(delta: float) -> void:
 func _enter_attacking_state() -> void:
 	print("PLAYER: ENTERING ATTACK")
 	_play_animation("attack")
-	attack_sfx.play()
+	if attack_sfx:
+		attack_sfx.play()
 	print("PLAYER: ATTACK ANIMATION COMPLETE")
 	attack_collision_shape.disabled = false
 	print("PLAYER: COLLISION SHAPE DISABLED")
