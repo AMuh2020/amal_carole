@@ -22,6 +22,7 @@ extends CharacterBody2D
 @onready var attack_cooldown_timer: Timer = Timer.new() # Timer to control attack frequency.
 @onready var attack_detection_area: Area2D = $AnimatedSprite2D/AttackDetection # Area2D for detecting attack range.
 @onready var attack_damage_timer: Timer = Timer.new() # Timer for when to apply attack damage
+@onready var health_bar: ProgressBar = $ProgressBar
 
 # --- State Management ---
 enum State { IDLE, WALKING, CHASING, ATTACKING, TAKING_DAMAGE, DEAD } # Define the possible states for the enemy.
@@ -107,6 +108,7 @@ func take_damage(amount: int) -> void:
 		return # Cannot take damage if already dead
 
 	current_health -= amount
+	health_bar.update_health(current_health)
 	print("Enemy took ", amount, " damage. Current health: ", current_health)
 
 	if current_health <= 0:

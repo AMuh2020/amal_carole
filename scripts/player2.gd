@@ -3,7 +3,6 @@ extends CharacterBody2D
 
 
 ## Constants
-@export var SPEED = 200.0
 const JUMP_VELOCITY = -330.0
 const CROUCH_SPEED_MULTIPLIER = 0.5
 const GRAVITY = 980 # Define a gravity constant for consistency
@@ -14,10 +13,12 @@ const GRAVITY = 980 # Define a gravity constant for consistency
 @onready var crouch_shape: CollisionShape2D = $CollisionShape2DCrouch
 @onready var attack_timer: Timer = $Timer # Renamed for clarity
 @onready var attack_collision_shape: CollisionShape2D = $AnimatedSprite2D/PlayerAttackArea/CollisionShape2D
+@onready var health_bar: ProgressBar = $ProgressBar
 
 ## Player Properties
+@export var SPEED = 200.0
 var current_health: int = 3
-var max_health: int = 30
+@export var max_health: int = 30
 var current_animation: String = ""
 var previous_crouch_state: bool = false # Still useful for collision shape switching
 var collectible_count = 0
@@ -136,11 +137,13 @@ func take_damage(damage: int) -> void:
 	if current_health <= 0:
 		print("Player died!")
 		transition_to_state(PlayerState.DEATH)
+	health_bar.update_health(current_health)
 	print("Player health: ", str(current_health))
 
 func heal(amount: int) -> void:
 	current_health = min(current_health + amount, max_health) # Heal, but don't exceed max_health
 	print("PLAYER: healed for ", amount, " health. Current health: ", current_health)
+	health_bar.update_health(current_health)
 	# Add any visual effects (particles), sound effects, or UI updates here.
 	if current_health >= max_health:
 		print("Player is at full health!")
