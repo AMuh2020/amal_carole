@@ -1,4 +1,4 @@
-[gd_scene load_steps=77 format=3 uid="uid://jg383sevgif8"]
+[gd_scene load_steps=80 format=3 uid="uid://jg383sevgif8"]
 
 [ext_resource type="Script" uid="uid://ciohjltecql03" path="res://scripts/skeleton_enemy2.gd" id="1_h4wr6"]
 [ext_resource type="Texture2D" uid="uid://bhwgt4x6bvcq7" path="res://assets/Skeleton/Sprite Sheets/Skeleton Idle.png" id="1_rv2i1"]
@@ -6,6 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://cesvgumns0mps" path="res://assets/Skeleton/Sprite Sheets/Skeleton Attack.png" id="2_h4wr6"]
 [ext_resource type="Texture2D" uid="uid://bdnh58lbx4a3i" path="res://assets/Skeleton/Sprite Sheets/Skeleton Walk.png" id="3_btgl0"]
 [ext_resource type="Texture2D" uid="uid://d3jnq8uam1yik" path="res://assets/Skeleton/Sprite Sheets/Skeleton Hit.png" id="3_ekv7b"]
+[ext_resource type="Script" uid="uid://crmy4i8wdcncy" path="res://scripts/enemy_health_bar.gd" id="7_5qlil"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tjppl"]
 atlas = ExtResource("2_h4wr6")
@@ -504,6 +505,12 @@ height = 32.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_2q3an"]
 size = Vector2(168, 61)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_pf7nr"]
+bg_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_5o1k3"]
+bg_color = Color(0, 0.721216, 0.309921, 1)
+
 [node name="SkeletonEnemy" type="CharacterBody2D"]
 collision_layer = 2
 collision_mask = 9
@@ -512,7 +519,7 @@ script = ExtResource("1_h4wr6")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 scale = Vector2(1.3, 1.3)
 sprite_frames = SubResource("SpriteFrames_m5opx")
-animation = &"attack"
+animation = &"idle"
 autoplay = "walk"
 offset = Vector2(4, 0)
 
@@ -572,14 +579,24 @@ one_shot = true
 
 [node name="WalkDurationTimer" type="Timer" parent="."]
 
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -30.0
+offset_top = -20.0
+offset_right = 30.0
+offset_bottom = -16.0
+theme_override_styles/background = SubResource("StyleBoxFlat_pf7nr")
+theme_override_styles/fill = SubResource("StyleBoxFlat_5o1k3")
+show_percentage = false
+script = ExtResource("7_5qlil")
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_AnimatedSprite2D_animation_finished"]
 [connection signal="area_entered" from="AnimatedSprite2D/AttackDetection" to="." method="_on_skeleton_damage_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/AttackDetection" to="." method="_on_AttackDetection_area_entered"]
 [connection signal="area_exited" from="AnimatedSprite2D/AttackDetection" to="." method="_on_skeleton_damage_area_exited"]
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]
 [connection signal="area_entered" from="SkeletonHitbox" to="." method="_on_skeleton_hitbox_area_entered"]
-[connection signal="area_entered" from="Detection" to="." method="_on_Detection_area_entered"]
 [connection signal="area_entered" from="Detection" to="." method="_on_detection_area_entered"]
+[connection signal="area_entered" from="Detection" to="." method="_on_Detection_area_entered"]
 [connection signal="area_exited" from="Detection" to="." method="_on_detection_area_exited"]
 [connection signal="area_exited" from="Detection" to="." method="_on_Detection_area_exited"]
 [connection signal="timeout" from="IdleTimer" to="." method="_on_idle_timer_timeout"]

@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dap6y3ljuei43" path="res://scenes/players_and_enemies/main_menu_player.tscn" id="5_3ovsr"]
 [ext_resource type="PackedScene" uid="uid://mn1b5goqhlul" path="res://scenes/players_and_enemies/samurai_player.tscn" id="6_thkx5"]
 [ext_resource type="AudioStream" uid="uid://5mwtwbieyut4" path="res://music/BeforeSelectingLevel.mp3" id="7_5seab"]
-[ext_resource type="Script" uid="uid://cdaxv1071gbuq" path="res://scripts/main_menu_player_2.gd" id="7_x2yjq"]
+[ext_resource type="Script" path="res://scripts/main_menu_player_2.gd" id="7_x2yjq"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_thkx5"]
 texture = ExtResource("4_uqeha")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=64 format=3 uid="uid://ciotouojb2y8v"]
+[gd_scene load_steps=67 format=3 uid="uid://ciotouojb2y8v"]
 
 [ext_resource type="Texture2D" uid="uid://ctceup0mncabg" path="res://assets/MC_Knight/Colour1/NoOutline/120x80_PNGSheets/_Idle.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bv4aecilrl6wk" path="res://scripts/player2.gd" id="1_y6ler"]
+[ext_resource type="Script" uid="uid://cmwpa2126gxd8" path="res://scripts/player_health_bar.gd" id="2_0iqnh"]
 [ext_resource type="Texture2D" uid="uid://b8i0fm3hq8swp" path="res://assets/MC_Knight/Colour1/NoOutline/120x80_PNGSheets/_Attack.png" id="2_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://ca0l165mhk3yp" path="res://assets/MC_Knight/Colour1/NoOutline/120x80_PNGSheets/_Jump.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://ygsuufp0mqfd" path="res://assets/MC_Knight/Colour1/NoOutline/120x80_PNGSheets/_Run.png" id="3_qhqgy"]
@@ -408,6 +409,20 @@ height = 35.0
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
 size = Vector2(20, 24)
 
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6ler"]
+bg_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0iqnh"]
+bg_color = Color(1.29953e-06, 0.721263, 0.308939, 1)
+corner_radius_top_left = 3
+corner_radius_top_right = 3
+corner_radius_bottom_right = 3
+corner_radius_bottom_left = 3
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 5
 collision_layer = 2
@@ -417,10 +432,9 @@ script = ExtResource("1_y6ler")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -40)
 sprite_frames = SubResource("SpriteFrames_3v2ag")
-animation = &"attack"
+animation = &"run"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
+frame_progress = 0.860145
 offset = Vector2(5, 0)
 
 [node name="PlayerAttackArea" type="Area2D" parent="AnimatedSprite2D" groups=["sword"]]
@@ -449,6 +463,18 @@ disabled = true
 [node name="Timer" type="Timer" parent="."]
 one_shot = true
 autostart = true
+
+[node name="ProgressBar" type="ProgressBar" parent="."]
+offset_left = -12.0
+offset_top = -44.0
+offset_right = 10.0
+offset_bottom = -42.0
+theme_override_styles/background = SubResource("StyleBoxFlat_y6ler")
+theme_override_styles/fill = SubResource("StyleBoxFlat_0iqnh")
+max_value = 30.0
+value = 30.0
+show_percentage = false
+script = ExtResource("2_0iqnh")
 
 [node name="PlayerHitbox" type="Area2D" parent="." groups=["player"]]
 visible = false
