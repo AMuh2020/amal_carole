@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://sspdrxut25c1"
+path="res://.godot/imported/squeak_toy_7.mp3-59917fa378c4e032f2950c83cadbd29b.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Honks, Sqeaks & Squeegee/squeak_toy_7.mp3"
+dest_files=["res://.godot/imported/squeak_toy_7.mp3-59917fa378c4e032f2950c83cadbd29b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

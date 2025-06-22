@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8ibt6tt0wncf"
+path="res://.godot/imported/cartoon_laugh_3.mp3-08ff6e30a7b0eb900daa79d2fc9135db.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Voices & People/cartoon_laugh_3.mp3"
+dest_files=["res://.godot/imported/cartoon_laugh_3.mp3-08ff6e30a7b0eb900daa79d2fc9135db.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

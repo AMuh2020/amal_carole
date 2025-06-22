@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cmmio68ish3q3"
+path="res://.godot/imported/boing_thwip.mp3-45be698bb10aee315d828a4f12435925.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Cartoon & SFX/boing_thwip.mp3"
+dest_files=["res://.godot/imported/boing_thwip.mp3-45be698bb10aee315d828a4f12435925.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dqje1ly5xkhqr"
+path="res://.godot/imported/dog_5.mp3-76d7182c1f60cc45c0a230fef63d1038.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Animals & Nature/dog_5.mp3"
+dest_files=["res://.godot/imported/dog_5.mp3-76d7182c1f60cc45c0a230fef63d1038.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

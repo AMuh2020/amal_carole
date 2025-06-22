@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bpa0bmwel3at3"
+path="res://.godot/imported/coin_2.mp3-68fe3f443d004883dd02a6b4d5eca736.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Metal & Industry/coin_2.mp3"
+dest_files=["res://.godot/imported/coin_2.mp3-68fe3f443d004883dd02a6b4d5eca736.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

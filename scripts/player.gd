@@ -4,6 +4,8 @@ const SPEED = 200.0
 const JUMP_VELOCITY = -330.0
 const CROUCH_SPEED_MULTIPLIER = 0.5
 
+@onready var attack_sfx = $AudioStreamPlayer2D as AudioStreamPlayer2D
+
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var idle_shape: CollisionShape2D = $CollisionShape2DIdle
 @onready var crouch_shape: CollisionShape2D = $CollisionShape2DCrouch
@@ -42,6 +44,8 @@ func _physics_process(delta: float) -> void:
 		#print("attack pressed")
 		is_attacking = true
 		_play_animation("attack")
+		if attack_sfx:
+			attack_sfx.play()
 		$AnimatedSprite2D/PlayerAttackArea/CollisionShape2D.disabled = false
 		timer.start(0.5)
 		

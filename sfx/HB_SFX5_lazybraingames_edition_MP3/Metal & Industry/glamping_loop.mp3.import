@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dpn2ay0gb47rn"
+path="res://.godot/imported/glamping_loop.mp3-d757c2376840f36275781c42bf9744a0.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Metal & Industry/glamping_loop.mp3"
+dest_files=["res://.godot/imported/glamping_loop.mp3-d757c2376840f36275781c42bf9744a0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

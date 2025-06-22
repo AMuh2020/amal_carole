@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://df4f6jgmn6ahk"
+path="res://.godot/imported/hit_5.mp3-2b0b72aaeaa08a47fc1d53ad0b4fc7ea.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Action & Weapons/hit_5.mp3"
+dest_files=["res://.godot/imported/hit_5.mp3-2b0b72aaeaa08a47fc1d53ad0b4fc7ea.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

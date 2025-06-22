@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ckwyixrqr4xkk"
+path="res://.godot/imported/animal_growl_1.mp3-199d79103c9d4e3b8e3cb9026d47c69b.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Animals & Nature/animal_growl_1.mp3"
+dest_files=["res://.godot/imported/animal_growl_1.mp3-199d79103c9d4e3b8e3cb9026d47c69b.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

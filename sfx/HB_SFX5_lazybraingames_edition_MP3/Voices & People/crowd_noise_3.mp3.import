@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bc46lmm05xan2"
+path="res://.godot/imported/crowd_noise_3.mp3-98be7bb8ecd13f8723d78d41a48e90ba.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Voices & People/crowd_noise_3.mp3"
+dest_files=["res://.godot/imported/crowd_noise_3.mp3-98be7bb8ecd13f8723d78d41a48e90ba.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

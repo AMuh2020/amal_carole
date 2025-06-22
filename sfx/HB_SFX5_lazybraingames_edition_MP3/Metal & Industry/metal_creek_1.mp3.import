@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c8pttc3ft5wfo"
+path="res://.godot/imported/metal_creek_1.mp3-3a17edd0d03e9573ccf5f6941ece2899.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Metal & Industry/metal_creek_1.mp3"
+dest_files=["res://.godot/imported/metal_creek_1.mp3-3a17edd0d03e9573ccf5f6941ece2899.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

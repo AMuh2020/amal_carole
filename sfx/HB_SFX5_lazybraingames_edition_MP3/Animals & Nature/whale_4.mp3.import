@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cwq5kqs45oysf"
+path="res://.godot/imported/whale_4.mp3-8d41ebd55c1f8f9721c9d4ca6d721bdf.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Animals & Nature/whale_4.mp3"
+dest_files=["res://.godot/imported/whale_4.mp3-8d41ebd55c1f8f9721c9d4ca6d721bdf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

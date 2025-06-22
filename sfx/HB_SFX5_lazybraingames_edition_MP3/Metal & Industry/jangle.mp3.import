@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://daknhvv6cdins"
+path="res://.godot/imported/jangle.mp3-5b66550d1662fd7633dd3068c8083141.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Metal & Industry/jangle.mp3"
+dest_files=["res://.godot/imported/jangle.mp3-5b66550d1662fd7633dd3068c8083141.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

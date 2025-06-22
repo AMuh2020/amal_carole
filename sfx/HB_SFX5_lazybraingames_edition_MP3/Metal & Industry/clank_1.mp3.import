@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c6c3p4a6r184e"
+path="res://.godot/imported/clank_1.mp3-4b7c736eed84e54b2f52780f406c6ef6.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Metal & Industry/clank_1.mp3"
+dest_files=["res://.godot/imported/clank_1.mp3-4b7c736eed84e54b2f52780f406c6ef6.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

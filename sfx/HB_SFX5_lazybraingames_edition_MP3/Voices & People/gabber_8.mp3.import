@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ds03bh47rh7pb"
+path="res://.godot/imported/gabber_8.mp3-d015f0a2526c9cf15d18d2efadd312d8.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Voices & People/gabber_8.mp3"
+dest_files=["res://.godot/imported/gabber_8.mp3-d015f0a2526c9cf15d18d2efadd312d8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

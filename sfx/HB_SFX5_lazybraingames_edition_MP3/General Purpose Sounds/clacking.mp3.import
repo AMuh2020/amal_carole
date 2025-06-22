@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bvdg2yimuindd"
+path="res://.godot/imported/clacking.mp3-e301b1ef513ccd7d3355eb33ef3b56f0.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/General Purpose Sounds/clacking.mp3"
+dest_files=["res://.godot/imported/clacking.mp3-e301b1ef513ccd7d3355eb33ef3b56f0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

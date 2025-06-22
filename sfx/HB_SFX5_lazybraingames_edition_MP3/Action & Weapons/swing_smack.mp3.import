@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwt8hsbnctkuf"
+path="res://.godot/imported/swing_smack.mp3-6ec01e948f2ca73b46a56453d88c1fca.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Action & Weapons/swing_smack.mp3"
+dest_files=["res://.godot/imported/swing_smack.mp3-6ec01e948f2ca73b46a56453d88c1fca.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

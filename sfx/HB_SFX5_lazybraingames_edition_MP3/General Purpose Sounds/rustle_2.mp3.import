@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bkq771lh8ogh5"
+path="res://.godot/imported/rustle_2.mp3-116ccd68585d59b92a6a639a62cf725e.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/General Purpose Sounds/rustle_2.mp3"
+dest_files=["res://.godot/imported/rustle_2.mp3-116ccd68585d59b92a6a639a62cf725e.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

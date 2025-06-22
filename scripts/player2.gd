@@ -7,6 +7,8 @@ const JUMP_VELOCITY = -330.0
 const CROUCH_SPEED_MULTIPLIER = 0.5
 const GRAVITY = 980 # Define a gravity constant for consistency
 
+@onready var attack_sfx = $AudioStreamPlayer2D as AudioStreamPlayer2D
+
 ## Node References
 @onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
 @onready var idle_shape: CollisionShape2D = $CollisionShape2DIdle
@@ -266,6 +268,7 @@ func handle_crouching_physics(delta: float) -> void:
 func _enter_attacking_state() -> void:
 	print("PLAYER: ENTERING ATTACK")
 	_play_animation("attack")
+	attack_sfx.play()
 	print("PLAYER: ATTACK ANIMATION COMPLETE")
 	attack_collision_shape.disabled = false
 	print("PLAYER: COLLISION SHAPE DISABLED")

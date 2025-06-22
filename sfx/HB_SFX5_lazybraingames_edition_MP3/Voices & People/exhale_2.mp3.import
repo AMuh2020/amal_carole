@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cx7px7ah2kkdq"
+path="res://.godot/imported/exhale_2.mp3-e4e3ad45bacf7618d5877eb26dbd9c11.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Voices & People/exhale_2.mp3"
+dest_files=["res://.godot/imported/exhale_2.mp3-e4e3ad45bacf7618d5877eb26dbd9c11.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

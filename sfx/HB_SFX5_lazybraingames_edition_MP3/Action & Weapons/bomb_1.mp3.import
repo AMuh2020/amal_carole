@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cg74rbao0t1ot"
+path="res://.godot/imported/bomb_1.mp3-4088c15a93341cfa0584d693c241f096.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Action & Weapons/bomb_1.mp3"
+dest_files=["res://.godot/imported/bomb_1.mp3-4088c15a93341cfa0584d693c241f096.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

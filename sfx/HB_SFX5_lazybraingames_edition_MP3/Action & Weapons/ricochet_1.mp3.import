@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://8rn6wt8n4ks2"
+path="res://.godot/imported/ricochet_1.mp3-73993ddc573ebc5c7e4bcd735f82a296.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Action & Weapons/ricochet_1.mp3"
+dest_files=["res://.godot/imported/ricochet_1.mp3-73993ddc573ebc5c7e4bcd735f82a296.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

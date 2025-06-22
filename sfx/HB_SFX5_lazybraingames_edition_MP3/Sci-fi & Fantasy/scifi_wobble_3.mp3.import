@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bh5xtvj8cgleg"
+path="res://.godot/imported/scifi_wobble_3.mp3-e1317a3bc86f5b07904304cc0b023236.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Sci-fi & Fantasy/scifi_wobble_3.mp3"
+dest_files=["res://.godot/imported/scifi_wobble_3.mp3-e1317a3bc86f5b07904304cc0b023236.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

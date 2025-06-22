@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://nn87xad7yu52"
+path="res://.godot/imported/dog_whine_2.mp3-f145510228adcc1ab5b64ab55bd1ff75.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Animals & Nature/dog_whine_2.mp3"
+dest_files=["res://.godot/imported/dog_whine_2.mp3-f145510228adcc1ab5b64ab55bd1ff75.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dgs4opo31syo1"
+path="res://.godot/imported/latch_7.mp3-ca7ed370f5e3ef16b332db117767a3f2.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Creaking, Stretching & Latches/latch_7.mp3"
+dest_files=["res://.godot/imported/latch_7.mp3-ca7ed370f5e3ef16b332db117767a3f2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://by5m6ilk0b4kh"
+path="res://.godot/imported/phone_talk_9.mp3-62f9d06e7057bc9ed7bf35449383d071.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Voices & People/phone_talk_9.mp3"
+dest_files=["res://.godot/imported/phone_talk_9.mp3-62f9d06e7057bc9ed7bf35449383d071.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

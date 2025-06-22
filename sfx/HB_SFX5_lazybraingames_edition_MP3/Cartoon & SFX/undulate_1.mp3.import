@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgiwryg3x8tsp"
+path="res://.godot/imported/undulate_1.mp3-f9f231f89fcd6d5a499d19ee920613e4.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Cartoon & SFX/undulate_1.mp3"
+dest_files=["res://.godot/imported/undulate_1.mp3-f9f231f89fcd6d5a499d19ee920613e4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

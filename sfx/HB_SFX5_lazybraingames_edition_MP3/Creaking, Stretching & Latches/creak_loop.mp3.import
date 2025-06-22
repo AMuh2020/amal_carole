@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://gpjf4d5ucl23"
+path="res://.godot/imported/creak_loop.mp3-1eed552aabec98d1ddad81f95e74c5a7.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Creaking, Stretching & Latches/creak_loop.mp3"
+dest_files=["res://.godot/imported/creak_loop.mp3-1eed552aabec98d1ddad81f95e74c5a7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bkdfvg3xb3sxu"
+path="res://.godot/imported/scifi_telemetric_loop_2.mp3-461395d7b41be223cd7efc6ab3f08799.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Sci-fi & Fantasy/scifi_telemetric_loop_2.mp3"
+dest_files=["res://.godot/imported/scifi_telemetric_loop_2.mp3-461395d7b41be223cd7efc6ab3f08799.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

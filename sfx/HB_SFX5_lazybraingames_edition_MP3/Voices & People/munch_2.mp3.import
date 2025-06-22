@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bbsddceoc7gh0"
+path="res://.godot/imported/munch_2.mp3-45473164510f776fa9e806ce2ef9c283.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Voices & People/munch_2.mp3"
+dest_files=["res://.godot/imported/munch_2.mp3-45473164510f776fa9e806ce2ef9c283.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

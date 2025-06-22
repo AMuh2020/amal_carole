@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c1wfem318s2ah"
+path="res://.godot/imported/man_snore_5.mp3-8db2c3919781fda5c1ab72b70d2bb6a0.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Voices & People/man_snore_5.mp3"
+dest_files=["res://.godot/imported/man_snore_5.mp3-8db2c3919781fda5c1ab72b70d2bb6a0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

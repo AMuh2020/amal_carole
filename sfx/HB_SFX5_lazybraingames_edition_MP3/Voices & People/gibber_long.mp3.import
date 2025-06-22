@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cfdifqdvr8kae"
+path="res://.godot/imported/gibber_long.mp3-81735a89d4abc92c4c6f4036fad12bae.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Voices & People/gibber_long.mp3"
+dest_files=["res://.godot/imported/gibber_long.mp3-81735a89d4abc92c4c6f4036fad12bae.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

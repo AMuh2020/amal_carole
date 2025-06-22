@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5lf865os2pny"
+path="res://.godot/imported/poke.mp3-613a048a3e991c3ac5855fa3d85e8fb8.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Cartoon & SFX/poke.mp3"
+dest_files=["res://.godot/imported/poke.mp3-613a048a3e991c3ac5855fa3d85e8fb8.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

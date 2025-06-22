@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://krugyk7d3bbb"
+path="res://.godot/imported/zap_away_2.mp3-92949de34a927aae3dcc3ee13ba0d4ac.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Sci-fi & Fantasy/zap_away_2.mp3"
+dest_files=["res://.godot/imported/zap_away_2.mp3-92949de34a927aae3dcc3ee13ba0d4ac.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

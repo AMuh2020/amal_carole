@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://crc5sy7rj46g5"
+path="res://.godot/imported/clonk.mp3-966f13802c88abc63a6cd02ffdcf9d1f.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/General Purpose Sounds/clonk.mp3"
+dest_files=["res://.godot/imported/clonk.mp3-966f13802c88abc63a6cd02ffdcf9d1f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

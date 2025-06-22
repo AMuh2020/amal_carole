@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8dweo2r1xj21"
+path="res://.godot/imported/animal_moaning_1.mp3-93516f8553b13aac9fdb1b635e3ed6c1.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Animals & Nature/animal_moaning_1.mp3"
+dest_files=["res://.godot/imported/animal_moaning_1.mp3-93516f8553b13aac9fdb1b635e3ed6c1.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

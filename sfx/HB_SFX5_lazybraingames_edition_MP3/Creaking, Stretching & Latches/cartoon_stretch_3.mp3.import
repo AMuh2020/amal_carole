@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c5tb2lovmt3by"
+path="res://.godot/imported/cartoon_stretch_3.mp3-2ff118895741fdec7d8e78537a83b837.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Creaking, Stretching & Latches/cartoon_stretch_3.mp3"
+dest_files=["res://.godot/imported/cartoon_stretch_3.mp3-2ff118895741fdec7d8e78537a83b837.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

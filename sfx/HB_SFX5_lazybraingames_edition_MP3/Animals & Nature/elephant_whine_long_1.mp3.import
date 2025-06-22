@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://io37d1ifqdak"
+path="res://.godot/imported/elephant_whine_long_1.mp3-585124d7259697784e5a338752bd3569.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Animals & Nature/elephant_whine_long_1.mp3"
+dest_files=["res://.godot/imported/elephant_whine_long_1.mp3-585124d7259697784e5a338752bd3569.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

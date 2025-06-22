@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cg8s7l81fe7gc"
+path="res://.godot/imported/pop_9.mp3-1ceb1f3f26b9c17fdbd4fa2ea12bd081.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/General Purpose Sounds/pop_9.mp3"
+dest_files=["res://.godot/imported/pop_9.mp3-1ceb1f3f26b9c17fdbd4fa2ea12bd081.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

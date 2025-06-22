@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://k882y8sles4u"
+path="res://.godot/imported/junk_8.mp3-fdeb12e6af517e586216939beadcb2a2.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Metal & Industry/junk_8.mp3"
+dest_files=["res://.godot/imported/junk_8.mp3-fdeb12e6af517e586216939beadcb2a2.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

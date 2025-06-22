@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c7b50wxjvgni8"
+path="res://.godot/imported/skreet.mp3-fc941a20d716383139d58d1ebc3a69fe.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/General Purpose Sounds/skreet.mp3"
+dest_files=["res://.godot/imported/skreet.mp3-fc941a20d716383139d58d1ebc3a69fe.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

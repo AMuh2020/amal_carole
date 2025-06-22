@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://uqc3q7uvk8cj"
+path="res://.godot/imported/boing_2.mp3-ed11fdb8d6af53cc9de2fbe633f09a76.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Cartoon & SFX/boing_2.mp3"
+dest_files=["res://.godot/imported/boing_2.mp3-ed11fdb8d6af53cc9de2fbe633f09a76.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

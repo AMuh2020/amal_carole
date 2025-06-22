@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dgxp2uxulsr1w"
+path="res://.godot/imported/animal_call_long_1.mp3-f85a9b435e4e125f44616f1b2076854a.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Animals & Nature/animal_call_long_1.mp3"
+dest_files=["res://.godot/imported/animal_call_long_1.mp3-f85a9b435e4e125f44616f1b2076854a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

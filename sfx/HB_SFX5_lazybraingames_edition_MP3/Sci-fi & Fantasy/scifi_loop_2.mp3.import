@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://e0jbt611sw42"
+path="res://.godot/imported/scifi_loop_2.mp3-31c4ff6372b4a1d6a364c2ba7cc09d7c.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Sci-fi & Fantasy/scifi_loop_2.mp3"
+dest_files=["res://.godot/imported/scifi_loop_2.mp3-31c4ff6372b4a1d6a364c2ba7cc09d7c.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

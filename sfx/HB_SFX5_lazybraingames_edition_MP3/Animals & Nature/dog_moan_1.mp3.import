@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dwsjpra8vsovt"
+path="res://.godot/imported/dog_moan_1.mp3-3b95a8165767c9578d74c74479ad25d9.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Animals & Nature/dog_moan_1.mp3"
+dest_files=["res://.godot/imported/dog_moan_1.mp3-3b95a8165767c9578d74c74479ad25d9.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

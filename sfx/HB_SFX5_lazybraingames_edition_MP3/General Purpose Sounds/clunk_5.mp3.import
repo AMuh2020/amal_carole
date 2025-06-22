@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bjijin3ia0fbp"
+path="res://.godot/imported/clunk_5.mp3-c9ba637901b0e5e78815443f7f3b23af.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/General Purpose Sounds/clunk_5.mp3"
+dest_files=["res://.godot/imported/clunk_5.mp3-c9ba637901b0e5e78815443f7f3b23af.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

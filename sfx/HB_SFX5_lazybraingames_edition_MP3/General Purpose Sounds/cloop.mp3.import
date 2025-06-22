@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://boj3pjbc2njhl"
+path="res://.godot/imported/cloop.mp3-d7a60b84bf0d1eaa5c5899a92cabb188.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/General Purpose Sounds/cloop.mp3"
+dest_files=["res://.godot/imported/cloop.mp3-d7a60b84bf0d1eaa5c5899a92cabb188.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

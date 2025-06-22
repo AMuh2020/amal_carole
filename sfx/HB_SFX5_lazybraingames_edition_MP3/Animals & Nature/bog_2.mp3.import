@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://5a157jok7lgd"
+path="res://.godot/imported/bog_2.mp3-884918e4d87d7fec9303b737d1d4e6db.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Animals & Nature/bog_2.mp3"
+dest_files=["res://.godot/imported/bog_2.mp3-884918e4d87d7fec9303b737d1d4e6db.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

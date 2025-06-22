@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://50l25i2w7oko"
+path="res://.godot/imported/crank_rattle_2.mp3-2777430c6347d26f0bfd15ccb9d95f33.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Metal & Industry/crank_rattle_2.mp3"
+dest_files=["res://.godot/imported/crank_rattle_2.mp3-2777430c6347d26f0bfd15ccb9d95f33.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

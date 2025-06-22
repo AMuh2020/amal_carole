@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://th2wxn0wxsde"
+path="res://.godot/imported/ratchet.mp3-fe04f230a4f21286ee474a96ba3bd383.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Metal & Industry/ratchet.mp3"
+dest_files=["res://.godot/imported/ratchet.mp3-fe04f230a4f21286ee474a96ba3bd383.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

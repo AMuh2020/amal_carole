@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://c0jjuesxh11rh"
+path="res://.godot/imported/squeegee_7.mp3-b602cab0bad6e9aed5ef804556389be7.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Honks, Sqeaks & Squeegee/squeegee_7.mp3"
+dest_files=["res://.godot/imported/squeegee_7.mp3-b602cab0bad6e9aed5ef804556389be7.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

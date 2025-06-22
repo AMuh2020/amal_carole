@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://wymn5tyy1jbw"
+path="res://.godot/imported/thwip_2.mp3-9cf5ffbbfd7acc48426a3a9e29c7fd69.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Action & Weapons/thwip_2.mp3"
+dest_files=["res://.godot/imported/thwip_2.mp3-9cf5ffbbfd7acc48426a3a9e29c7fd69.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

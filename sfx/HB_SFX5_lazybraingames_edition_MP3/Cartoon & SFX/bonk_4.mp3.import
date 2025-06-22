@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cjup0mwd2leca"
+path="res://.godot/imported/bonk_4.mp3-82335b99423afa458e3df9465c2015d3.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Cartoon & SFX/bonk_4.mp3"
+dest_files=["res://.godot/imported/bonk_4.mp3-82335b99423afa458e3df9465c2015d3.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

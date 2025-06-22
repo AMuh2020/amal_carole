@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dfj4dnp5h512s"
+path="res://.godot/imported/noise_17.mp3-5e4cba37a4d0805c418c3073ac5b0310.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Metal & Industry/noise_17.mp3"
+dest_files=["res://.godot/imported/noise_17.mp3-5e4cba37a4d0805c418c3073ac5b0310.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

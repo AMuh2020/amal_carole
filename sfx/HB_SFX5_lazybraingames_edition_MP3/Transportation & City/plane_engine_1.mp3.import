@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cb8jdqabjnvhi"
+path="res://.godot/imported/plane_engine_1.mp3-696ec3ecba566738e2b2c83dd7686a18.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Transportation & City/plane_engine_1.mp3"
+dest_files=["res://.godot/imported/plane_engine_1.mp3-696ec3ecba566738e2b2c83dd7686a18.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

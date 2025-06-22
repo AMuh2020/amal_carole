@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bwpv77up0le6s"
+path="res://.godot/imported/elephant_small_noise.mp3-6489c11b5366b6890ffebfe1921fda5f.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Animals & Nature/elephant_small_noise.mp3"
+dest_files=["res://.godot/imported/elephant_small_noise.mp3-6489c11b5366b6890ffebfe1921fda5f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

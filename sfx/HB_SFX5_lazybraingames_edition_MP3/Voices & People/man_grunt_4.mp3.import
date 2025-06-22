@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://u5835k6wb22g"
+path="res://.godot/imported/man_grunt_4.mp3-fba7484ac65b2c98a26434e8b2a991aa.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Voices & People/man_grunt_4.mp3"
+dest_files=["res://.godot/imported/man_grunt_4.mp3-fba7484ac65b2c98a26434e8b2a991aa.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

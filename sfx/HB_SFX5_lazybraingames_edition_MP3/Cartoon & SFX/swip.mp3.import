@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://ciot44riul7jl"
+path="res://.godot/imported/swip.mp3-88fe0c51327f449bf66da2203e6b5278.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Cartoon & SFX/swip.mp3"
+dest_files=["res://.godot/imported/swip.mp3-88fe0c51327f449bf66da2203e6b5278.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

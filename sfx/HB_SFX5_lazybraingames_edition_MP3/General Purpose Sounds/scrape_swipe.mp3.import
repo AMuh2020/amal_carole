@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dxbsaxurupnti"
+path="res://.godot/imported/scrape_swipe.mp3-d18b13b2b82818dc668ed58bd4322055.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/General Purpose Sounds/scrape_swipe.mp3"
+dest_files=["res://.godot/imported/scrape_swipe.mp3-d18b13b2b82818dc668ed58bd4322055.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

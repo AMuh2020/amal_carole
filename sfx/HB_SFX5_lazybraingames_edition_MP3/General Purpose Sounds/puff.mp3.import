@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dwotwvxggbetm"
+path="res://.godot/imported/puff.mp3-9e86776462bfc58476c8f1b8873e1fa0.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/General Purpose Sounds/puff.mp3"
+dest_files=["res://.godot/imported/puff.mp3-9e86776462bfc58476c8f1b8873e1fa0.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

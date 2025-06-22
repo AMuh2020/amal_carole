@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dnquiu8afujrf"
+path="res://.godot/imported/office_clatter.mp3-6517f40967fce621e1363fafaec760a4.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Metal & Industry/office_clatter.mp3"
+dest_files=["res://.godot/imported/office_clatter.mp3-6517f40967fce621e1363fafaec760a4.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

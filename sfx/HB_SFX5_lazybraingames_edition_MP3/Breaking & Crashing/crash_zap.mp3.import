@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bftvku2l4mpeo"
+path="res://.godot/imported/crash_zap.mp3-a17af129faf651ef8086acd4936eaa35.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Breaking & Crashing/crash_zap.mp3"
+dest_files=["res://.godot/imported/crash_zap.mp3-a17af129faf651ef8086acd4936eaa35.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bprmr8d6cns8j"
+path="res://.godot/imported/scifi_phone_2.mp3-be099f17b26fc8ab40ddf3246645a257.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Sci-fi & Fantasy/scifi_phone_2.mp3"
+dest_files=["res://.godot/imported/scifi_phone_2.mp3-be099f17b26fc8ab40ddf3246645a257.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b4383atu2jp6n"
+path="res://.godot/imported/whir_2.mp3-83124e761fdb08eb5c17366cac80eb55.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Metal & Industry/whir_2.mp3"
+dest_files=["res://.godot/imported/whir_2.mp3-83124e761fdb08eb5c17366cac80eb55.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

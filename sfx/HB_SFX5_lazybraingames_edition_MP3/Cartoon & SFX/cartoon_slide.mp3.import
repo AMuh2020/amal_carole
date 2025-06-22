@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cqua7rpf50s8q"
+path="res://.godot/imported/cartoon_slide.mp3-7051b0098e22c200b5e591865e542a03.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Cartoon & SFX/cartoon_slide.mp3"
+dest_files=["res://.godot/imported/cartoon_slide.mp3-7051b0098e22c200b5e591865e542a03.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

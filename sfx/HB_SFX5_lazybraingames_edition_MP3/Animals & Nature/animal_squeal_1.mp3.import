@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cp5qml8qaqlgf"
+path="res://.godot/imported/animal_squeal_1.mp3-c7f3793b9cecd40a37fc4fdeeaa45d08.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Animals & Nature/animal_squeal_1.mp3"
+dest_files=["res://.godot/imported/animal_squeal_1.mp3-c7f3793b9cecd40a37fc4fdeeaa45d08.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

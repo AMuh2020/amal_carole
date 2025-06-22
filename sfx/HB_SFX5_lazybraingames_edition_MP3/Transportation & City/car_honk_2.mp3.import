@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://b8yrhfj2bs35s"
+path="res://.godot/imported/car_honk_2.mp3-89cd938c0b19c5d638d25ba37ef291cf.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Transportation & City/car_honk_2.mp3"
+dest_files=["res://.godot/imported/car_honk_2.mp3-89cd938c0b19c5d638d25ba37ef291cf.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

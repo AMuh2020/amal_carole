@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cqv788coc08gm"
+path="res://.godot/imported/ball_catch_2.mp3-169c7d18f398eed44276c93ed3394cec.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Action & Weapons/ball_catch_2.mp3"
+dest_files=["res://.godot/imported/ball_catch_2.mp3-169c7d18f398eed44276c93ed3394cec.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

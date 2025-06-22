@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bklxn88qsppo8"
+path="res://.godot/imported/whistle_work_long.mp3-3b3bc8bad5b7ab1d88726d85b389c25a.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Metal & Industry/whistle_work_long.mp3"
+dest_files=["res://.godot/imported/whistle_work_long.mp3-3b3bc8bad5b7ab1d88726d85b389c25a.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

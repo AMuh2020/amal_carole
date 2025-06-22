@@ -1,4 +1,4 @@
-[gd_scene load_steps=48 format=3 uid="uid://mn1b5goqhlul"]
+[gd_scene load_steps=49 format=3 uid="uid://mn1b5goqhlul"]
 
 [ext_resource type="Script" uid="uid://bv4aecilrl6wk" path="res://scripts/player2.gd" id="1_thsyj"]
 [ext_resource type="Texture2D" uid="uid://cixtf6v3tmqm" path="res://newsamurai/MidnightSlash/Attack2.png" id="2_uqdpi"]
@@ -7,6 +7,7 @@
 [ext_resource type="Texture2D" uid="uid://prwjxc36m2p2" path="res://newsamurai/MidnightSlash/Jump.png" id="5_5d30q"]
 [ext_resource type="Texture2D" uid="uid://b3j1c4mwwlrvd" path="res://newsamurai/MidnightSlash/Run.png" id="6_ah0bh"]
 [ext_resource type="Script" uid="uid://cmwpa2126gxd8" path="res://scripts/player_health_bar.gd" id="7_vkjjb"]
+[ext_resource type="AudioStream" uid="uid://bvo715a0xx33" path="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Action & Weapons/hit_7.mp3" id="8_guoa8"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_k4gc6"]
 atlas = ExtResource("2_uqdpi")
@@ -356,6 +357,11 @@ max_value = 30.0
 value = 30.0
 show_percentage = false
 script = ExtResource("7_vkjjb")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_guoa8")
+volume_db = 8.929
+bus = &"SFX"
 
 [connection signal="area_entered" from="AnimatedSprite2D/PlayerAttackArea" to="." method="_on_attack_area_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_attack_timer_timeout"]

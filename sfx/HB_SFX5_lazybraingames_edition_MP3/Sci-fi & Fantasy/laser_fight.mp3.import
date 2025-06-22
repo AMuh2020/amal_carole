@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://bgkcjhyqf36l"
+path="res://.godot/imported/laser_fight.mp3-5f1a19930abbc9b46308269c898fee84.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Sci-fi & Fantasy/laser_fight.mp3"
+dest_files=["res://.godot/imported/laser_fight.mp3-5f1a19930abbc9b46308269c898fee84.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dg3ps7o4sgtpj"
+path="res://.godot/imported/missle.mp3-cecb2e2ecad0fc5da5e176a7cd506101.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Action & Weapons/missle.mp3"
+dest_files=["res://.godot/imported/missle.mp3-cecb2e2ecad0fc5da5e176a7cd506101.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

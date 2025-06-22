@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://d584g7t41hn6"
+path="res://.godot/imported/man_growl_3.mp3-71f7a09701275c8d59d7c87bc2c69bcb.mp3str"
+
+[deps]
+
+source_file="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Voices & People/man_growl_3.mp3"
+dest_files=["res://.godot/imported/man_growl_3.mp3-71f7a09701275c8d59d7c87bc2c69bcb.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
