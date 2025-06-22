@@ -21,6 +21,10 @@ InteractionManager="*res://interactions/InteractionManager.tscn"
 Global="*res://scripts/global.gd"
 Music="res://scenes/miscellaneous/music.tscn"
 
+[display]
+
+window/stretch/mode="viewport"
+
 [global_group]
 
 player=""
