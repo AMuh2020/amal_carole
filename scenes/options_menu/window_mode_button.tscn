@@ -7,8 +7,6 @@
 script = ExtResource("2_hdds7")
 
 [node name="Label" parent="HBoxContainer" index="0"]
+custom_minimum_size = Vector2(350, 0)
 text = "Window Mode"
 horizontal_alignment = 0
-
-[node name="OptionButton" parent="HBoxContainer" index="2"]
-custom_minimum_size = Vector2(256, 64)

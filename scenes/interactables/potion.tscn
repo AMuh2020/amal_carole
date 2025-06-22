@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://c6lwpthns7ndf"]
+[gd_scene load_steps=8 format=3 uid="uid://c6lwpthns7ndf"]
 
 [ext_resource type="Script" uid="uid://ks7mbjxm0f38" path="res://scripts/potion.gd" id="1_itmmj"]
 [ext_resource type="Texture2D" uid="uid://bnc6hx47hu34e" path="res://assets/32rogues/items.png" id="2_3mc24"]
 [ext_resource type="PackedScene" uid="uid://cy030b4jued0g" path="res://interactions/interaction_area/interaction_area.tscn" id="3_8kk5y"]
+[ext_resource type="AudioStream" uid="uid://scbamelspqmn" path="res://sfx/HB_SFX5_lazybraingames_edition_MP3/General Purpose Sounds/clooping.mp3" id="4_7y8xi"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_t5fwm"]
 atlas = ExtResource("2_3mc24")
@@ -32,3 +33,8 @@ sprite_frames = SubResource("SpriteFrames_l3y02")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionArea"]
 shape = SubResource("CircleShape2D_itmmj")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("4_7y8xi")
+volume_db = 5.0
+bus = &"SFX"

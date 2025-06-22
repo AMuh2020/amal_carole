@@ -9,7 +9,7 @@
 [ext_resource type="PackedScene" uid="uid://bxvhaj3mlidwf" path="res://scenes/miscellaneous/door.tscn" id="6_oc4kc"]
 [ext_resource type="PackedScene" uid="uid://ct20g567hani0" path="res://scenes/miscellaneous/RoamWall.tscn" id="7_oc4kc"]
 [ext_resource type="PackedScene" uid="uid://c6lwpthns7ndf" path="res://scenes/interactables/potion.tscn" id="8_s8va5"]
-[ext_resource type="PackedScene" path="res://scenes/interactables/cat_food.tscn" id="10_qxy0u"]
+[ext_resource type="PackedScene" uid="uid://catk8242vibfi" path="res://scenes/interactables/cat_food.tscn" id="10_qxy0u"]
 [ext_resource type="PackedScene" path="res://scenes/interactables/kill_zone.tscn" id="11_excbq"]
 [ext_resource type="PackedScene" path="res://scenes/interactables/spike.tscn" id="12_iav0o"]
 [ext_resource type="PackedScene" uid="uid://dqmx0454dl7c2" path="res://scenes/interactables/next_level_portal.tscn" id="13_dnkej"]
@@ -439,5 +439,6 @@ position = Vector2(3118, -304)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_mm8aj")
+volume_db = -10.0
 autoplay = true
 bus = &"Music "
