@@ -5,7 +5,7 @@ extends Control
 @onready var quit_button = $VBoxContainer/QuitButton as Button
 @onready var vbox_container = $VBoxContainer as VBoxContainer
 @onready var options_menu = $options_menu as OptionsMenu
-@onready var background = $Background as Node2D
+@onready var background = $Panel as Panel
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
