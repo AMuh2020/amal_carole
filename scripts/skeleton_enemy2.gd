@@ -19,9 +19,9 @@ extends CharacterBody2D
 @onready var ray_cast_right: RayCast2D = $RayCastRight # RayCast to check for ground/walls on the right.
 @onready var ray_cast_left: RayCast2D = $RayCastLeft # RayCast to check for ground/walls on the left.
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D # Reference to the enemy's sprite for flipping.
-@onready var attack_cooldown_timer: Timer = Timer.new() # Timer to control attack frequency.
+@onready var attack_cooldown_timer: Timer = $AttackCooldownTimer # Timer to control attack frequency.
 @onready var attack_detection_area: Area2D = $AnimatedSprite2D/AttackDetection # Area2D for detecting attack range.
-@onready var attack_damage_timer: Timer = Timer.new() # Timer for when to apply attack damage
+@onready var attack_damage_timer: Timer = $AttackDamageTimer # Timer for when to apply attack damage
 @onready var health_bar: ProgressBar = $ProgressBar
 
 # --- State Management ---
@@ -48,15 +48,15 @@ func _ready() -> void:
 	# Connect AnimatedSprite2D animation finished signal
 	#anim_sprite.animation_finished.connect(_on_AnimatedSprite2D_animation_finished)
 	# Add attack cooldown timer to the scene tree and connect its signal
-	add_child(attack_cooldown_timer)
-	attack_cooldown_timer.one_shot = true
+	#add_child(attack_cooldown_timer)
+	#attack_cooldown_timer.one_shot = true
 	attack_cooldown_timer.wait_time = attack_cooldown
-	attack_cooldown_timer.timeout.connect(Callable(self, "_on_AttackCooldownTimer_timeout"))
+	#attack_cooldown_timer.timeout.connect(Callable(self, "_on_AttackCooldownTimer_timeout"))
 	# --- MODIFICATION END ---
 	
-	add_child(attack_damage_timer)
-	attack_damage_timer.one_shot = true # It should only fire once per attack
-	attack_damage_timer.timeout.connect(Callable(self, "_on_AttackDamageTimer_timeout"))
+	#add_child(attack_damage_timer)
+	#attack_damage_timer.one_shot = true # It should only fire once per attack
+	#attack_damage_timer.timeout.connect(Callable(self, "_on_AttackDamageTimer_timeout"))
 	# Ensure raycasts are enabled from the start.
 	ray_cast_right.enabled = true
 	ray_cast_left.enabled = true
@@ -114,7 +114,8 @@ func take_damage(amount: int) -> void:
 	if current_health <= 0:
 		_die()
 	else:
-		_change_state(State.TAKING_DAMAGE)
+		if current_state != State.ATTACKING:
+			_change_state(State.TAKING_DAMAGE)
 # --- MODIFICATION END ---
 
 
@@ -173,7 +174,7 @@ func _change_state(new_state: State) -> void:
 			# Stop chasing related movement. Play attack animation.
 			velocity.x = 0
 			_play_animation("attack")
-			attack_damage_timer.wait_time = 0.5 # Set your 'X' seconds here (e.g., 0.5 seconds into the animation)
+			#attack_damage_timer.wait_time = 0.5 # Set your 'X' seconds here (e.g., 0.5 seconds into the animation)
 			attack_damage_timer.start()
 			# Attack cooldown timer starts when the attack animation finishes
 			print("Enemy State: ATTACKING!")
@@ -186,8 +187,8 @@ func _change_state(new_state: State) -> void:
 		State.DEAD:
 			# Stop all movement. Play death animation.
 			velocity = Vector2.ZERO
-			set_collision_layer_value(1, false) # Example: Disable enemy's main collision layer
-			set_collision_mask_value(1, false) # Example: Stop colliding with environment/player
+			set_collision_layer_value(2, false) 
+			set_collision_mask_value(2, false) # Example: Stop colliding with environment/player
 			detection_area.set_collision_mask(0) # Disable detection area
 			attack_detection_area.set_collision_mask(0) # Disable attack detection area
 			_play_animation("death")
