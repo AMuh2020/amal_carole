@@ -3,7 +3,7 @@ extends CharacterBody2D
 
 
 ## Constants
-const JUMP_VELOCITY = -400
+const JUMP_VELOCITY = -330
 const CROUCH_SPEED_MULTIPLIER = 0.5
 const GRAVITY = 980 # Define a gravity constant for consistency
 
