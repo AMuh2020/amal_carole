@@ -6,7 +6,6 @@ extends Control
 @onready var vbox_container = $VBoxContainer as VBoxContainer
 @onready var options_menu = $options_menu as OptionsMenu
 @onready var background = $Panel as Panel
-@onready var main_menu_music = $AudioStreamPlayer2D as AudioStreamPlayer2D
 
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
@@ -17,7 +16,7 @@ func _process(delta: float) -> void:
 	pass
 
 func _on_start_button_pressed():
-	main_menu_music.stop()
+	MainMenuMusic.stop()
 	await get_tree().process_frame
 	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
 
