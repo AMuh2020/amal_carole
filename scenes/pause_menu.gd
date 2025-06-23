@@ -2,6 +2,7 @@ class_name PauseMenu
 
 extends Control
 
+@onready var margin_container = $MarginContainer as MarginContainer
 @onready var vbox_container = $MarginContainer/VBoxContainer as VBoxContainer
 @onready var settings_menu = $SettingsMenu as SettingsMenu
 @onready var continue_button = $MarginContainer/VBoxContainer/Continue as Button
@@ -13,12 +14,11 @@ extends Control
 func _ready():
 	get_tree().paused = true
 	settings_menu.visible = false
-	settings_menu.process_mode = Node.PROCESS_MODE_WHEN_PAUSED
 	handle_connecting_signals()
 
 func _on_settings_button_down() -> void:
 	get_tree().paused = true
-	vbox_container.visible = false
+	margin_container.visible = false
 	settings_menu.set_process(true)
 	settings_menu.visible = true
 
@@ -32,7 +32,7 @@ func _on_quit_button_down() -> void:
 	get_tree().change_scene_to_file("res://scenes/main_menu/main_menu.tscn")
 	
 func on_exit_settings_menu() -> void:
-	vbox_container.visible = true
+	margin_container.visible = true
 	settings_menu.visible = false
 
 func handle_connecting_signals() -> void:
