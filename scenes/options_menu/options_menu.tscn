@@ -265,10 +265,11 @@ theme_override_constants/separation = -48
 
 [node name="Label" type="Label" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
+theme_override_colors/font_color = Color(0.248352, 0.573054, 0.837245, 1)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/shadow_offset_x = 12
 theme_override_fonts/font = ExtResource("1_liyum")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 40
 text = "OPTIONS"
 horizontal_alignment = 1
 vertical_alignment = 1
