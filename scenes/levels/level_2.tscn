@@ -6,7 +6,7 @@
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_ra442"]
 [ext_resource type="PackedScene" uid="uid://clv2qhvnt4ks1" path="res://scenes/sand_blocks.tscn" id="3_l37oo"]
 [ext_resource type="AudioStream" uid="uid://d3x7lo0cvft1v" path="res://music/DuringBattles.mp3" id="4_fiq81"]
-[ext_resource type="PackedScene" path="res://scenes/interactables/kill_zone.tscn" id="6_qpwj6"]
+[ext_resource type="PackedScene" uid="uid://b6wo2kc5kppxl" path="res://scenes/interactables/kill_zone.tscn" id="6_qpwj6"]
 [ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="7_ibugp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5whl"]

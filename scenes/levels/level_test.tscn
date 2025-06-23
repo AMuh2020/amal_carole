@@ -7,7 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://ct20g567hani0" path="res://scenes/miscellaneous/RoamWall.tscn" id="2_uh3ll"]
 [ext_resource type="PackedScene" uid="uid://bxvhaj3mlidwf" path="res://scenes/miscellaneous/door.tscn" id="3_4ptlp"]
 [ext_resource type="PackedScene" uid="uid://c6lwpthns7ndf" path="res://scenes/interactables/potion.tscn" id="7_4lw2e"]
-[ext_resource type="PackedScene" path="res://scenes/interactables/spike.tscn" id="8_8883n"]
+[ext_resource type="PackedScene" uid="uid://duid5ll74gb3x" path="res://scenes/interactables/spike.tscn" id="8_8883n"]
 [ext_resource type="PackedScene" uid="uid://catk8242vibfi" path="res://scenes/interactables/cat_food.tscn" id="8_bqmi1"]
 [ext_resource type="PackedScene" uid="uid://dqmx0454dl7c2" path="res://scenes/interactables/next_level_portal.tscn" id="10_es4qh"]
 [ext_resource type="PackedScene" uid="uid://dyxly478iefv1" path="res://scenes/players_and_enemies/Dragon.tscn" id="10_nxmka"]
