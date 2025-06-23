@@ -1,9 +1,10 @@
-[gd_scene load_steps=21 format=4 uid="uid://bag5qxtq8lejf"]
+[gd_scene load_steps=22 format=4 uid="uid://bag5qxtq8lejf"]
 
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_06474"]
+[ext_resource type="Script" uid="uid://dw5fdysk053hg" path="res://scenes/levels/level_4.gd" id="1_glw47"]
 [ext_resource type="Script" uid="uid://n0j66o4vl0ud" path="res://scripts/sand_storm.gd" id="2_anwe6"]
 [ext_resource type="PackedScene" uid="uid://mn1b5goqhlul" path="res://scenes/players_and_enemies/samurai_player.tscn" id="2_vmkp1"]
-[ext_resource type="PackedScene" uid="uid://b6wo2kc5kppxl" path="res://scenes/interactables/kill_zone.tscn" id="2_w6h2s"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/kill_zone.tscn" id="2_w6h2s"]
 [ext_resource type="Texture2D" uid="uid://68kinyg37mt8" path="res://assets/random_stuff/sandstorm 2x2.png" id="4_anwe6"]
 [ext_resource type="Script" uid="uid://cobdmviitwtr7" path="res://scripts/enemy_group.gd" id="5_um320"]
 [ext_resource type="PackedScene" uid="uid://jg383sevgif8" path="res://scenes/players_and_enemies/skeleton_enemy.tscn" id="6_glw47"]
@@ -224,6 +225,7 @@ size = Vector2(64, 43)
 size = Vector2(48, 27.5)
 
 [node name="Level_4" type="Node2D"]
+script = ExtResource("1_glw47")
 
 [node name="TileMapLayer" type="TileMapLayer" parent="."]
 use_parent_material = true
@@ -345,3 +347,11 @@ position = Vector2(-0.551605, -16.397)
 zoom = Vector2(2, 2)
 limit_bottom = 530
 position_smoothing_enabled = true
+
+[node name="UI_Container" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI_Container"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0

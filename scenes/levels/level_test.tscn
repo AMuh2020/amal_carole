@@ -1,12 +1,13 @@
-[gd_scene load_steps=14 format=4 uid="uid://duc7rjeylcpk8"]
+[gd_scene load_steps=15 format=4 uid="uid://duc7rjeylcpk8"]
 
 [ext_resource type="PackedScene" uid="uid://jg383sevgif8" path="res://scenes/players_and_enemies/skeleton_enemy.tscn" id="1_jp5fc"]
+[ext_resource type="Script" uid="uid://cgun6hkvkp4fs" path="res://scenes/levels/level_test.gd" id="1_nxmka"]
 [ext_resource type="Script" uid="uid://cobdmviitwtr7" path="res://scripts/enemy_group.gd" id="1_ycf23"]
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_4ptlp"]
 [ext_resource type="PackedScene" uid="uid://ct20g567hani0" path="res://scenes/miscellaneous/RoamWall.tscn" id="2_uh3ll"]
 [ext_resource type="PackedScene" uid="uid://bxvhaj3mlidwf" path="res://scenes/miscellaneous/door.tscn" id="3_4ptlp"]
 [ext_resource type="PackedScene" uid="uid://c6lwpthns7ndf" path="res://scenes/interactables/potion.tscn" id="7_4lw2e"]
-[ext_resource type="PackedScene" uid="uid://duid5ll74gb3x" path="res://scenes/interactables/spike.tscn" id="8_8883n"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/spike.tscn" id="8_8883n"]
 [ext_resource type="PackedScene" uid="uid://catk8242vibfi" path="res://scenes/interactables/cat_food.tscn" id="8_bqmi1"]
 [ext_resource type="PackedScene" uid="uid://dqmx0454dl7c2" path="res://scenes/interactables/next_level_portal.tscn" id="10_es4qh"]
 [ext_resource type="PackedScene" uid="uid://dyxly478iefv1" path="res://scenes/players_and_enemies/Dragon.tscn" id="10_nxmka"]
@@ -179,6 +180,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_hbghi")
 
 [node name="Level_test" type="Node2D"]
+script = ExtResource("1_nxmka")
 
 [node name="Enemy Group" type="Node" parent="."]
 script = ExtResource("1_ycf23")
@@ -237,3 +239,11 @@ position = Vector2(-0.551605, -16.397)
 zoom = Vector2(2, 2)
 limit_bottom = 530
 position_smoothing_enabled = true
+
+[node name="UI_Container" type="CanvasLayer" parent="."]
+
+[node name="Control" type="Control" parent="UI_Container"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
