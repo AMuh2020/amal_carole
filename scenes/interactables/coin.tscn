@@ -1,5 +1,6 @@
-[gd_scene load_steps=16 format=3 uid="uid://5ggx23nu2ij1"]
+[gd_scene load_steps=17 format=3 uid="uid://5ggx23nu2ij1"]
 
+[ext_resource type="Script" uid="uid://sfimimxrbv7m" path="res://scenes/interactables/collectible.gd" id="1_7lxb0"]
 [ext_resource type="Texture2D" uid="uid://bm7c5cpqq4vxb" path="res://assets/brackeys_platformer_assets/sprites/coin.png" id="1_7qpmk"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_0t63x"]
@@ -98,6 +99,7 @@ animations = [{
 radius = 5.0
 
 [node name="Area2D" type="Area2D"]
+script = ExtResource("1_7lxb0")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_s5w7y")
