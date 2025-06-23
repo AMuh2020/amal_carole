@@ -672,7 +672,7 @@ size = Vector2(27, 48)
 size = Vector2(66, 61.875)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1he8f"]
-size = Vector2(702, 272)
+size = Vector2(832, 466)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_ft08n"]
 bg_color = Color(0, 0, 0, 1)
@@ -728,7 +728,7 @@ shape = SubResource("RectangleShape2D_ft08n")
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Detection"]
-position = Vector2(0, -103)
+position = Vector2(0, -200)
 shape = SubResource("RectangleShape2D_1he8f")
 
 [node name="MeleeCooldownTimer" type="Timer" parent="."]
