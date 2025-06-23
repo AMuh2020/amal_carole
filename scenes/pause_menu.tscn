@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bam1sden6qo4f"]
+[gd_scene load_steps=5 format=3 uid="uid://bam1sden6qo4f"]
 
 [ext_resource type="Script" uid="uid://dy5e3muw2v11b" path="res://scenes/pause_menu.gd" id="1_kukqi"]
 [ext_resource type="FontFile" uid="uid://cnhxno38oi627" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_myx47"]
+[ext_resource type="PackedScene" uid="uid://bbv34fi48s8w" path="res://scenes/settings_menu.tscn" id="2_5d2l8"]
 [ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="2_kukqi"]
 
 [node name="PauseMenu" type="Control"]
@@ -13,6 +14,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_kukqi")
+
+[node name="SettingsMenu" parent="." instance=ExtResource("2_5d2l8")]
+process_mode = 3
+layout_mode = 1
 
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
