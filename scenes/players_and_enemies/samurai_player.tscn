@@ -1,11 +1,11 @@
-[gd_scene load_steps=49 format=3 uid="uid://mn1b5goqhlul"]
+[gd_scene load_steps=48 format=3 uid="uid://mn1b5goqhlul"]
 
 [ext_resource type="Script" uid="uid://bv4aecilrl6wk" path="res://scripts/player2.gd" id="1_thsyj"]
-[ext_resource type="Texture2D" uid="uid://cixtf6v3tmqm" path="res://newsamurai/MidnightSlash/Attack2.png" id="2_uqdpi"]
-[ext_resource type="Texture2D" uid="uid://c8i6p5ean6ghh" path="res://newsamurai/MidnightSlash/Death.png" id="3_vkjjb"]
-[ext_resource type="Texture2D" uid="uid://cejdfs7jhi4wa" path="res://newsamurai/MidnightSlash/Idle.png" id="4_guoa8"]
-[ext_resource type="Texture2D" uid="uid://prwjxc36m2p2" path="res://newsamurai/MidnightSlash/Jump.png" id="5_5d30q"]
-[ext_resource type="Texture2D" uid="uid://b3j1c4mwwlrvd" path="res://newsamurai/MidnightSlash/Run.png" id="6_ah0bh"]
+[ext_resource type="Texture2D" uid="uid://cixtf6v3tmqm" path="res://assets/newsamurai/MidnightSlash/Attack2.png" id="2_uqdpi"]
+[ext_resource type="Texture2D" uid="uid://c8i6p5ean6ghh" path="res://assets/newsamurai/MidnightSlash/Death.png" id="3_vkjjb"]
+[ext_resource type="Texture2D" uid="uid://cejdfs7jhi4wa" path="res://assets/newsamurai/MidnightSlash/Idle.png" id="4_guoa8"]
+[ext_resource type="Texture2D" uid="uid://prwjxc36m2p2" path="res://assets/newsamurai/MidnightSlash/Jump.png" id="5_5d30q"]
+[ext_resource type="Texture2D" uid="uid://b3j1c4mwwlrvd" path="res://assets/newsamurai/MidnightSlash/Run.png" id="6_ah0bh"]
 [ext_resource type="Script" uid="uid://cmwpa2126gxd8" path="res://scripts/player_health_bar.gd" id="7_vkjjb"]
 [ext_resource type="AudioStream" uid="uid://bvo715a0xx33" path="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Action & Weapons/hit_7.mp3" id="8_guoa8"]
 
@@ -272,9 +272,6 @@ size = Vector2(34, 23)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_47qqc"]
 size = Vector2(13, 32)
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_y4r1p"]
-radius = 4.0
-
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
 size = Vector2(13, 32)
 
@@ -321,11 +318,6 @@ disabled = true
 position = Vector2(0.5, -16)
 shape = SubResource("RectangleShape2D_47qqc")
 
-[node name="ExperimentWithCapsule" type="CollisionShape2D" parent="."]
-position = Vector2(1, -15)
-shape = SubResource("CapsuleShape2D_y4r1p")
-disabled = true
-
 [node name="CollisionShape2DCrouch" type="CollisionShape2D" parent="."]
 position = Vector2(0, -16)
 shape = SubResource("RectangleShape2D_d2wvv")
@@ -337,7 +329,7 @@ autostart = true
 
 [node name="PlayerHitbox" type="Area2D" parent="." groups=["player"]]
 visible = false
-collision_layer = 4
+collision_layer = 6
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="PlayerHitbox"]
@@ -347,9 +339,9 @@ shape = SubResource("RectangleShape2D_y4r1p")
 
 [node name="ProgressBar" type="ProgressBar" parent="."]
 offset_left = -11.0
-offset_top = -36.0
+offset_top = -37.0
 offset_right = 11.0
-offset_bottom = -34.0
+offset_bottom = -35.0
 theme_override_styles/background = SubResource("StyleBoxFlat_guoa8")
 theme_override_styles/fill = SubResource("StyleBoxFlat_5d30q")
 max_value = 30.0
