@@ -6,11 +6,11 @@ extends CharacterBody2D
 # --- Exported Variables ---
 @export var speed: float = 100.0 # Movement speed of the boss. (Increased for boss)
 @export var gravity: float = 980.0 # Gravity applied to the boss.
-@export var max_health: int = 1000 # Maximum health of the boss. (Significantly increased)
+@export var max_health: int = 400 # Maximum health of the boss. (Significantly increased)
 @export var melee_damage: int = 10 # Damage dealt by the boss's melee attack.
 @export var breath_damage: int = 20 # Damage per tick dealt by the boss's breath attack.
 @export var melee_attack_cooldown: float = 2.0 # Time between melee attacks.
-@export var breath_attack_cooldown: float = 4.0 # Time between breath attacks.
+@export var breath_attack_cooldown: float = 6.0 # Time between breath attacks.
 @export var breath_attack_duration: float = 2.0 # How long the breath attack lasts.
 @export var fireball_cooldown: float = 3.0
 # --- Node References (Set in _ready) ---
