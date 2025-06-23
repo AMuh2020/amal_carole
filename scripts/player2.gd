@@ -179,6 +179,7 @@ func _on_attack_timer_timeout() -> void:
 
 
 func _on_attack_area_area_entered(area: Area2D) -> void:
+	print("PLAYER: AREA IN RANGE ", area)
 	if area.is_in_group("enemy") and current_state == PlayerState.ATTACKING:
 		var enemy = area.get_parent()
 		if enemy and enemy.has_method("take_damage"): # Defensive check
