@@ -19,7 +19,6 @@ config/icon="res://icon.svg"
 
 InteractionManager="*res://interactions/InteractionManager.tscn"
 Global="res://scripts/global.gd"
-Music="res://scenes/miscellaneous/music.tscn"
 MainMenuMusic="*res://scenes/main_menu_music.tscn"
 
 [display]

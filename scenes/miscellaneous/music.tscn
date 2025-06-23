@@ -1,8 +1,0 @@
-[gd_scene load_steps=2 format=3 uid="uid://dyi0dm6s3r6rn"]
-
-[ext_resource type="AudioStream" uid="uid://5mwtwbieyut4" path="res://music/BeforeSelectingLevel.mp3" id="1_67jhj"]
-
-[node name="Music" type="AudioStreamPlayer2D"]
-stream = ExtResource("1_67jhj")
-autoplay = true
-bus = &"Music "
