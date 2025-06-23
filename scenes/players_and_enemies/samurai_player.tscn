@@ -273,7 +273,7 @@ size = Vector2(34, 23)
 size = Vector2(13, 32)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_d2wvv"]
-size = Vector2(13, 32)
+size = Vector2(12.5, 30)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4r1p"]
 size = Vector2(14, 35)
@@ -315,11 +315,11 @@ shape = SubResource("RectangleShape2D_3v2ag")
 disabled = true
 
 [node name="CollisionShape2DIdle" type="CollisionShape2D" parent="."]
-position = Vector2(0.5, -16)
+position = Vector2(0.5, -14)
 shape = SubResource("RectangleShape2D_47qqc")
 
 [node name="CollisionShape2DCrouch" type="CollisionShape2D" parent="."]
-position = Vector2(0, -16)
+position = Vector2(0.25, -14)
 shape = SubResource("RectangleShape2D_d2wvv")
 disabled = true
 
