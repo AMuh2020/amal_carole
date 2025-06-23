@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bsup00a4evouq"]
+[gd_scene load_steps=3 format=3 uid="uid://bsup00a4evouq"]
 
+[ext_resource type="Script" uid="uid://co2u36d4l8h5l" path="res://scenes/options_menu/audio_slider_settings.gd" id="1_13n86"]
 [ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="1_uhl4l"]
 
 [node name="Audio_Slider_Settings" type="Control"]
@@ -9,6 +10,8 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_13n86")
+bus_name = "Master"
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
@@ -17,10 +20,10 @@ offset_bottom = 40.0
 theme_override_constants/separation = 42
 
 [node name="Audio_Name_Lbl" type="Label" parent="HBoxContainer"]
-custom_minimum_size = Vector2(300, 0)
+custom_minimum_size = Vector2(330, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_uhl4l")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 31
 text = "Master Volume"
 
 [node name="VSeparator" type="VSeparator" parent="HBoxContainer"]
@@ -40,5 +43,5 @@ layout_mode = 2
 custom_minimum_size = Vector2(300, 0)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_uhl4l")
-theme_override_font_sizes/font_size = 32
+theme_override_font_sizes/font_size = 25
 text = "99.2"
