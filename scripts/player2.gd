@@ -3,7 +3,6 @@ extends CharacterBody2D
 
 
 ## Constants
-const JUMP_VELOCITY = -330
 const CROUCH_SPEED_MULTIPLIER = 0.5
 const GRAVITY = 980 # Define a gravity constant for consistency
 
@@ -18,6 +17,7 @@ const GRAVITY = 980 # Define a gravity constant for consistency
 @onready var health_bar: ProgressBar = $ProgressBar
 
 ## Player Properties
+@export var JUMP_VELOCITY = -330
 @export var SPEED = 200.0
 var current_health: int = 3
 @export var max_health: int = 30

@@ -10,7 +10,7 @@ extends CharacterBody2D
 @export var idle_times: Array[float] = [1.0, 1.5, 2.0] # Possible durations for idle state.
 @export var max_health: int = 30 # Maximum health of the enemy.
 @export var attack_damage: int = 5 # Damage dealt by the enemy's attack.
-@export var attack_cooldown: float = 1.0 # Time between attacks.
+@export var attack_cooldown: float = 0.5 # Time between attacks.
 
 # --- Node References (Set in _ready) ---
 @onready var detection_area: Area2D = $Detection # Area2D to detect the player.
@@ -38,7 +38,8 @@ func _ready() -> void:
 	# Connect signals from the Detection Area2D to respond to player entry/exit.
 	#detection_area.body_entered.connect(_on_Detection_body_entered)
 	#detection_area.body_exited.connect(_on_Detection_body_exited)
-
+	print(anim_sprite)
+	print(anim_sprite.animation)
 	# Connect signals from the timers to trigger state changes.
 	#walk_duration_timer.timeout.connect(_on_WalkDurationTimer_timeout)
 	#idle_duration_timer.timeout.connect(_on_IdleDurationTimer_timeout)
@@ -175,7 +176,7 @@ func _change_state(new_state: State) -> void:
 			velocity.x = 0
 			_play_animation("attack")
 			#attack_damage_timer.wait_time = 0.5 # Set your 'X' seconds here (e.g., 0.5 seconds into the animation)
-			attack_damage_timer.start()
+			#attack_damage_timer.start()
 			# Attack cooldown timer starts when the attack animation finishes
 			print("Enemy State: ATTACKING!")
 		State.TAKING_DAMAGE:
@@ -412,3 +413,18 @@ func _on_AttackCooldownTimer_timeout() -> void:
 	# This signal simply means the enemy is ready to attack again.
 	# The actual attack trigger happens in _chase_player or _on_AttackDetection_area_entered.
 	pass
+
+
+func _on_animated_sprite_2d_frame_changed() -> void:
+	#pass
+	#print(anim_sprite)
+	anim_sprite = $AnimatedSprite2D
+	if anim_sprite.animation == "attack" and current_state == State.ATTACKING:
+		if anim_sprite.frame == 7:
+			if is_instance_valid(player_node) and attack_detection_area.overlaps_area(player_node.get_node("PlayerHitbox")):
+				if player_node.has_method("take_damage"):
+					player_node.take_damage(attack_damage)
+					print("Enemy attacked player for ", attack_damage, " damage (timed)!")
+				else:
+					push_warning("Player node does not have a 'take_damage' method!")
+			#print("NOTE: 7th frame")
