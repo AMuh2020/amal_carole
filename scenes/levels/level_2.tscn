@@ -10,7 +10,7 @@
 [ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="7_ibugp"]
 [ext_resource type="AudioStream" uid="uid://74grbf0fs1xr" path="res://sfx/heavy-bubbles-35889.mp3" id="9_3p04p"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_j5whl"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8qukl"]
 texture = ExtResource("1_ra442")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -174,7 +174,7 @@ texture = ExtResource("1_ra442")
 
 [sub_resource type="TileSet" id="TileSet_pxj5x"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_j5whl")
+sources/0 = SubResource("TileSetAtlasSource_8qukl")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_qsp8v"]
 size = Vector2(6359.44, 1.81638)

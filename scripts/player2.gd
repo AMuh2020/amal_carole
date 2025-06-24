@@ -15,15 +15,20 @@ const GRAVITY = 980 # Define a gravity constant for consistency
 @onready var attack_timer: Timer = $Timer # Renamed for clarity
 @onready var attack_collision_shape: CollisionShape2D = $AnimatedSprite2D/PlayerAttackArea/CollisionShape2D
 @onready var health_bar: ProgressBar = $ProgressBar
+@onready var stamina_bar: ProgressBar = $StaminaBar
 
 ## Player Properties
 @export var JUMP_VELOCITY = -330
 @export var SPEED = 200.0
-var current_health: int = 3
-@export var max_health: int = 30
+var current_health: int = 100
+@export var max_health: int = 100
 var current_animation: String = ""
 var previous_crouch_state: bool = false # Still useful for collision shape switching
 var collectible_count = 0
+var attack_damage: int = 20
+var max_stamina:int = 100
+var stamina:int = 100
+var attack_stamina_drain: int = 20
 ## Player States Enum
 
 enum PlayerState {
@@ -183,7 +188,7 @@ func _on_attack_area_area_entered(area: Area2D) -> void:
 	if area.is_in_group("enemy") and current_state == PlayerState.ATTACKING:
 		var enemy = area.get_parent()
 		if enemy and enemy.has_method("take_damage"): # Defensive check
-			enemy.take_damage(12)
+			enemy.take_damage(attack_damage)
 
 ## State-Specific Functions (Cont.)
 
@@ -195,7 +200,10 @@ func handle_idle_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump") and is_on_floor():
 		transition_to_state(PlayerState.JUMPING)
 	elif event.is_action_pressed("attack"):
-		transition_to_state(PlayerState.ATTACKING)
+		if stamina-attack_stamina_drain > 0:
+			stamina -= attack_stamina_drain
+			stamina_bar.update_stamina(stamina)
+			transition_to_state(PlayerState.ATTACKING)
 
 func handle_idle_physics(delta: float) -> void:
 	var direction = Input.get_axis("move_left", "move_right")
@@ -356,3 +364,14 @@ func handle_death_input(event: InputEvent) -> void:
 
 func handle_death_physics(delta: float) -> void:
 	pass # Do nothing when dead
+
+
+func _on_stamina_recover_timeout() -> void:
+	print("recovering check")
+	if stamina < max_stamina:
+		if stamina + 5 > max_stamina:
+			stamina = max_stamina
+			
+		else:
+			stamina += 5
+		stamina_bar.update_stamina(stamina)

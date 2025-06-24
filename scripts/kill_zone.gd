@@ -6,7 +6,7 @@ extends Area2D
 func _on_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
 		print("you died")
-		body.take_damage(99)
+		body.take_damage(200)
 		lava_sfx.play()
 		$CollisionShape2D.disabled = true
 		visible = false
