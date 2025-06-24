@@ -19,7 +19,7 @@ func _on_start_button_pressed():
 	MainMenuMusic.stop()
 	TransitionScene.transition()
 	await get_tree().create_timer(0.5).timeout
-	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/prologue_1.tscn")
 
 
 func _on_options_button_pressed() -> void:

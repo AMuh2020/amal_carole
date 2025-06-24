@@ -12,7 +12,6 @@
 [ext_resource type="Texture2D" uid="uid://bgdwfvn4uqc62" path="res://assets/MC_Knight/Colour1/NoOutline/120x80_PNGSheets/_JumpFallInbetween.png" id="4_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://i53fomxmrwlr" path="res://assets/MC_Knight/Colour1/Outline/120x80_PNGSheets/_Death.png" id="5_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://bx2amou5jivau" path="res://assets/MC_Knight/Colour1/Outline/120x80_PNGSheets/_Hit.png" id="6_jej6c"]
-[ext_resource type="Script" uid="uid://dpyhbi2jm72la" path="res://scripts/stamina_bar.gd" id="12_4tsjx"]
 [ext_resource type="AudioStream" uid="uid://bvo715a0xx33" path="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Action & Weapons/hit_7.mp3" id="12_hgu2g"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_oaxmr"]
@@ -457,6 +456,20 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tsjx"]
 bg_color = Color(0, 0.721569, 1, 1)
 
+[sub_resource type="GDScript" id="GDScript_80js2"]
+script/source = "extends ProgressBar
+
+@onready var player: CharacterBody2D = $\"..\"
+
+func _ready() -> void:
+	if player.has_method(\"take_damage\"):
+		max_value = player.max_health
+		value = player.max_health
+
+func update_health(health: int):
+	value = health
+"
+
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 5
 collision_layer = 2
@@ -466,14 +479,8 @@ script = ExtResource("1_y6ler")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -40)
 sprite_frames = SubResource("SpriteFrames_3v2ag")
-<<<<<<< HEAD
-animation = &"jump_falling"
+animation = &"idle"
 autoplay = "idle"
-frame_progress = 0.629642
-=======
-animation = &"attack"
-autoplay = "idle"
->>>>>>> 95659fb81c7a96f2a5124e2fff10a284d8b920a2
 offset = Vector2(5, 0)
 
 [node name="PlayerAttackArea" type="Area2D" parent="AnimatedSprite2D" groups=["sword"]]
@@ -481,7 +488,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/PlayerAttackArea"]
-position = Vector2(28, 26.5)
+position = Vector2(32, 26.5)
 shape = SubResource("RectangleShape2D_3v2ag")
 disabled = true
 
@@ -490,7 +497,7 @@ position = Vector2(-1, -17.5)
 shape = SubResource("RectangleShape2D_y4r1p")
 
 [node name="CollisionShape2DCrouch" type="CollisionShape2D" parent="."]
-position = Vector2(-1, -12)
+position = Vector2(0, -12)
 shape = SubResource("RectangleShape2D_d2wvv")
 disabled = true
 
@@ -520,7 +527,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_4tsjx")
 max_value = 30.0
 value = 30.0
 show_percentage = false
-script = ExtResource("12_4tsjx")
+script = SubResource("GDScript_80js2")
 
 [node name="PlayerHitbox" type="Area2D" parent="." groups=["player"]]
 visible = false
@@ -536,14 +543,7 @@ shape = SubResource("RectangleShape2D_y4r1p")
 stream = ExtResource("12_hgu2g")
 bus = &"SFX"
 
-[node name="StaminaRecover" type="Timer" parent="."]
-autostart = true
-
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="AnimatedSprite2D/PlayerAttackArea" to="." method="_on_attack_area_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
-<<<<<<< HEAD
-=======
-[connection signal="timeout" from="StaminaRecover" to="." method="_on_stamina_recover_timeout"]
->>>>>>> 95659fb81c7a96f2a5124e2fff10a284d8b920a2
