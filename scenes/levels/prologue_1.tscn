@@ -1,12 +1,12 @@
 [gd_scene load_steps=14 format=4 uid="uid://kcq47ekorm5a"]
 
-[ext_resource type="Script" uid="uid://d2q3l63bpgt5k" path="res://scenes/levels/panel.gd" id="1_4178q"]
+[ext_resource type="Script" path="res://scenes/levels/panel.gd" id="1_4178q"]
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_otmpu"]
 [ext_resource type="Script" uid="uid://mslog8fqohxm" path="res://scenes/levels/prologue_1.gd" id="1_s7uqr"]
 [ext_resource type="PackedScene" uid="uid://ciotouojb2y8v" path="res://scenes/players_and_enemies/player.tscn" id="2_4178q"]
 [ext_resource type="PackedScene" uid="uid://dihl4ylc1f354" path="res://scenes/players_and_enemies/pet_cat.tscn" id="3_gd7os"]
-[ext_resource type="Script" uid="uid://b2ry2gg6wisf6" path="res://scenes/players_and_enemies/prologue1_player1.gd" id="4_gd7os"]
-[ext_resource type="Script" uid="uid://dfsh2qh7ik1ik" path="res://scenes/players_and_enemies/prologue1_player2.gd" id="6_sdj14"]
+[ext_resource type="Script" path="res://scenes/players_and_enemies/prologue1_player1.gd" id="4_gd7os"]
+[ext_resource type="Script" path="res://scenes/players_and_enemies/prologue1_player2.gd" id="6_sdj14"]
 [ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="7_bpif2"]
 [ext_resource type="AudioStream" uid="uid://prtg8bb2ir2o" path="res://music/medieval-ambient-236809.mp3" id="9_wo61c"]
 

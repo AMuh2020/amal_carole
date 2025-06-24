@@ -1,7 +1,7 @@
-[gd_scene load_steps=16 format=4 uid="uid://dfmwiglauhr3l"]
+[gd_scene load_steps=18 format=4 uid="uid://dfmwiglauhr3l"]
 
-[ext_resource type="Script" path="res://scenes/levels/level_5.gd" id="1_dwyms"]
-[ext_resource type="Script" path="res://scenes/levels/end_scene.gd" id="1_hldbq"]
+[ext_resource type="Script" uid="uid://cqsg2lsllifrl" path="res://scenes/levels/level_5.gd" id="1_dwyms"]
+[ext_resource type="Script" uid="uid://d28k6hijdqkcc" path="res://scenes/levels/end_scene.gd" id="1_hldbq"]
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_r1vs7"]
 [ext_resource type="PackedScene" uid="uid://ciotouojb2y8v" path="res://scenes/players_and_enemies/player.tscn" id="3_fsnos"]
 [ext_resource type="Script" path="res://scenes/players_and_enemies/level_5_knight.gd" id="4_mxx4w"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scenes/players_and_enemies/level_5_samurai.gd" id="6_tqnj0"]
 [ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="8_6xwso"]
 [ext_resource type="PackedScene" uid="uid://dihl4ylc1f354" path="res://scenes/players_and_enemies/pet_cat.tscn" id="9_5ke18"]
+[ext_resource type="Script" uid="uid://b3sj28eoys38e" path="res://scenes/players_and_enemies/level_5_cat.gd" id="10_6xwso"]
 [ext_resource type="PackedScene" uid="uid://lao1yogqhtkj" path="res://scenes/players_and_enemies/pet_panda.tscn" id="10_j14br"]
 [ext_resource type="AudioStream" uid="uid://bdtskx6withqc" path="res://music/victory-361739.mp3" id="11_dwyms"]
 
@@ -190,6 +191,12 @@ _data = {
 }
 point_count = 57
 
+[sub_resource type="Curve2D" id="Curve2D_5ke18"]
+_data = {
+"points": PackedVector2Array(0, 0, 0, 0, 1117, 206, 0, 0, 0, 0, 1114, 184, 0, 0, 0, 0, 1110, 174, 0, 0, 0, 0, 1103, 169, 0, 0, 0, 0, 1094, 172, 0, 0, 0, 0, 1087, 179, 0, 0, 0, 0, 1081, 187, 0, 0, 0, 0, 1076, 195, 0, 0, 0, 0, 1072, 203, 0, 0, 0, 0, 1078, 184, 0, 0, 0, 0, 1083, 172, 0, 0, 0, 0, 1093, 166, 0, 0, 0, 0, 1103, 163, 0, 0, 0, 0, 1106, 178, 0, 0, 0, 0, 1111, 189, 0, 0, 0, 0, 1116, 196, 0, 0, 0, 0, 1121, 202, 0, 0, 0, 0, 1106, 189, 0, 0, 0, 0, 1099, 180, 0, 0, 0, 0, 1093, 178, 0, 0, 0, 0, 1087, 184, 0, 0, 0, 0, 1082, 194, 0, 0, 0, 0, 1078, 201, 0, 0, 0, 0, 1092, 188, 0, 0, 0, 0, 1096, 186, 0, 0, 0, 0, 1100, 190, 0, 0, 0, 0, 1106, 196, 0, 0, 0, 0, 1110, 203, 0, 0, 0, 0, 1106, 204, 0, 0, 0, 0, 1098, 195, 0, 0, 0, 0, 1078, 172, 0, 0, 0, 0, 1069, 169, 0, 0, 0, 0, 1064, 172, 0, 0, 0, 0, 1060, 182, 0, 0, 0, 0, 1054, 191, 0, 0, 0, 0, 1048, 199, 0, 0, 0, 0, 1040, 203)
+}
+point_count = 37
+
 [node name="Level_5" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -301,13 +308,23 @@ theme_override_fonts/font = ExtResource("8_6xwso")
 text = "The samurai defeated all the 
 levels and villians..."
 
-[node name="PetCat" parent="End_Scene" instance=ExtResource("9_5ke18")]
-position = Vector2(1101, 209)
+[node name="PetPanda" parent="End_Scene" instance=ExtResource("10_j14br")]
+position = Vector2(1098, 529)
+scale = Vector2(-1, 1)
 script = null
 
-[node name="CharacterBody2D" parent="End_Scene" instance=ExtResource("10_j14br")]
-position = Vector2(1098, 529)
-script = null
+[node name="Path2D3" type="Path2D" parent="End_Scene"]
+curve = SubResource("Curve2D_5ke18")
+
+[node name="PathFollow2D" type="PathFollow2D" parent="End_Scene/Path2D3"]
+position = Vector2(1117, 206)
+rotation = -1.70632
+rotates = false
+
+[node name="PetCat" parent="End_Scene/Path2D3/PathFollow2D" instance=ExtResource("9_5ke18")]
+rotation = -1.43527
+scale = Vector2(-1, -1)
+script = ExtResource("10_6xwso")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("11_dwyms")

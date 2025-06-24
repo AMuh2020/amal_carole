@@ -6,8 +6,13 @@ extends Panel
 @onready var path2d2 = $Path2D2 as Path2D
 @onready var path_follow2 = $Path2D2/PathFollow2D2 as PathFollow2D
 
+@onready var path2d3: Path2D = $Path2D3
+@onready var path_follow3: PathFollow2D = $Path2D3/PathFollow2D
+
+
 const SPEED1 = 90.0
 const SPEED2 = 90.0
+const SPEED3 = 30.0
 
 func _ready():
 	print("My node path: ", get_path())
@@ -25,3 +30,7 @@ func _process(delta: float) -> void:
 	path_follow2.progress += SPEED2 * delta
 	if path_follow2.progress > path2d2.curve.get_baked_length():
 		path_follow2.progress = 0
+	
+	path_follow3.progress += SPEED3 * delta
+	if path_follow3.progress > path2d3.curve.get_baked_length():
+		path_follow3.progress = 0

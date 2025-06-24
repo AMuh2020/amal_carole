@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cjkpavwvu62sj"]
+[gd_scene load_steps=3 format=3 uid="uid://cjkpavwvu62sj"]
 
 [ext_resource type="FontFile" uid="uid://cnhxno38oi627" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8-Bold.ttf" id="1_oi3pl"]
+[ext_resource type="Script" uid="uid://cka04kgc6dxsd" path="res://scenes/levels/final_scene.gd" id="1_s63sb"]
 
 [node name="Final Scene" type="CanvasLayer"]
+script = ExtResource("1_s63sb")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 anchors_preset = 15
@@ -28,3 +30,24 @@ grow_vertical = 2
 theme_override_fonts/font = ExtResource("1_oi3pl")
 theme_override_font_sizes/font_size = 75
 text = "THE END"
+
+[node name="Label2" type="Label" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -495.5
+offset_top = -251.0
+offset_right = 495.5
+offset_bottom = -168.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("1_oi3pl")
+theme_override_font_sizes/font_size = 39
+text = "Knight & Samurai: Pets Quest
+By AMAL & CAROLE"
+horizontal_alignment = 1
+vertical_alignment = 1
+uppercase = true
