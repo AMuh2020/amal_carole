@@ -1,8 +1,9 @@
-[gd_scene load_steps=70 format=3 uid="uid://ciotouojb2y8v"]
+[gd_scene load_steps=75 format=3 uid="uid://ciotouojb2y8v"]
 
 [ext_resource type="Texture2D" uid="uid://ctceup0mncabg" path="res://assets/MC_Knight/Colour1/NoOutline/120x80_PNGSheets/_Idle.png" id="1_3vyb7"]
 [ext_resource type="Script" uid="uid://bv4aecilrl6wk" path="res://scripts/player2.gd" id="1_y6ler"]
 [ext_resource type="Script" uid="uid://cmwpa2126gxd8" path="res://scripts/player_health_bar.gd" id="2_0iqnh"]
+[ext_resource type="Texture2D" uid="uid://bsuy5dqthwx31" path="res://assets/MC_Knight/Colour1/NoOutline/120x80_PNGSheets/_AttackNoMovement.png" id="2_80js2"]
 [ext_resource type="Texture2D" uid="uid://b8i0fm3hq8swp" path="res://assets/MC_Knight/Colour1/NoOutline/120x80_PNGSheets/_Attack.png" id="2_tuyoq"]
 [ext_resource type="Texture2D" uid="uid://ca0l165mhk3yp" path="res://assets/MC_Knight/Colour1/NoOutline/120x80_PNGSheets/_Jump.png" id="3_dqkch"]
 [ext_resource type="Texture2D" uid="uid://ygsuufp0mqfd" path="res://assets/MC_Knight/Colour1/NoOutline/120x80_PNGSheets/_Run.png" id="3_qhqgy"]
@@ -11,7 +12,24 @@
 [ext_resource type="Texture2D" uid="uid://bgdwfvn4uqc62" path="res://assets/MC_Knight/Colour1/NoOutline/120x80_PNGSheets/_JumpFallInbetween.png" id="4_qlg0r"]
 [ext_resource type="Texture2D" uid="uid://i53fomxmrwlr" path="res://assets/MC_Knight/Colour1/Outline/120x80_PNGSheets/_Death.png" id="5_3v2ag"]
 [ext_resource type="Texture2D" uid="uid://bx2amou5jivau" path="res://assets/MC_Knight/Colour1/Outline/120x80_PNGSheets/_Hit.png" id="6_jej6c"]
+[ext_resource type="Script" uid="uid://dpyhbi2jm72la" path="res://scripts/stamina_bar.gd" id="12_4tsjx"]
 [ext_resource type="AudioStream" uid="uid://bvo715a0xx33" path="res://sfx/HB_SFX5_lazybraingames_edition_MP3/Action & Weapons/hit_7.mp3" id="12_hgu2g"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_oaxmr"]
+atlas = ExtResource("2_80js2")
+region = Rect2(0, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qmk8t"]
+atlas = ExtResource("2_80js2")
+region = Rect2(120, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_1om2q"]
+atlas = ExtResource("2_80js2")
+region = Rect2(240, 0, 120, 80)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_eks03"]
+atlas = ExtResource("2_80js2")
+region = Rect2(360, 0, 120, 80)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_31cv2"]
 atlas = ExtResource("2_tuyoq")
@@ -209,6 +227,23 @@ region = Rect2(1080, 0, 120, 80)
 animations = [{
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_oaxmr")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qmk8t")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_1om2q")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_eks03")
+}],
+"loop": false,
+"name": &"attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_31cv2")
 }, {
 "duration": 1.0,
@@ -221,7 +256,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_wqfne")
 }],
 "loop": false,
-"name": &"attack",
+"name": &"attackMove",
 "speed": 10.0
 }, {
 "frames": [{
@@ -398,7 +433,7 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3v2ag"]
-size = Vector2(42, 27)
+size = Vector2(34, 27)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y4r1p"]
 size = Vector2(14, 35)
@@ -422,20 +457,6 @@ bg_color = Color(0, 0, 0, 1)
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_4tsjx"]
 bg_color = Color(0, 0.721569, 1, 1)
 
-[sub_resource type="GDScript" id="GDScript_80js2"]
-script/source = "extends ProgressBar
-
-@onready var player: CharacterBody2D = $\"..\"
-
-func _ready() -> void:
-	if player.has_method(\"take_damage\"):
-		max_value = player.max_health
-		value = player.max_health
-
-func update_health(health: int):
-	value = health
-"
-
 [node name="Player" type="CharacterBody2D" groups=["player"]]
 z_index = 5
 collision_layer = 2
@@ -445,9 +466,8 @@ script = ExtResource("1_y6ler")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -40)
 sprite_frames = SubResource("SpriteFrames_3v2ag")
-animation = &"run"
+animation = &"attack"
 autoplay = "idle"
-frame_progress = 0.860145
 offset = Vector2(5, 0)
 
 [node name="PlayerAttackArea" type="Area2D" parent="AnimatedSprite2D" groups=["sword"]]
@@ -455,7 +475,7 @@ collision_layer = 4
 collision_mask = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AnimatedSprite2D/PlayerAttackArea"]
-position = Vector2(32, 26.5)
+position = Vector2(28, 26.5)
 shape = SubResource("RectangleShape2D_3v2ag")
 disabled = true
 
@@ -464,7 +484,7 @@ position = Vector2(-1, -17.5)
 shape = SubResource("RectangleShape2D_y4r1p")
 
 [node name="CollisionShape2DCrouch" type="CollisionShape2D" parent="."]
-position = Vector2(0, -12)
+position = Vector2(-1, -12)
 shape = SubResource("RectangleShape2D_d2wvv")
 disabled = true
 
@@ -494,7 +514,7 @@ theme_override_styles/fill = SubResource("StyleBoxFlat_4tsjx")
 max_value = 30.0
 value = 30.0
 show_percentage = false
-script = SubResource("GDScript_80js2")
+script = ExtResource("12_4tsjx")
 
 [node name="PlayerHitbox" type="Area2D" parent="." groups=["player"]]
 visible = false
@@ -510,7 +530,11 @@ shape = SubResource("RectangleShape2D_y4r1p")
 stream = ExtResource("12_hgu2g")
 bus = &"SFX"
 
+[node name="StaminaRecover" type="Timer" parent="."]
+autostart = true
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="AnimatedSprite2D/PlayerAttackArea" to="." method="_on_attack_area_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="StaminaRecover" to="." method="_on_stamina_recover_timeout"]
