@@ -17,7 +17,8 @@ func _process(delta: float) -> void:
 
 func _on_start_button_pressed():
 	MainMenuMusic.stop()
-	await get_tree().process_frame
+	TransitionScene.transition()
+	await get_tree().create_timer(0.5).timeout
 	get_tree().change_scene_to_file("res://scenes/levels/level_1.tscn")
 
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://c82telybq8pjv"]
+[gd_scene load_steps=15 format=4 uid="uid://c82telybq8pjv"]
 
 [ext_resource type="Script" uid="uid://bsl83kcy3vnmp" path="res://scenes/levels/level_3.gd" id="1_o8c3j"]
 [ext_resource type="PackedScene" uid="uid://ciotouojb2y8v" path="res://scenes/players_and_enemies/player.tscn" id="2_2bnyt"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://bxvhaj3mlidwf" path="res://scenes/miscellaneous/door.tscn" id="8_josfm"]
 [ext_resource type="PackedScene" uid="uid://dyxly478iefv1" path="res://scenes/players_and_enemies/Dragon.tscn" id="9_lgrx1"]
 [ext_resource type="PackedScene" uid="uid://dqmx0454dl7c2" path="res://scenes/interactables/next_level_portal.tscn" id="10_fhpes"]
+[ext_resource type="AudioStream" uid="uid://d3x7lo0cvft1v" path="res://music/DuringBattles.mp3" id="11_n6eey"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0qepi"]
 texture = ExtResource("3_n6eey")
@@ -479,3 +480,8 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_n6eey")
+autoplay = true
+bus = &"Music "

@@ -1,15 +1,16 @@
-[gd_scene load_steps=24 format=4 uid="uid://bag5qxtq8lejf"]
+[gd_scene load_steps=25 format=4 uid="uid://bag5qxtq8lejf"]
 
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_06474"]
 [ext_resource type="Script" uid="uid://dw5fdysk053hg" path="res://scenes/levels/level_4.gd" id="1_glw47"]
 [ext_resource type="Script" uid="uid://n0j66o4vl0ud" path="res://scripts/sand_storm.gd" id="2_anwe6"]
 [ext_resource type="PackedScene" uid="uid://mn1b5goqhlul" path="res://scenes/players_and_enemies/samurai_player.tscn" id="2_vmkp1"]
-[ext_resource type="PackedScene" uid="uid://b6wo2kc5kppxl" path="res://scenes/interactables/kill_zone.tscn" id="2_w6h2s"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/kill_zone.tscn" id="2_w6h2s"]
 [ext_resource type="Texture2D" uid="uid://68kinyg37mt8" path="res://assets/random_stuff/sandstorm 2x2.png" id="4_anwe6"]
 [ext_resource type="Script" uid="uid://cobdmviitwtr7" path="res://scripts/enemy_group.gd" id="5_um320"]
 [ext_resource type="PackedScene" uid="uid://jg383sevgif8" path="res://scenes/players_and_enemies/skeleton_enemy.tscn" id="6_glw47"]
 [ext_resource type="PackedScene" uid="uid://ct20g567hani0" path="res://scenes/miscellaneous/RoamWall.tscn" id="7_4wsov"]
 [ext_resource type="PackedScene" uid="uid://bxvhaj3mlidwf" path="res://scenes/miscellaneous/door.tscn" id="8_qvnao"]
+[ext_resource type="AudioStream" uid="uid://d3x7lo0cvft1v" path="res://music/DuringBattles.mp3" id="11_4wsov"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_glw47"]
 texture = ExtResource("1_06474")
@@ -527,3 +528,8 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_4wsov")
+autoplay = true
+bus = &"Music "
