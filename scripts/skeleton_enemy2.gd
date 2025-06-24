@@ -317,12 +317,6 @@ func _on_Detection_area_exited(area: Area2D) -> void:
 		if not player_detected: # Only revert if no other player hitbox is still in area
 			_change_state(State.IDLE)
 
-# Called when a body enters the Detection Area2D.
-func _on_Detection_body_entered(body: Node2D) -> void:
-	# Check if the entered body is the player (you might use a group or specific node name).
-	if body.name == "Player": # Assuming your player node is named "Player"
-		player_detected = true
-		_change_state(State.CHASING)
 
 # Called when a body exits the Detection Area2D.
 func _on_Detection_body_exited(body: Node2D) -> void:
