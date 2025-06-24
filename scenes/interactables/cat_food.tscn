@@ -1,7 +1,8 @@
-[gd_scene load_steps=6 format=3 uid="uid://catk8242vibfi"]
+[gd_scene load_steps=7 format=3 uid="uid://catk8242vibfi"]
 
 [ext_resource type="Script" uid="uid://sfimimxrbv7m" path="res://scenes/interactables/collectible.gd" id="1_4c81s"]
 [ext_resource type="Texture2D" uid="uid://bcmhrqo0g0myf" path="res://assets/random_stuff/cat food pixel art by me.png" id="1_e1cuf"]
+[ext_resource type="AudioStream" uid="uid://ds1qle0xd1m4y" path="res://sfx/cat-meow-6226.mp3" id="3_yq3f0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_4c81s"]
 atlas = ExtResource("1_e1cuf")
@@ -34,5 +35,10 @@ offset = Vector2(0, 33)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_d5gmh")
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_yq3f0")
+volume_db = -15.0
+bus = &"SFX"
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

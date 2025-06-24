@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://clv2qhvnt4ks1"]
+[gd_scene load_steps=6 format=3 uid="uid://clv2qhvnt4ks1"]
 
 [ext_resource type="Script" uid="uid://d031dq24mnxt0" path="res://scripts/sand_blocks.gd" id="1_wnut3"]
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="2_wjek7"]
+[ext_resource type="AudioStream" uid="uid://cyh5lepi0ulon" path="res://sfx/sand-shovel-digging-356916 (mp3cut.net).mp3" id="3_wjek7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wnut3"]
 size = Vector2(16, 16)
@@ -29,3 +30,8 @@ shape = SubResource("RectangleShape2D_wjek7")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.5
 one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("3_wjek7")
+volume_db = -5.0
+bus = &"SFX"

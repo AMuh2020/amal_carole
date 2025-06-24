@@ -1,6 +1,6 @@
-[gd_scene load_steps=20 format=4 uid="uid://h0dg0j1q4t5t"]
+[gd_scene load_steps=21 format=4 uid="uid://h0dg0j1q4t5t"]
 
-[ext_resource type="Script" path="res://scenes/levels/level_1.gd" id="1_iwr0g"]
+[ext_resource type="Script" uid="uid://brpbd5gwe2hcl" path="res://scenes/levels/level_1.gd" id="1_iwr0g"]
 [ext_resource type="PackedScene" uid="uid://jg383sevgif8" path="res://scenes/players_and_enemies/skeleton_enemy.tscn" id="1_nsrm0"]
 [ext_resource type="PackedScene" uid="uid://bam1sden6qo4f" path="res://scenes/pause_menu.tscn" id="2_bahl2"]
 [ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="2_dga24"]
@@ -12,9 +12,10 @@
 [ext_resource type="PackedScene" uid="uid://ct20g567hani0" path="res://scenes/miscellaneous/RoamWall.tscn" id="7_oc4kc"]
 [ext_resource type="PackedScene" uid="uid://c6lwpthns7ndf" path="res://scenes/interactables/potion.tscn" id="8_s8va5"]
 [ext_resource type="PackedScene" uid="uid://catk8242vibfi" path="res://scenes/interactables/cat_food.tscn" id="10_qxy0u"]
-[ext_resource type="PackedScene" uid="uid://b6wo2kc5kppxl" path="res://scenes/interactables/kill_zone.tscn" id="11_excbq"]
-[ext_resource type="PackedScene" uid="uid://duid5ll74gb3x" path="res://scenes/interactables/spike.tscn" id="12_iav0o"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/kill_zone.tscn" id="11_excbq"]
+[ext_resource type="PackedScene" path="res://scenes/interactables/spike.tscn" id="12_iav0o"]
 [ext_resource type="PackedScene" uid="uid://dqmx0454dl7c2" path="res://scenes/interactables/next_level_portal.tscn" id="13_dnkej"]
+[ext_resource type="AudioStream" uid="uid://74grbf0fs1xr" path="res://sfx/heavy-bubbles-35889.mp3" id="14_bahl2"]
 [ext_resource type="AudioStream" uid="uid://d3x7lo0cvft1v" path="res://music/DuringBattles.mp3" id="14_mm8aj"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
@@ -440,6 +441,11 @@ position = Vector2(2364, -284)
 position = Vector2(1512.5, -46)
 shape = SubResource("RectangleShape2D_iav0o")
 
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="KillZone"]
+stream = ExtResource("14_bahl2")
+volume_db = 20.0
+bus = &"SFX"
+
 [node name="Spikes" type="Node" parent="."]
 
 [node name="Spike" parent="Spikes" instance=ExtResource("12_iav0o")]
@@ -465,7 +471,6 @@ position = Vector2(3118, -304)
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("14_mm8aj")
-volume_db = -5.0
 autoplay = true
 bus = &"Music "
 
