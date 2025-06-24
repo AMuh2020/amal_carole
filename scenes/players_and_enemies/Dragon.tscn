@@ -541,6 +541,32 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": SubResource("AtlasTexture_ft08n")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_j22hj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_b88a5")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4fhuk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_jfw5j")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_e3116")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_s3t5o")
+}],
+"loop": false,
+"name": &"fireball_attack",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": SubResource("AtlasTexture_1he8f")
 }, {
 "duration": 1.0,
@@ -698,8 +724,10 @@ script = ExtResource("1_j6sx1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b2pgl")
-animation = &"melee_attack"
+animation = &"fireball_attack"
 autoplay = "idle"
+frame = 6
+frame_progress = 1.0
 
 [node name="BreathAttackArea" type="Area2D" parent="AnimatedSprite2D"]
 collision_mask = 3

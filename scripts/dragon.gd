@@ -97,7 +97,7 @@ func take_damage(amount: int) -> void:
 
 	current_health -= amount
 	health_bar.update_health(current_health)
-	print("BOSS: took ", amount, " damage. Current health: ", current_health)
+	#print("BOSS: took ", amount, " damage. Current health: ", current_health)
 
 	if current_health <= 0:
 		_die()
@@ -116,9 +116,9 @@ func _change_state(new_state: State) -> void:
 	#if current_state == State.BREATH_ATTACKING and new_state != State.BREATH_ATTACKING:
 		#breath_attack_area.set_deferred("monitoring", false) # Use deferred for safety
 		#breath_damage_timer.stop()
-	print("Boss State: Changed from", State.keys()[current_state], " to ", State.keys()[new_state])
+	#print("Boss State: Changed from", State.keys()[current_state], " to ", State.keys()[new_state])
 	current_state = new_state
-	print("Boss State: ", State.keys()[current_state])
+	#print("Boss State: ", State.keys()[current_state])
 	
 
 	match current_state:
@@ -197,7 +197,7 @@ func _chase_player() -> void:
 	var player_in_breath_range = breath_attack_area.overlaps_area(player_node.get_node("PlayerHitbox"))
 	#print("BOSS: player ov ", player_node.get_node("PlayerHitbox"))
 	#print("BOSS: player in breath reange ", player_in_breath_range, " can breath", can_breath)
-	print("BOSS: can fireball ", can_fireball)
+	#print("BOSS: can fireball ", can_fireball)
 	#print("Boss: player node ", player_node)
 	# prio breath attack if player is in range and ready
 	if player_in_breath_range and can_breath:
@@ -240,7 +240,7 @@ func fire_fireball():
 
 func _on_Detection_body_entered(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		print("BOSS: Player entered boss detection area.")
+		#print("BOSS: Player entered boss detection area.")
 		player_detected = true
 		player_node = body
 		# Boss starts chasing immediately once player is detected
@@ -248,7 +248,7 @@ func _on_Detection_body_entered(body: Node2D) -> void:
 
 func _on_Detection_body_exited(body: Node2D) -> void:
 	if body.is_in_group("player"):
-		print("BOSS: Player exited boss detection area.")
+		#print("BOSS: Player exited boss detection area.")
 		player_detected = false
 		player_node = null
 		# In an enclosed space, the player shouldn't easily exit the main detection.
@@ -268,7 +268,7 @@ func _on_BreathCooldownTimer_timeout() -> void:
 
 func _on_BreathAttackDuration_timeout(timer: Timer) -> void:
 	# This is called after the breath attack duration is over
-	print("Breath attack duration finished.")
+	#print("Breath attack duration finished.")
 	#breath_attack_area.set_deferred("monitoring", false)
 	breath_damage_timer.stop()
 	timer.queue_free() # Clean up the temporary timer
@@ -280,7 +280,7 @@ func _on_BreathAttackDuration_timeout(timer: Timer) -> void:
 		_on_Detection_body_exited(player_node) # Simulate player exiting if not detected
 
 func _on_BreathAttack_Impact():
-	print("BOSS BREATH ATTACKING")
+	#print("BOSS BREATH ATTACKING")
 	# This function is called periodically during the breath attack duration
 	if current_state == State.BREATH_ATTACKING and is_instance_valid(player_node):
 		for area in breath_attack_area.get_overlapping_areas():
@@ -288,7 +288,7 @@ func _on_BreathAttack_Impact():
 				var player_body = area.owner # Get the root player node
 				if player_body.has_method("take_damage"):
 					player_body.take_damage(breath_damage)
-					print("Boss hit player with breath for ", breath_damage, " damage!")
+					#print("Boss hit player with breath for ", breath_damage, " damage!")
 				else:
 					push_warning("Player node does not have a 'take_damage' method!")
 
@@ -314,25 +314,25 @@ func _on_AnimatedSprite2D_animation_finished() -> void:
 				_on_Detection_body_exited(player_node)
 		"death":
 			queue_free()
-			print("Boss removed from scene.")
+			#print("Boss removed from scene.")
 
 func _on_frame_changed():
 	if anim_sprite.animation == "melee_attack" && anim_sprite.frame == 8:
 		_on_MeleeAttack_Impact()
 	if anim_sprite.animation == "breath_attack" && anim_sprite.frame == 7:
-		print("BOSS: frame 7 reached breath attack")
+		#print("BOSS: frame 7 reached breath attack")
 		_on_BreathAttack_Impact()
 	
 
 # Function for melee attack damage application
 # This should be called via an AnimationPlayer signal at the point of impact in your "melee_attack" animation
 func _on_MeleeAttack_Impact() -> void:
-	print("BOSS MELEE IMPACT")
+	#print("BOSS MELEE IMPACT")
 	if current_state == State.MELEE_ATTACKING and is_instance_valid(player_node):
 		if melee_detection_area.overlaps_area(player_node.get_node("PlayerHitbox")):
 			if player_node.has_method("take_damage"):
 				player_node.take_damage(melee_damage)
-				print("Boss hit player with melee for ", melee_damage, " damage!")
+				#print("Boss hit player with melee for ", melee_damage, " damage!")
 			else:
 				push_warning("Player node does not have a 'take_damage' method!")
 
