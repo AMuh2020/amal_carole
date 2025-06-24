@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://pmogs2p4flmd"]
+[gd_scene load_steps=14 format=4 uid="uid://pmogs2p4flmd"]
 
 [ext_resource type="Script" uid="uid://54sw2qrcmnnv" path="res://scripts/main_menu.gd" id="1_ob46e"]
 [ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="2_uqeha"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://dap6y3ljuei43" path="res://scenes/players_and_enemies/main_menu_player.tscn" id="5_3ovsr"]
 [ext_resource type="PackedScene" uid="uid://mn1b5goqhlul" path="res://scenes/players_and_enemies/samurai_player.tscn" id="6_thkx5"]
 [ext_resource type="Script" uid="uid://cdaxv1071gbuq" path="res://scripts/main_menu_player_2.gd" id="7_x2yjq"]
+[ext_resource type="Texture2D" uid="uid://21yx7w8cl4nw" path="res://logo/Knight-Samurai-Pet-Quest-6-23-2025.png" id="9_thkx5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_thkx5"]
 texture = ExtResource("4_uqeha")
@@ -196,10 +197,6 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_ob46e")
 
-[node name="options_menu" parent="." instance=ExtResource("3_wem23")]
-visible = false
-layout_mode = 1
-
 [node name="Panel" type="Panel" parent="."]
 layout_mode = 1
 anchors_preset = 15
@@ -250,6 +247,10 @@ position = Vector2(-3.00003, -0.999995)
 rotation = 3.11018
 script = ExtResource("7_x2yjq")
 
+[node name="Knight-samurai-pet-quest-6-23-2025" type="Sprite2D" parent="."]
+position = Vector2(582, 80)
+texture = ExtResource("9_thkx5")
+
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 1
 anchors_preset = -1
@@ -286,6 +287,10 @@ theme_override_colors/font_hover_color = Color(0.752941, 0.792157, 0.133333, 1)
 theme_override_fonts/font = ExtResource("2_uqeha")
 text = "QUIT"
 alignment = 0
+
+[node name="options_menu" parent="." instance=ExtResource("3_wem23")]
+visible = false
+layout_mode = 1
 
 [connection signal="pressed" from="VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="VBoxContainer/OptionsButton" to="." method="_on_options_button_pressed"]

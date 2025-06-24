@@ -7,12 +7,13 @@ extends Node2D
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	interaction_area.interact = Callable(self, "_on_interact")
+	drinking_sfx.finished.connect(on_sfx_finished)
 	
-func _on_interact():
-	print("drinking potions")
-	#get player to drink potion
+func _on_interact() -> void:
 	drinking_sfx.play()
-	print("Is playing: ", drinking_sfx.playing)
 	var player = get_tree().get_first_node_in_group("player")
 	player.heal(10)
+	hide()
+
+func on_sfx_finished() -> void:
 	queue_free()

@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://cyh5lepi0ulon"
+path="res://.godot/imported/sand-shovel-digging-356916 (mp3cut.net).mp3-286ad16bea1fdd4a1bb9aa1ebb4cdf0f.mp3str"
+
+[deps]
+
+source_file="res://sfx/sand-shovel-digging-356916 (mp3cut.net).mp3"
+dest_files=["res://.godot/imported/sand-shovel-digging-356916 (mp3cut.net).mp3-286ad16bea1fdd4a1bb9aa1ebb4cdf0f.mp3str"]
+
+[params]
+
+loop=false
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4
