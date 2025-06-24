@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=3 uid="uid://cuun4pxiwolqj"]
+[gd_scene load_steps=40 format=3 uid="uid://db1s6hkfgecip"]
 
 [ext_resource type="Script" uid="uid://cojw15bqnf7su" path="res://scripts/samurai_player.gd" id="1_go2xg"]
 [ext_resource type="Texture2D" uid="uid://by08urtakwtnt" path="res://assets/FREE_Samurai 2D Pixel Art v1.2/Sprites/IDLE.png" id="1_wtcfe"]
