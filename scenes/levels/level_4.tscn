@@ -1,9 +1,10 @@
-[gd_scene load_steps=38 format=4 uid="uid://bag5qxtq8lejf"]
+[gd_scene load_steps=39 format=4 uid="uid://bag5qxtq8lejf"]
 
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_06474"]
 [ext_resource type="Script" uid="uid://dw5fdysk053hg" path="res://scenes/levels/level_4.gd" id="1_glw47"]
 [ext_resource type="Script" uid="uid://n0j66o4vl0ud" path="res://scripts/sand_storm.gd" id="3_ov8fk"]
 [ext_resource type="Texture2D" uid="uid://68kinyg37mt8" path="res://assets/random_stuff/sandstorm 2x2.png" id="4_pmra4"]
+[ext_resource type="PackedScene" uid="uid://c6lwpthns7ndf" path="res://scenes/interactables/potion.tscn" id="4_qvnao"]
 [ext_resource type="Texture2D" uid="uid://bk4g20hh0cyv1" path="res://assets/random_stuff/sandstorm 2.0.png" id="5_1bx01"]
 [ext_resource type="Script" uid="uid://cobdmviitwtr7" path="res://scripts/enemy_group.gd" id="5_um320"]
 [ext_resource type="PackedScene" uid="uid://jg383sevgif8" path="res://scenes/players_and_enemies/skeleton_enemy.tscn" id="6_glw47"]
@@ -660,6 +661,9 @@ position = Vector2(3557, 258)
 position = Vector2(4465, 732)
 
 [node name="Potions" type="Node" parent="."]
+
+[node name="Potion" parent="Potions" instance=ExtResource("4_qvnao")]
+position = Vector2(2696, 80)
 
 [connection signal="body_entered" from="Storm/StormDamageArea" to="Storm" method="_on_body_entered"]
 [connection signal="body_exited" from="Storm/StormDamageArea" to="Storm" method="_on_storm_damage_area_body_exited"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=4 uid="uid://cpr7ftjp8lfv"]
+[gd_scene load_steps=13 format=4 uid="uid://cpr7ftjp8lfv"]
 
 [ext_resource type="Script" uid="uid://0hu6a62i2rnk" path="res://scenes/levels/level_2.gd" id="1_8qukl"]
 [ext_resource type="PackedScene" uid="uid://mn1b5goqhlul" path="res://scenes/players_and_enemies/samurai_player.tscn" id="1_fiq81"]
@@ -8,6 +8,7 @@
 [ext_resource type="AudioStream" uid="uid://d3x7lo0cvft1v" path="res://music/DuringBattles.mp3" id="4_fiq81"]
 [ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="7_ibugp"]
 [ext_resource type="PackedScene" uid="uid://cey3bnvm36da7" path="res://scenes/interactables/lava_kill_zone.tscn" id="7_qsp8v"]
+[ext_resource type="PackedScene" uid="uid://clu1uj0aq4442" path="res://scenes/interactables/bamboo.tscn" id="9_3p04p"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8qukl"]
 texture = ExtResource("1_ra442")
@@ -207,8 +208,11 @@ zoom = Vector2(3, 3)
 
 [node name="NextLevelPortal" parent="." instance=ExtResource("1_l37oo")]
 position = Vector2(7148, 575)
+collectibles_needed = 9
 
-[node name="Label" type="Label" parent="."]
+[node name="Labels" type="Node" parent="."]
+
+[node name="Label" type="Label" parent="Labels"]
 offset_left = -126.0
 offset_top = -95.0
 offset_right = 170.0
@@ -220,7 +224,7 @@ step -- the sinking soil
 will pull you under...
 "
 
-[node name="Label2" type="Label" parent="."]
+[node name="Label2" type="Label" parent="Labels"]
 offset_left = 679.0
 offset_top = -19.0
 offset_right = 937.0
@@ -232,7 +236,7 @@ that you'll sink into
 if you don't run fast
 enough!"
 
-[node name="Label3" type="Label" parent="."]
+[node name="Label3" type="Label" parent="Labels"]
 offset_left = 1329.0
 offset_top = -105.0
 offset_right = 1575.0
@@ -243,7 +247,7 @@ text = "The bridge can be a
 quick break... just 
 a suggestion!"
 
-[node name="Label4" type="Label" parent="."]
+[node name="Label4" type="Label" parent="Labels"]
 offset_left = 1916.0
 offset_top = 122.0
 offset_right = 2240.0
@@ -254,7 +258,7 @@ text = "Another break, catch your
 breath... but not for too
 long!"
 
-[node name="Label5" type="Label" parent="."]
+[node name="Label5" type="Label" parent="Labels"]
 offset_left = 3596.0
 offset_top = 347.0
 offset_right = 3920.0
@@ -264,7 +268,7 @@ theme_override_fonts/font = ExtResource("7_ibugp")
 text = "Slow, calculated jumps,
 be careful!"
 
-[node name="Label6" type="Label" parent="."]
+[node name="Label6" type="Label" parent="Labels"]
 offset_left = 4053.0
 offset_top = 895.0
 offset_right = 4377.0
@@ -274,7 +278,7 @@ theme_override_fonts/font = ExtResource("7_ibugp")
 text = "Another break?? Don't
 stop now!!"
 
-[node name="Label7" type="Label" parent="."]
+[node name="Label7" type="Label" parent="Labels"]
 offset_left = 5785.0
 offset_top = 549.0
 offset_right = 6041.0
@@ -1514,3 +1518,32 @@ position = Vector2(856, 120)
 
 [node name="SandBlocks357" parent="Sandblocks" instance=ExtResource("3_l37oo")]
 position = Vector2(920, 120)
+
+[node name="Bamboo" type="Node" parent="."]
+
+[node name="Bamboo" parent="Bamboo" instance=ExtResource("9_3p04p")]
+position = Vector2(516, 54)
+
+[node name="Bamboo2" parent="Bamboo" instance=ExtResource("9_3p04p")]
+position = Vector2(693, 102)
+
+[node name="Bamboo3" parent="Bamboo" instance=ExtResource("9_3p04p")]
+position = Vector2(1456, -7)
+
+[node name="Bamboo4" parent="Bamboo" instance=ExtResource("9_3p04p")]
+position = Vector2(3653, 829)
+
+[node name="Bamboo5" parent="Bamboo" instance=ExtResource("9_3p04p")]
+position = Vector2(1969, 230)
+
+[node name="Bamboo6" parent="Bamboo" instance=ExtResource("9_3p04p")]
+position = Vector2(3654, 428)
+
+[node name="Bamboo7" parent="Bamboo" instance=ExtResource("9_3p04p")]
+position = Vector2(4457, 895)
+
+[node name="Bamboo8" parent="Bamboo" instance=ExtResource("9_3p04p")]
+position = Vector2(5870, 624)
+
+[node name="Bamboo9" parent="Bamboo" instance=ExtResource("9_3p04p")]
+position = Vector2(7037, 588)
