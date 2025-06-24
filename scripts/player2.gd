@@ -16,6 +16,8 @@ const GRAVITY = 980 # Define a gravity constant for consistency
 @onready var attack_collision_shape: CollisionShape2D = $AnimatedSprite2D/PlayerAttackArea/CollisionShape2D
 @onready var health_bar: ProgressBar = $ProgressBar
 @onready var stamina_bar: ProgressBar = $StaminaBar
+@onready var item_count_label: Label = $"../UI_Container/ItemCountLabel"
+@onready var next_level_portal: Area2D = $"../NextLevelPortal"
 
 ## Player Properties
 @export var JUMP_VELOCITY = -330
@@ -25,6 +27,7 @@ var current_health: int = 100
 var current_animation: String = ""
 var previous_crouch_state: bool = false # Still useful for collision shape switching
 var collectible_count = 0
+var collectibles_needed: int
 var attack_damage: int = 20
 var max_stamina:int = 100
 var stamina:int = 100
@@ -47,6 +50,8 @@ func _ready() -> void:
 	# Set initial state
 	transition_to_state(PlayerState.IDLE)
 	current_health = max_health
+	collectibles_needed = next_level_portal.collectibles_needed
+	item_count_label.text = "Item count: " + str(collectible_count) + "/" + str(collectibles_needed)
 
 func _physics_process(delta: float) -> void:
 	# Apply gravity if not on floor
@@ -158,6 +163,7 @@ func heal(amount: int) -> void:
 func pickup_collectible() -> void:
 	print("picked it up")
 	collectible_count += 1
+	item_count_label.text = "Item count: " + str(collectible_count) + "/" + str(collectibles_needed)
 	#if collectible_count >= level.collectible:
 		#something something
 

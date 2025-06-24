@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=4 uid="uid://duc7rjeylcpk8"]
+[gd_scene load_steps=16 format=4 uid="uid://duc7rjeylcpk8"]
 
 [ext_resource type="PackedScene" uid="uid://jg383sevgif8" path="res://scenes/players_and_enemies/skeleton_enemy.tscn" id="1_jp5fc"]
 [ext_resource type="Script" uid="uid://cgun6hkvkp4fs" path="res://scenes/levels/level_test.gd" id="1_nxmka"]
@@ -12,6 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://dqmx0454dl7c2" path="res://scenes/interactables/next_level_portal.tscn" id="10_es4qh"]
 [ext_resource type="PackedScene" uid="uid://dyxly478iefv1" path="res://scenes/players_and_enemies/Dragon.tscn" id="10_nxmka"]
 [ext_resource type="PackedScene" uid="uid://ciotouojb2y8v" path="res://scenes/players_and_enemies/player.tscn" id="12_nxmka"]
+[ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="13_6racp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
 texture = ExtResource("2_4ptlp")
@@ -247,3 +248,11 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+
+[node name="ItemCountLabel" type="Label" parent="UI_Container"]
+offset_left = 18.0
+offset_top = 15.0
+offset_right = 103.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("13_6racp")
+text = "Item count"

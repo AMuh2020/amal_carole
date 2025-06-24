@@ -608,6 +608,14 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
+[node name="ItemCountLabel" type="Label" parent="UI_Container"]
+offset_left = 18.0
+offset_top = 15.0
+offset_right = 103.0
+offset_bottom = 62.0
+theme_override_fonts/font = ExtResource("14_o3ttr")
+text = "Item count"
+
 [node name="Label" type="Label" parent="."]
 offset_left = 45.0
 offset_top = 22.0
