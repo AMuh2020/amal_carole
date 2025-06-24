@@ -530,7 +530,11 @@ shape = SubResource("RectangleShape2D_y4r1p")
 stream = ExtResource("12_hgu2g")
 bus = &"SFX"
 
+[node name="StaminaRecover" type="Timer" parent="."]
+autostart = true
+
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="AnimatedSprite2D/PlayerAttackArea" to="." method="_on_attack_area_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="timeout" from="StaminaRecover" to="." method="_on_stamina_recover_timeout"]
