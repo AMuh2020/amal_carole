@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://catk8242vibfi" path="res://scenes/interactables/cat_food.tscn" id="8_bqmi1"]
 [ext_resource type="PackedScene" uid="uid://dqmx0454dl7c2" path="res://scenes/interactables/next_level_portal.tscn" id="10_es4qh"]
 [ext_resource type="PackedScene" uid="uid://dyxly478iefv1" path="res://scenes/players_and_enemies/Dragon.tscn" id="10_nxmka"]
-[ext_resource type="PackedScene" uid="uid://ciotouojb2y8v" path="res://scenes/players_and_enemies/player.tscn" id="11_s0ovu"]
+[ext_resource type="PackedScene" uid="uid://mn1b5goqhlul" path="res://scenes/players_and_enemies/samurai_player.tscn" id="13_6racp"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_hbghi"]
 texture = ExtResource("2_4ptlp")
@@ -231,11 +231,11 @@ position = Vector2(-367, 49)
 [node name="Dragon" parent="." instance=ExtResource("10_nxmka")]
 position = Vector2(-539, 75)
 
-[node name="Player" parent="." instance=ExtResource("11_s0ovu")]
-position = Vector2(-152, -101)
+[node name="Samurai" parent="." instance=ExtResource("13_6racp")]
+position = Vector2(-156, -16)
 
-[node name="Camera2D" type="Camera2D" parent="Player"]
-position = Vector2(-0.551605, -16.397)
+[node name="Camera2D" type="Camera2D" parent="Samurai"]
+position = Vector2(3.44839, -101.397)
 zoom = Vector2(2, 2)
 limit_bottom = 530
 position_smoothing_enabled = true

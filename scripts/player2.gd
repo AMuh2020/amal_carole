@@ -367,11 +367,12 @@ func handle_death_physics(delta: float) -> void:
 
 
 func _on_stamina_recover_timeout() -> void:
-	print("recovering check")
+	#print("recovering check")
 	if stamina < max_stamina:
-		if stamina + 5 > max_stamina:
+		if stamina + 10 > max_stamina:
 			stamina = max_stamina
 			
 		else:
-			stamina += 5
+			stamina += 10
+			print("Updating stamina to", stamina)
 		stamina_bar.update_stamina(stamina)

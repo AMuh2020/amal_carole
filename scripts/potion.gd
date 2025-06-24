@@ -12,7 +12,7 @@ func _ready() -> void:
 func _on_interact() -> void:
 	drinking_sfx.play()
 	var player = get_tree().get_first_node_in_group("player")
-	player.heal(10)
+	player.heal(50)
 	hide()
 
 func on_sfx_finished() -> void:

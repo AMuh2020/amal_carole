@@ -432,7 +432,7 @@ position = Vector2(1530, -104)
 position = Vector2(2702, -281)
 
 [node name="Potion2" parent="Collectibles" instance=ExtResource("8_s8va5")]
-position = Vector2(2364, -284)
+position = Vector2(1486, -238)
 
 [node name="LavaKillZone" parent="." instance=ExtResource("13_bahl2")]
 

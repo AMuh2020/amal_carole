@@ -9,7 +9,7 @@ func _on_body_entered(body: Node2D) -> void:
 	if body.has_method("pickup_collectible"):
 		body.pickup_collectible()
 		cat_sfx.play()
-		$CollisionShape2D.disabled = true  # Optional: prevent retrigger
+		$CollisionShape2D.set_deferred("disabled", true)  # Optional: prevent retrigger
 		visible = false  # Hide while sound plays
 
 func _on_sfx_finished() -> void:
