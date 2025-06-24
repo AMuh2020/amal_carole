@@ -537,7 +537,7 @@ animations = [{
 }],
 "loop": false,
 "name": &"death",
-"speed": 10.0
+"speed": 5.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -698,10 +698,8 @@ script = ExtResource("1_j6sx1")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_b2pgl")
-animation = &"hurt"
+animation = &"melee_attack"
 autoplay = "idle"
-frame = 3
-frame_progress = 1.0
 
 [node name="BreathAttackArea" type="Area2D" parent="AnimatedSprite2D"]
 collision_mask = 3

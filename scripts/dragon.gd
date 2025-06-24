@@ -7,12 +7,12 @@ extends CharacterBody2D
 @export var speed: float = 100.0 # Movement speed of the boss. (Increased for boss)
 @export var gravity: float = 980.0 # Gravity applied to the boss.
 @export var max_health: int = 400 # Maximum health of the boss. (Significantly increased)
-@export var melee_damage: int = 10 # Damage dealt by the boss's melee attack.
-@export var breath_damage: int = 20 # Damage per tick dealt by the boss's breath attack.
+@export var melee_damage: int = 20 # Damage dealt by the boss's melee attack.
+@export var breath_damage: int = 50 # Damage per tick dealt by the boss's breath attack.
+@export var fireball_damage: int = 60
 @export var melee_attack_cooldown: float = 2.0 # Time between melee attacks.
-@export var breath_attack_cooldown: float = 6.0 # Time between breath attacks.
-@export var breath_attack_duration: float = 2.0 # How long the breath attack lasts.
-@export var fireball_cooldown: float = 3.0
+@export var breath_attack_cooldown: float = 3.0 # Time between breath attacks.
+@export var fireball_cooldown: float = 5.0
 # --- Node References (Set in _ready) ---
 @onready var detection_area: Area2D = $Detection # Area2D to detect the player.
 @onready var anim_sprite: AnimatedSprite2D = $AnimatedSprite2D # Reference to the boss's sprite for flipping.
@@ -151,11 +151,11 @@ func _change_state(new_state: State) -> void:
 			_play_animation("hurt")
 		State.DEAD:
 			velocity = Vector2.ZERO
-			set_collision_layer_value(2, false) # Example: Stop colliding with environment/player
-			set_collision_mask_value(2, false)
-			detection_area.set_collision_mask(0) # Disable detection area
-			melee_detection_area.set_collision_mask(0) # Disable melee attack detection
-			breath_attack_area.set_collision_mask(0) # Disable breath attack
+			#set_collision_layer_value(2, false) # Example: Stop colliding with environment/player
+			#set_collision_mask_value(2, false)
+			#detection_area.set_collision_mask(0) # Disable detection area
+			#melee_detection_area.set_collision_mask(0) # Disable melee attack detection
+			#breath_attack_area.set_collision_mask(0) # Disable breath attack
 			_play_animation("death")
 
 # --- Helper Functions ---
@@ -231,8 +231,8 @@ func fire_fireball():
 	# Set initial properties for the fireball
 	fireball_instance.global_position = fireball_spawn_point.global_position
 	fireball_instance.initial_direction = direction_to_player
-	fireball_instance.speed = 300 + 100 * (shot_count-1)
-	fireball_instance.damage = 10 # Pass damage to the fireball if it handles it
+	fireball_instance.speed = 200 + 50 * (shot_count-1)
+	fireball_instance.damage = fireball_damage # Pass damage to the fireball if it handles it
 	fireball_instance.player_node = player_node
 	get_parent().add_child(fireball_instance)
 	_change_state(State.CHASING)

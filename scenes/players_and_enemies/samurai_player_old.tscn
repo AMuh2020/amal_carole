@@ -1,9 +1,336 @@
-[gd_scene load_steps=40 format=3 uid="uid://db1s6hkfgecip"]
+[gd_scene load_steps=40 format=3 uid="uid://bvaoqprdhnug5"]
 
-[ext_resource type="Script" uid="uid://cojw15bqnf7su" path="res://scripts/samurai_player.gd" id="1_go2xg"]
 [ext_resource type="Texture2D" uid="uid://by08urtakwtnt" path="res://assets/FREE_Samurai 2D Pixel Art v1.2/Sprites/IDLE.png" id="1_wtcfe"]
 [ext_resource type="Texture2D" uid="uid://cpxsxyqwcpj0j" path="res://assets/FREE_Samurai 2D Pixel Art v1.2/Sprites/ATTACK 1.png" id="2_vx28d"]
 [ext_resource type="Texture2D" uid="uid://cy4vp6sbfj1n2" path="res://assets/FREE_Samurai 2D Pixel Art v1.2/Sprites/RUN.png" id="4_v2153"]
+
+[sub_resource type="GDScript" id="GDScript_gs6sr"]
+script/source = "extends CharacterBody2D
+
+## Constants
+const SPEED = 500.0
+const JUMP_VELOCITY = -330.0
+const CROUCH_SPEED_MULTIPLIER = 0.5
+const GRAVITY = 980 # Define a gravity constant for consistency
+
+## Node References
+@onready var animated_sprite: AnimatedSprite2D = $AnimatedSprite2D
+@onready var idle_shape: CollisionShape2D = $CollisionShape2DIdle
+@onready var crouch_shape: CollisionShape2D = $CollisionShape2DCrouch
+@onready var attack_timer: Timer = $Timer # Renamed for clarity
+@onready var attack_collision_shape: CollisionShape2D = $AnimatedSprite2D/PlayerAttackArea/CollisionShape2D
+
+## Player Properties
+var health: int = 3
+var current_animation: String = \"\"
+var previous_crouch_state: bool = false # Still useful for collision shape switching
+
+## Player States Enum
+
+enum PlayerState {
+	IDLE,
+	WALKING,
+	CROUCHING,
+	ATTACKING,
+	JUMPING,
+	FALLING,
+	DEATH
+}
+
+var current_state: PlayerState = PlayerState.IDLE
+
+func _ready() -> void:
+	# Set initial state
+	transition_to_state(PlayerState.IDLE)
+
+func _physics_process(delta: float) -> void:
+	# Apply gravity if not on floor
+	if not is_on_floor():
+		velocity.y += GRAVITY * delta
+
+	# Handle state-specific physics logic
+	match current_state:
+		PlayerState.IDLE:
+			handle_idle_physics(delta)
+		PlayerState.WALKING:
+			handle_walking_physics(delta)
+		PlayerState.CROUCHING:
+			handle_crouching_physics(delta)
+		PlayerState.ATTACKING:
+			handle_attacking_physics(delta)
+		PlayerState.JUMPING:
+			handle_jumping_physics(delta)
+		PlayerState.FALLING:
+			handle_falling_physics(delta)
+		PlayerState.DEATH:
+			handle_death_physics(delta) # Death state might not need delta updates, but good to have a placeholder
+
+	# Handle general collision shape switching based on crouching
+	var is_currently_crouching = Input.is_action_pressed(\"crouch\") and is_on_floor()
+	if is_currently_crouching != previous_crouch_state:
+		idle_shape.disabled = is_currently_crouching
+		crouch_shape.disabled = not is_currently_crouching
+		previous_crouch_state = is_currently_crouching
+
+	move_and_slide()
+
+func _input(event: InputEvent) -> void:
+	# Handle state-specific input
+	match current_state:
+		PlayerState.IDLE:
+			handle_idle_input(event)
+		PlayerState.WALKING:
+			handle_walking_input(event)
+		PlayerState.CROUCHING:
+			handle_crouching_input(event)
+		# ATTACKING, JUMPING, FALLING, DEATH typically don't allow new actions via input
+		# but you can add functions if they do (e.g., jump cancelling an attack)
+		PlayerState.ATTACKING:
+			handle_attacking_input(event)
+		PlayerState.JUMPING:
+			handle_jumping_input(event)
+		PlayerState.FALLING:
+			handle_falling_input(event)
+
+func transition_to_state(new_state: PlayerState) -> void:
+	if current_state == new_state:
+		return # No need to transition if already in this state
+
+	# Exit logic for the old state (if any)
+	match current_state:
+		PlayerState.ATTACKING:
+			_exit_attacking_state()
+		PlayerState.DEATH:
+			_exit_death_state()
+		# Add any other exit logic here if needed
+
+	current_state = new_state
+	#print(\"Transitioned to state: \", PlayerState.keys()[current_state]) # For debugging
+
+	# Enter logic for the new state
+	match current_state:
+		PlayerState.IDLE:
+			_enter_idle_state()
+		PlayerState.WALKING:
+			_enter_walking_state()
+		PlayerState.CROUCHING:
+			_enter_crouching_state()
+		PlayerState.ATTACKING:
+			_enter_attacking_state()
+		PlayerState.JUMPING:
+			_enter_jumping_state()
+		PlayerState.FALLING:
+			_enter_falling_state()
+		PlayerState.DEATH:
+			_enter_death_state()
+
+## Animation Helper
+func _play_animation(anim_name: String) -> void:
+	if current_animation != anim_name:
+		animated_sprite.play(anim_name)
+		current_animation = anim_name
+
+## Damage Handling
+func take_damage(damage: int) -> void:
+	if health > 0:
+		health -= damage
+		print(\"Player taken \", str(damage))
+	if health <= 0:
+		print(\"Player died!\")
+		transition_to_state(PlayerState.DEATH)
+	print(\"Player health: \", str(health))
+
+## Signal Connections
+func _on_animated_sprite_2d_animation_finished() -> void:
+	# Handle animation finished events relevant to the current state
+	match current_state:
+		PlayerState.ATTACKING:
+			if animated_sprite.animation == \"attack\":
+				transition_to_state(PlayerState.IDLE) # Go back to idle after attack anim
+
+func _on_attack_timer_timeout() -> void:
+	# This timer is specifically for resetting the attack state (failsafe)
+	if current_state == PlayerState.ATTACKING:
+		_exit_attacking_state()
+		# Consider if you want to transition out of attacking immediately on timeout
+		# or wait for animation finished. If this is a failsafe, it might just reset the hitbox.
+		# For simplicity here, we'll just ensure hitbox is disabled.
+		print(\"Attack failsafe timer triggered.\")
+		if current_state == PlayerState.ATTACKING: # Only transition if still attacking
+			transition_to_state(PlayerState.IDLE)
+
+
+func _on_attack_area_area_entered(area: Area2D) -> void:
+	if area.is_in_group(\"enemy\") and current_state == PlayerState.ATTACKING:
+		var enemy = area.get_parent()
+		if enemy and enemy.has_method(\"take_damage\"): # Defensive check
+			enemy.take_damage(12)
+
+## State-Specific Functions (Cont.)
+
+func _enter_idle_state() -> void:
+	_play_animation(\"idle\")
+	velocity.x = 0
+
+func handle_idle_input(event: InputEvent) -> void:
+	if event.is_action_pressed(\"jump\") and is_on_floor():
+		transition_to_state(PlayerState.JUMPING)
+	elif event.is_action_pressed(\"attack\"):
+		transition_to_state(PlayerState.ATTACKING)
+
+func handle_idle_physics(delta: float) -> void:
+	var direction = Input.get_axis(\"move_left\", \"move_right\")
+
+	if direction != 0:
+		transition_to_state(PlayerState.WALKING)
+	elif Input.is_action_pressed(\"crouch\"):
+		transition_to_state(PlayerState.CROUCHING)
+
+	# If falling due to walking off a ledge while idle (no input)
+	if not is_on_floor() and velocity.y > 0:
+		transition_to_state(PlayerState.FALLING)
+
+
+func _enter_walking_state() -> void:
+	_play_animation(\"run\")
+
+func handle_walking_input(event: InputEvent) -> void:
+	if event.is_action_pressed(\"jump\") and is_on_floor():
+		transition_to_state(PlayerState.JUMPING)
+	elif event.is_action_pressed(\"attack\"):
+		transition_to_state(PlayerState.ATTACKING)
+
+func handle_walking_physics(delta: float) -> void:
+	var direction = Input.get_axis(\"move_left\", \"move_right\")
+
+	if direction == 0:
+		transition_to_state(PlayerState.IDLE)
+	elif Input.is_action_pressed(\"crouch\"):
+		transition_to_state(PlayerState.CROUCHING)
+	else:
+		velocity.x = direction * SPEED
+		if direction > 0:
+			animated_sprite.scale.x = 1
+		elif direction < 0:
+			animated_sprite.scale.x = -1
+
+	if not is_on_floor() and velocity.y > 0:
+		transition_to_state(PlayerState.FALLING)
+		
+
+func _enter_crouching_state() -> void:
+	_play_animation(\"crouch\")
+	velocity.x = 0 # Stop horizontal movement when entering crouch
+
+func handle_crouching_input(event: InputEvent) -> void:
+	# No jump or attack while crouching in this implementation
+	pass
+
+func handle_crouching_physics(delta: float) -> void:
+	if not Input.is_action_pressed(\"crouch\") or not is_on_floor():
+		# If you release crouch or walk off a ledge
+		if Input.get_axis(\"move_left\", \"move_right\") != 0:
+			transition_to_state(PlayerState.WALKING)
+		else:
+			transition_to_state(PlayerState.IDLE)
+		return
+
+	var direction = Input.get_axis(\"move_left\", \"move_right\")
+	if direction != 0:
+		_play_animation(\"crouch_walk\")
+		velocity.x = direction * SPEED * CROUCH_SPEED_MULTIPLIER
+		if direction > 0:
+			animated_sprite.scale.x = 1
+		elif direction < 0:
+			animated_sprite.scale.x = -1
+	else:
+		_play_animation(\"crouch\")
+		velocity.x = 0
+
+func _enter_attacking_state() -> void:
+	_play_animation(\"attack\")
+	attack_collision_shape.disabled = false
+	attack_timer.start(0.5) # Assuming your attack animation lasts 0.5 seconds
+	velocity.x = 0 # Stop movement during attack
+
+func _exit_attacking_state() -> void:
+	attack_collision_shape.disabled = true
+	if attack_timer.time_left > 0: # Stop timer if it's still running
+		attack_timer.stop()
+
+func handle_attacking_input(event: InputEvent) -> void:
+	pass # Cannot initiate new actions while attacking
+
+func handle_attacking_physics(delta: float) -> void:
+	# No horizontal movement during attack, just gravity
+	velocity.x = 0
+
+func _enter_jumping_state() -> void:
+	velocity.y = JUMP_VELOCITY
+	print(\"enter jumping\")
+	_play_animation(\"jump\")
+
+func handle_jumping_input(event: InputEvent) -> void:
+	pass # Cannot jump again or attack in mid-jump here
+
+func handle_jumping_physics(delta: float) -> void:
+	var direction = Input.get_axis(\"move_left\", \"move_right\")
+	velocity.x = direction * SPEED
+
+	if velocity.y >= 0 and not is_on_floor(): # Transition to falling when upward velocity stops
+		transition_to_state(PlayerState.FALLING)
+	elif is_on_floor(): # Landed
+		if direction != 0:
+			transition_to_state(PlayerState.WALKING)
+		else:
+			transition_to_state(PlayerState.IDLE)
+
+	if direction > 0:
+		animated_sprite.scale.x = 1
+	elif direction < 0:
+		animated_sprite.scale.x = -1
+
+func _enter_falling_state() -> void:
+	_play_animation(\"jump_falling\")
+
+func handle_falling_input(event: InputEvent) -> void:
+	pass # No input actions while falling (e.g., double jump or attack in air)
+
+func handle_falling_physics(delta: float) -> void:
+	var direction = Input.get_axis(\"move_left\", \"move_right\")
+	velocity.x = direction * SPEED
+
+	if is_on_floor(): # Landed
+		if direction != 0:
+			transition_to_state(PlayerState.WALKING)
+		else:
+			transition_to_state(PlayerState.IDLE)
+
+	if direction > 0:
+		animated_sprite.scale.x = 1
+	elif direction < 0:
+		animated_sprite.scale.x = -1
+
+func _enter_death_state() -> void:
+	_play_animation(\"death\")
+	set_collision_mask_value(3, false) # Disable collision with enemies/obstacles
+	velocity = Vector2.ZERO # Stop all movement
+
+	# Wait for animation to finish then reload scene
+	await animated_sprite.animation_finished
+	await get_tree().create_timer(1.0).timeout # A small delay
+	get_tree().reload_current_scene()
+
+func _exit_death_state() -> void:
+	# This might be called if the scene reloads, or if you had a respawn mechanic
+	pass
+
+func handle_death_input(event: InputEvent) -> void:
+	pass # Ignore all input when dead
+
+func handle_death_physics(delta: float) -> void:
+	pass # Do nothing when dead
+"
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_lvkp4"]
 atlas = ExtResource("2_vx28d")
@@ -258,7 +585,7 @@ animations = [{
 size = Vector2(11, 31)
 
 [node name="SamuraiPlayer" type="CharacterBody2D" groups=["player"]]
-script = ExtResource("1_go2xg")
+script = SubResource("GDScript_gs6sr")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -33)

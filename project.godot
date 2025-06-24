@@ -11,14 +11,13 @@ config_version=5
 [application]
 
 config/name="amal_carole"
-run/main_scene="uid://kcq47ekorm5a"
+run/main_scene="uid://pmogs2p4flmd"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
 
 [autoload]
 
 InteractionManager="*res://interactions/InteractionManager.tscn"
-Global="res://scripts/global.gd"
 MainMenuMusic="*res://scenes/main_menu_music.tscn"
 TransitionScene="*res://scenes/levels/transition_scene.tscn"
 
