@@ -20,7 +20,7 @@ animations = [{
 }]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_d5gmh"]
-radius = 5.0
+radius = 6.0
 
 [node name="Bamboo" type="Area2D"]
 collision_layer = 3
@@ -28,8 +28,8 @@ collision_mask = 3
 script = ExtResource("1_m5h2y")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(5.96046e-08, 3.57628e-07)
-scale = Vector2(0.0411133, 0.0411133)
+position = Vector2(2.98023e-08, -1)
+scale = Vector2(0.0540283, 0.0540283)
 sprite_frames = SubResource("SpriteFrames_s5w7y")
 autoplay = "default"
 offset = Vector2(0, 33)
