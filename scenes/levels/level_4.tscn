@@ -594,6 +594,7 @@ shape = SubResource("RectangleShape2D_um320")
 position = Vector2(71, 108)
 JUMP_VELOCITY = -370
 SPEED = 300.0
+can_crouch = false
 
 [node name="Camera2D" type="Camera2D" parent="Samurai"]
 position = Vector2(-0.551605, -16.397)
