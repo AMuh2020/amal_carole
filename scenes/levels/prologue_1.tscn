@@ -1,16 +1,16 @@
 [gd_scene load_steps=14 format=4 uid="uid://kcq47ekorm5a"]
 
-[ext_resource type="Script" path="res://scenes/levels/panel.gd" id="1_4178q"]
+[ext_resource type="Script" uid="uid://d2q3l63bpgt5k" path="res://scenes/levels/panel.gd" id="1_4178q"]
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_otmpu"]
 [ext_resource type="Script" uid="uid://mslog8fqohxm" path="res://scenes/levels/prologue_1.gd" id="1_s7uqr"]
 [ext_resource type="PackedScene" uid="uid://ciotouojb2y8v" path="res://scenes/players_and_enemies/player.tscn" id="2_4178q"]
 [ext_resource type="PackedScene" uid="uid://dihl4ylc1f354" path="res://scenes/players_and_enemies/pet_cat.tscn" id="3_gd7os"]
-[ext_resource type="Script" path="res://scenes/players_and_enemies/prologue1_player1.gd" id="4_gd7os"]
-[ext_resource type="Script" path="res://scenes/players_and_enemies/prologue1_player2.gd" id="6_sdj14"]
+[ext_resource type="Script" uid="uid://b2ry2gg6wisf6" path="res://scenes/players_and_enemies/prologue1_player1.gd" id="4_gd7os"]
+[ext_resource type="Script" uid="uid://dfsh2qh7ik1ik" path="res://scenes/players_and_enemies/prologue1_player2.gd" id="6_sdj14"]
 [ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="7_bpif2"]
 [ext_resource type="AudioStream" uid="uid://prtg8bb2ir2o" path="res://music/medieval-ambient-236809.mp3" id="9_wo61c"]
 
-[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_bpif2"]
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_wo61c"]
 texture = ExtResource("1_otmpu")
 0:0/0 = 0
 0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -174,7 +174,7 @@ texture = ExtResource("1_otmpu")
 
 [sub_resource type="TileSet" id="TileSet_bpif2"]
 physics_layer_0/collision_layer = 1
-sources/0 = SubResource("TileSetAtlasSource_bpif2")
+sources/0 = SubResource("TileSetAtlasSource_wo61c")
 
 [sub_resource type="Curve2D" id="Curve2D_s7uqr"]
 _data = {
