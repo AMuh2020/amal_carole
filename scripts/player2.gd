@@ -18,10 +18,14 @@ const GRAVITY = 980 # Define a gravity constant for consistency
 @onready var stamina_bar: ProgressBar = $StaminaBar
 @onready var item_count_label: Label = $"../UI_Container/ItemCountLabel"
 @onready var next_level_portal: Area2D = $"../NextLevelPortal"
+@onready var crouch_bug_raycast: RayCast2D = $CrouchBugRaycast
+@onready var crouch_bug_raycast_2: RayCast2D = $CrouchBugRaycast2
+@onready var crouch_bug_raycast_3: RayCast2D = $CrouchBugRaycast3
 
 ## Player Properties
 @export var JUMP_VELOCITY = -330
 @export var SPEED = 200.0
+@export var can_crouch = true
 var current_health: int = 100
 @export var max_health: int = 100
 var current_animation: String = ""
@@ -65,7 +69,8 @@ func _physics_process(delta: float) -> void:
 		PlayerState.WALKING:
 			handle_walking_physics(delta)
 		PlayerState.CROUCHING:
-			handle_crouching_physics(delta)
+			if can_crouch:
+				handle_crouching_physics(delta)
 		PlayerState.ATTACKING:
 			handle_attacking_physics(delta)
 		PlayerState.JUMPING:
@@ -74,15 +79,22 @@ func _physics_process(delta: float) -> void:
 			handle_falling_physics(delta)
 		PlayerState.DEATH:
 			handle_death_physics(delta) # Death state might not need delta updates, but good to have a placeholder
-
-	# Handle general collision shape switching based on crouching
-	var is_currently_crouching = Input.is_action_pressed("crouch") and is_on_floor()
-	if is_currently_crouching != previous_crouch_state:
-		idle_shape.disabled = is_currently_crouching
-		crouch_shape.disabled = not is_currently_crouching
-		previous_crouch_state = is_currently_crouching
+	
+	if can_crouch:
+		# Handle general collision shape switching based on crouching
+		var is_currently_crouching = Input.is_action_pressed("crouch") and is_on_floor()
+		if is_currently_crouching != previous_crouch_state and not crouch_bug_ray_check():
+			idle_shape.disabled = is_currently_crouching
+			crouch_shape.disabled = not is_currently_crouching
+			previous_crouch_state = is_currently_crouching
 
 	move_and_slide()
+
+func crouch_bug_ray_check() -> bool:
+	if crouch_bug_raycast.is_colliding() or crouch_bug_raycast_2.is_colliding() or crouch_bug_raycast_3.is_colliding():
+		print("remain crouching")
+		return true
+	return false
 
 func _input(event: InputEvent) -> void:
 	# Handle state-specific input
@@ -92,7 +104,7 @@ func _input(event: InputEvent) -> void:
 		PlayerState.WALKING:
 			handle_walking_input(event)
 		PlayerState.CROUCHING:
-			handle_crouching_input(event)
+				handle_crouching_input(event)
 		# ATTACKING, JUMPING, FALLING, DEATH typically don't allow new actions via input
 		# but you can add functions if they do (e.g., jump cancelling an attack)
 		PlayerState.ATTACKING:
@@ -125,7 +137,7 @@ func transition_to_state(new_state: PlayerState) -> void:
 		PlayerState.WALKING:
 			_enter_walking_state()
 		PlayerState.CROUCHING:
-			_enter_crouching_state()
+				_enter_crouching_state()
 		PlayerState.ATTACKING:
 			_enter_attacking_state()
 		PlayerState.JUMPING:
@@ -217,7 +229,8 @@ func handle_idle_physics(delta: float) -> void:
 	if direction != 0:
 		transition_to_state(PlayerState.WALKING)
 	elif Input.is_action_pressed("crouch"):
-		transition_to_state(PlayerState.CROUCHING)
+		if can_crouch:
+			transition_to_state(PlayerState.CROUCHING)
 
 	# If falling due to walking off a ledge while idle (no input)
 	if not is_on_floor() and velocity.y > 0:
@@ -239,7 +252,8 @@ func handle_walking_physics(delta: float) -> void:
 	if direction == 0:
 		transition_to_state(PlayerState.IDLE)
 	elif Input.is_action_pressed("crouch"):
-		transition_to_state(PlayerState.CROUCHING)
+		if can_crouch:
+			transition_to_state(PlayerState.CROUCHING)
 	else:
 		velocity.x = direction * SPEED
 		if direction > 0:
@@ -260,7 +274,7 @@ func handle_crouching_input(event: InputEvent) -> void:
 	pass
 
 func handle_crouching_physics(delta: float) -> void:
-	if not Input.is_action_pressed("crouch") or not is_on_floor():
+	if (not Input.is_action_pressed("crouch") or not is_on_floor()) and not crouch_bug_ray_check():
 		# If you release crouch or walk off a ledge
 		if Input.get_axis("move_left", "move_right") != 0:
 			transition_to_state(PlayerState.WALKING)
