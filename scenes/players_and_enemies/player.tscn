@@ -466,8 +466,14 @@ script = ExtResource("1_y6ler")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -40)
 sprite_frames = SubResource("SpriteFrames_3v2ag")
+<<<<<<< HEAD
+animation = &"jump_falling"
+autoplay = "idle"
+frame_progress = 0.629642
+=======
 animation = &"attack"
 autoplay = "idle"
+>>>>>>> 95659fb81c7a96f2a5124e2fff10a284d8b920a2
 offset = Vector2(5, 0)
 
 [node name="PlayerAttackArea" type="Area2D" parent="AnimatedSprite2D" groups=["sword"]]
@@ -537,3 +543,4 @@ autostart = true
 [connection signal="area_entered" from="AnimatedSprite2D/PlayerAttackArea" to="." method="_on_attack_area_area_entered"]
 [connection signal="timeout" from="Timer" to="." method="_on_attack_timer_timeout"]
 [connection signal="timeout" from="StaminaRecover" to="." method="_on_stamina_recover_timeout"]
+>>>>>>> 95659fb81c7a96f2a5124e2fff10a284d8b920a2
