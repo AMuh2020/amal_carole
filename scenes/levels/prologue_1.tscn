@@ -334,6 +334,20 @@ theme_override_fonts/font = ExtResource("7_bpif2")
 text = "It's time for the knight 
 to save his cat!"
 
+[node name="CanvasLayer" type="CanvasLayer" parent="Panel"]
+
+[node name="SkipButton" type="Button" parent="Panel/CanvasLayer"]
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -41.0
+offset_top = -31.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Skip"
+
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("9_wo61c")
 volume_db = 10.0
