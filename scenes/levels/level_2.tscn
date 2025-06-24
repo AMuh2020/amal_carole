@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=4 uid="uid://cpr7ftjp8lfv"]
+[gd_scene load_steps=12 format=4 uid="uid://cpr7ftjp8lfv"]
 
 [ext_resource type="Script" uid="uid://0hu6a62i2rnk" path="res://scenes/levels/level_2.gd" id="1_8qukl"]
 [ext_resource type="PackedScene" uid="uid://mn1b5goqhlul" path="res://scenes/players_and_enemies/samurai_player.tscn" id="1_fiq81"]
@@ -6,9 +6,8 @@
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_ra442"]
 [ext_resource type="PackedScene" uid="uid://clv2qhvnt4ks1" path="res://scenes/sand_blocks.tscn" id="3_l37oo"]
 [ext_resource type="AudioStream" uid="uid://d3x7lo0cvft1v" path="res://music/DuringBattles.mp3" id="4_fiq81"]
-[ext_resource type="PackedScene" path="res://scenes/interactables/kill_zone.tscn" id="6_qpwj6"]
 [ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="7_ibugp"]
-[ext_resource type="AudioStream" uid="uid://74grbf0fs1xr" path="res://sfx/heavy-bubbles-35889.mp3" id="9_3p04p"]
+[ext_resource type="PackedScene" uid="uid://cey3bnvm36da7" path="res://scenes/interactables/lava_kill_zone.tscn" id="7_qsp8v"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8qukl"]
 texture = ExtResource("1_ra442")
@@ -207,1214 +206,8 @@ SPEED = 500.0
 [node name="Camera2D" type="Camera2D" parent="Node2D/Player"]
 zoom = Vector2(3, 3)
 
-[node name="SandBlocks" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(136, 8)
-
-[node name="SandBlocks2" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(152, 8)
-
-[node name="SandBlocks3" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(120, 8)
-
-[node name="SandBlocks337" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1352, 8)
-
-[node name="SandBlocks338" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1416, 8)
-
-[node name="SandBlocks336" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1384, 8)
-
-[node name="SandBlocks339" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1288, 8)
-
-[node name="SandBlocks340" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1256, 8)
-
-[node name="SandBlocks341" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1400, 8)
-
-[node name="SandBlocks342" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1304, 8)
-
-[node name="SandBlocks344" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1272, 8)
-
-[node name="SandBlocks345" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1320, 8)
-
-[node name="SandBlocks343" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1336, 8)
-
-[node name="SandBlocks4" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(168, 8)
-
-[node name="SandBlocks5" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(200, 8)
-
-[node name="SandBlocks6" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(184, 8)
-
-[node name="SandBlocks8" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(56, 8)
-
-[node name="SandBlocks10" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(72, 8)
-
-[node name="SandBlocks11" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(104, 8)
-
-[node name="SandBlocks12" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(88, 8)
-
-[node name="SandBlocks346" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(489, 72)
-
-[node name="SandBlocks349" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(553, 72)
-
-[node name="SandBlocks350" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(521, 72)
-
-[node name="SandBlocks348" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(473, 72)
-
-[node name="SandBlocks351" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(537, 72)
-
-[node name="SandBlocks347" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(505, 72)
-
-[node name="SandBlocks13" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(328, 8)
-
-[node name="SandBlocks14" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(344, 8)
-
-[node name="SandBlocks15" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(312, 8)
-
-[node name="SandBlocks16" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(360, 8)
-
-[node name="SandBlocks17" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(392, 8)
-
-[node name="SandBlocks18" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(376, 8)
-
-[node name="SandBlocks19" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(232, 8)
-
-[node name="SandBlocks20" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(248, 8)
-
-[node name="SandBlocks21" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(216, 8)
-
-[node name="SandBlocks22" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(264, 8)
-
-[node name="SandBlocks23" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(296, 8)
-
-[node name="SandBlocks24" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(280, 8)
-
-[node name="SandBlocks25" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(665, 120)
-
-[node name="SandBlocks26" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(681, 120)
-
-[node name="SandBlocks27" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(649, 120)
-
-[node name="SandBlocks28" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(697, 120)
-
-[node name="SandBlocks29" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(729, 120)
-
-[node name="SandBlocks353" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(888, 120)
-
-[node name="SandBlocks354" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(856, 120)
-
-[node name="SandBlocks357" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(920, 120)
-
 [node name="NextLevelPortal" parent="." instance=ExtResource("1_l37oo")]
 position = Vector2(7148, 575)
-
-[node name="SandBlocks356" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(936, 120)
-
-[node name="SandBlocks355" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(904, 120)
-
-[node name="SandBlocks352" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(872, 120)
-
-[node name="SandBlocks30" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(713, 120)
-
-[node name="SandBlocks31" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1063, 56)
-
-[node name="SandBlocks32" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1079, 56)
-
-[node name="SandBlocks33" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1047, 56)
-
-[node name="SandBlocks34" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1095, 56)
-
-[node name="SandBlocks35" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1127, 56)
-
-[node name="SandBlocks36" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1111, 56)
-
-[node name="SandBlocks37" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1802, 143)
-
-[node name="SandBlocks38" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1818, 143)
-
-[node name="SandBlocks39" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1786, 143)
-
-[node name="SandBlocks40" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1834, 143)
-
-[node name="SandBlocks358" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1978, 248)
-
-[node name="SandBlocks359" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1994, 248)
-
-[node name="SandBlocks360" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2010, 248)
-
-[node name="SandBlocks361" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2042, 248)
-
-[node name="SandBlocks363" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2026, 248)
-
-[node name="SandBlocks362" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1962, 248)
-
-[node name="SandBlocks41" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1866, 143)
-
-[node name="SandBlocks42" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1850, 143)
-
-[node name="SandBlocks43" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2152, 344)
-
-[node name="SandBlocks44" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2168, 344)
-
-[node name="SandBlocks45" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2136, 344)
-
-[node name="SandBlocks46" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2184, 344)
-
-[node name="SandBlocks47" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2216, 344)
-
-[node name="SandBlocks48" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2200, 344)
-
-[node name="SandBlocks7" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2440, 472)
-
-[node name="SandBlocks9" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2456, 472)
-
-[node name="SandBlocks49" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2424, 472)
-
-[node name="SandBlocks50" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2472, 472)
-
-[node name="SandBlocks51" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2504, 472)
-
-[node name="SandBlocks52" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2488, 472)
-
-[node name="SandBlocks53" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2360, 472)
-
-[node name="SandBlocks54" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2376, 472)
-
-[node name="SandBlocks55" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2408, 472)
-
-[node name="SandBlocks56" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2392, 472)
-
-[node name="SandBlocks57" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2632, 472)
-
-[node name="SandBlocks58" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2648, 472)
-
-[node name="SandBlocks59" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2616, 472)
-
-[node name="SandBlocks60" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2664, 472)
-
-[node name="SandBlocks61" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2696, 472)
-
-[node name="SandBlocks62" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2680, 472)
-
-[node name="SandBlocks63" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2536, 472)
-
-[node name="SandBlocks64" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2552, 472)
-
-[node name="SandBlocks65" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2520, 472)
-
-[node name="SandBlocks66" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2568, 472)
-
-[node name="SandBlocks67" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2600, 472)
-
-[node name="SandBlocks68" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2584, 472)
-
-[node name="SandBlocks69" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2792, 472)
-
-[node name="SandBlocks70" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2808, 472)
-
-[node name="SandBlocks71" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2776, 472)
-
-[node name="SandBlocks72" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2824, 472)
-
-[node name="SandBlocks73" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2856, 472)
-
-[node name="SandBlocks74" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2840, 472)
-
-[node name="SandBlocks75" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2712, 472)
-
-[node name="SandBlocks76" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2728, 472)
-
-[node name="SandBlocks77" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2760, 472)
-
-[node name="SandBlocks78" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2744, 472)
-
-[node name="SandBlocks79" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2984, 472)
-
-[node name="SandBlocks80" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3000, 472)
-
-[node name="SandBlocks81" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2968, 472)
-
-[node name="SandBlocks82" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3016, 472)
-
-[node name="SandBlocks83" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3048, 472)
-
-[node name="SandBlocks84" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3032, 472)
-
-[node name="SandBlocks85" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2888, 472)
-
-[node name="SandBlocks86" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2904, 472)
-
-[node name="SandBlocks87" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2872, 472)
-
-[node name="SandBlocks88" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2920, 472)
-
-[node name="SandBlocks89" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2952, 472)
-
-[node name="SandBlocks90" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(2936, 472)
-
-[node name="SandBlocks91" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3144, 440)
-
-[node name="SandBlocks92" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3160, 440)
-
-[node name="SandBlocks93" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3128, 440)
-
-[node name="SandBlocks94" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3176, 440)
-
-[node name="SandBlocks95" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3208, 424)
-
-[node name="SandBlocks96" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3192, 424)
-
-[node name="SandBlocks97" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3064, 456)
-
-[node name="SandBlocks98" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3080, 456)
-
-[node name="SandBlocks99" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3112, 456)
-
-[node name="SandBlocks100" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3096, 456)
-
-[node name="SandBlocks365" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3496, 408)
-
-[node name="SandBlocks366" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3512, 408)
-
-[node name="SandBlocks367" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3528, 408)
-
-[node name="SandBlocks368" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3560, 408)
-
-[node name="SandBlocks369" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3544, 408)
-
-[node name="SandBlocks364" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3432, 408)
-
-[node name="SandBlocks370" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3416, 408)
-
-[node name="SandBlocks371" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3448, 408)
-
-[node name="SandBlocks372" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3480, 408)
-
-[node name="SandBlocks373" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3464, 408)
-
-[node name="SandBlocks101" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3336, 392)
-
-[node name="SandBlocks102" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3352, 392)
-
-[node name="SandBlocks103" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3320, 392)
-
-[node name="SandBlocks104" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3368, 392)
-
-[node name="SandBlocks105" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3400, 392)
-
-[node name="SandBlocks106" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3384, 392)
-
-[node name="SandBlocks107" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3240, 424)
-
-[node name="SandBlocks108" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3256, 408)
-
-[node name="SandBlocks109" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3224, 424)
-
-[node name="SandBlocks110" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3272, 408)
-
-[node name="SandBlocks111" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3304, 408)
-
-[node name="SandBlocks112" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3288, 408)
-
-[node name="SandBlocks375" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3636, 632)
-
-[node name="SandBlocks376" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3652, 632)
-
-[node name="SandBlocks377" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3620, 632)
-
-[node name="SandBlocks378" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3668, 632)
-
-[node name="SandBlocks379" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3684, 632)
-
-[node name="SandBlocks374" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3784, 536)
-
-[node name="SandBlocks380" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3800, 536)
-
-[node name="SandBlocks381" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3768, 536)
-
-[node name="SandBlocks382" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3816, 536)
-
-[node name="SandBlocks383" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3832, 536)
-
-[node name="SandBlocks113" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3619, 453)
-
-[node name="SandBlocks114" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3635, 453)
-
-[node name="SandBlocks115" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3651, 453)
-
-[node name="SandBlocks116" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3683, 453)
-
-[node name="SandBlocks117" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3667, 453)
-
-[node name="SandBlocks385" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4809, 920)
-
-[node name="SandBlocks386" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4825, 920)
-
-[node name="SandBlocks387" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4793, 920)
-
-[node name="SandBlocks388" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4841, 920)
-
-[node name="SandBlocks389" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4857, 920)
-
-[node name="SandBlocks390" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4728, 920)
-
-[node name="SandBlocks391" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4744, 920)
-
-[node name="SandBlocks392" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4712, 920)
-
-[node name="SandBlocks393" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4760, 920)
-
-[node name="SandBlocks394" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4776, 920)
-
-[node name="SandBlocks384" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3878, 985)
-
-[node name="SandBlocks395" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3894, 985)
-
-[node name="SandBlocks396" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3910, 985)
-
-[node name="SandBlocks397" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3926, 985)
-
-[node name="SandBlocks398" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3862, 985)
-
-[node name="SandBlocks399" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3797, 985)
-
-[node name="SandBlocks400" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3813, 985)
-
-[node name="SandBlocks401" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3781, 985)
-
-[node name="SandBlocks402" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3829, 985)
-
-[node name="SandBlocks118" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3789, 738)
-
-[node name="SandBlocks119" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3805, 738)
-
-[node name="SandBlocks403" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3845, 985)
-
-[node name="SandBlocks120" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3773, 738)
-
-[node name="SandBlocks121" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3821, 738)
-
-[node name="SandBlocks122" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3837, 738)
-
-[node name="SandBlocks123" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3640, 856)
-
-[node name="SandBlocks124" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3656, 856)
-
-[node name="SandBlocks125" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3624, 856)
-
-[node name="SandBlocks126" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3672, 856)
-
-[node name="SandBlocks127" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3688, 856)
-
-[node name="SandBlocks128" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4040, 985)
-
-[node name="SandBlocks129" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4056, 985)
-
-[node name="SandBlocks130" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4024, 985)
-
-[node name="SandBlocks131" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4072, 985)
-
-[node name="SandBlocks132" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4088, 985)
-
-[node name="SandBlocks133" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3959, 985)
-
-[node name="SandBlocks134" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3975, 985)
-
-[node name="SandBlocks135" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3943, 985)
-
-[node name="SandBlocks136" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(3991, 985)
-
-[node name="SandBlocks137" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4007, 985)
-
-[node name="SandBlocks138" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5545, 984)
-
-[node name="SandBlocks139" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5561, 984)
-
-[node name="SandBlocks140" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5529, 984)
-
-[node name="SandBlocks141" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5577, 984)
-
-[node name="SandBlocks142" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5593, 984)
-
-[node name="SandBlocks143" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5464, 984)
-
-[node name="SandBlocks144" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5480, 984)
-
-[node name="SandBlocks145" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5448, 984)
-
-[node name="SandBlocks146" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5496, 984)
-
-[node name="SandBlocks147" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5512, 984)
-
-[node name="SandBlocks148" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4249, 985)
-
-[node name="SandBlocks149" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4265, 985)
-
-[node name="SandBlocks150" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4233, 985)
-
-[node name="SandBlocks151" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4281, 985)
-
-[node name="SandBlocks152" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4297, 985)
-
-[node name="SandBlocks153" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4168, 985)
-
-[node name="SandBlocks154" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4184, 985)
-
-[node name="SandBlocks155" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4152, 985)
-
-[node name="SandBlocks156" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4200, 985)
-
-[node name="SandBlocks157" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4216, 985)
-
-[node name="SandBlocks158" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4873, 936)
-
-[node name="SandBlocks159" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4889, 936)
-
-[node name="SandBlocks160" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4905, 936)
-
-[node name="SandBlocks161" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4921, 936)
-
-[node name="SandBlocks162" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4938, 953)
-
-[node name="SandBlocks163" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4954, 953)
-
-[node name="SandBlocks164" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4970, 953)
-
-[node name="SandBlocks404" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5002, 969)
-
-[node name="SandBlocks405" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5018, 969)
-
-[node name="SandBlocks406" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5034, 969)
-
-[node name="SandBlocks407" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5050, 969)
-
-[node name="SandBlocks165" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4986, 953)
-
-[node name="SandBlocks166" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5066, 985)
-
-[node name="SandBlocks167" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5082, 985)
-
-[node name="SandBlocks168" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5098, 985)
-
-[node name="SandBlocks169" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5114, 985)
-
-[node name="SandBlocks170" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5384, 984)
-
-[node name="SandBlocks171" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5400, 984)
-
-[node name="SandBlocks172" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5368, 984)
-
-[node name="SandBlocks173" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5416, 984)
-
-[node name="SandBlocks174" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5432, 984)
-
-[node name="SandBlocks175" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5303, 984)
-
-[node name="SandBlocks176" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5319, 984)
-
-[node name="SandBlocks177" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5287, 984)
-
-[node name="SandBlocks178" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5335, 984)
-
-[node name="SandBlocks179" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5351, 984)
-
-[node name="SandBlocks180" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5545, 920)
-
-[node name="SandBlocks181" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5561, 920)
-
-[node name="SandBlocks182" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5529, 920)
-
-[node name="SandBlocks183" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5577, 920)
-
-[node name="SandBlocks184" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5593, 920)
-
-[node name="SandBlocks185" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5464, 920)
-
-[node name="SandBlocks186" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5480, 920)
-
-[node name="SandBlocks187" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5448, 920)
-
-[node name="SandBlocks188" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5496, 920)
-
-[node name="SandBlocks189" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5512, 920)
-
-[node name="SandBlocks190" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5384, 856)
-
-[node name="SandBlocks191" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5400, 856)
-
-[node name="SandBlocks192" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5368, 856)
-
-[node name="SandBlocks193" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5416, 856)
-
-[node name="SandBlocks194" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5432, 856)
-
-[node name="SandBlocks195" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5303, 856)
-
-[node name="SandBlocks196" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5319, 856)
-
-[node name="SandBlocks197" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5287, 856)
-
-[node name="SandBlocks198" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5335, 856)
-
-[node name="SandBlocks199" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5351, 856)
-
-[node name="SandBlocks200" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5543, 792)
-
-[node name="SandBlocks201" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5559, 792)
-
-[node name="SandBlocks202" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5527, 792)
-
-[node name="SandBlocks203" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5575, 792)
-
-[node name="SandBlocks204" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5591, 792)
-
-[node name="SandBlocks205" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5462, 792)
-
-[node name="SandBlocks206" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5478, 792)
-
-[node name="SandBlocks207" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5446, 792)
-
-[node name="SandBlocks208" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5494, 792)
-
-[node name="SandBlocks209" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5510, 792)
-
-[node name="SandBlocks210" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5385, 713)
-
-[node name="SandBlocks211" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5401, 713)
-
-[node name="SandBlocks212" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5369, 713)
-
-[node name="SandBlocks213" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5417, 713)
-
-[node name="SandBlocks214" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5433, 713)
-
-[node name="SandBlocks215" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5304, 713)
-
-[node name="SandBlocks216" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5320, 713)
-
-[node name="SandBlocks217" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5288, 713)
-
-[node name="SandBlocks218" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5336, 713)
-
-[node name="SandBlocks219" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5352, 713)
-
-[node name="SandBlocks220" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5544, 648)
-
-[node name="SandBlocks221" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5560, 648)
-
-[node name="SandBlocks222" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5528, 648)
-
-[node name="SandBlocks223" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5576, 648)
-
-[node name="SandBlocks224" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5592, 648)
-
-[node name="SandBlocks225" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5463, 648)
-
-[node name="SandBlocks226" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5479, 648)
-
-[node name="SandBlocks227" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5447, 648)
-
-[node name="SandBlocks228" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5495, 648)
-
-[node name="SandBlocks229" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5511, 648)
-
-[node name="SandBlocks230" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5706, 648)
-
-[node name="SandBlocks231" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5722, 648)
-
-[node name="SandBlocks232" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5690, 648)
-
-[node name="SandBlocks233" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5738, 648)
-
-[node name="SandBlocks234" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5754, 648)
-
-[node name="SandBlocks235" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5625, 648)
-
-[node name="SandBlocks236" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5641, 648)
-
-[node name="SandBlocks237" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5609, 648)
-
-[node name="SandBlocks238" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5657, 648)
-
-[node name="SandBlocks239" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5673, 648)
-
-[node name="SandBlocks240" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5868, 648)
-
-[node name="SandBlocks241" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5884, 648)
-
-[node name="SandBlocks242" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5852, 648)
-
-[node name="SandBlocks243" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5900, 648)
-
-[node name="SandBlocks244" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5916, 648)
-
-[node name="SandBlocks245" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5787, 648)
-
-[node name="SandBlocks246" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5803, 648)
-
-[node name="SandBlocks247" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5771, 648)
-
-[node name="SandBlocks248" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5819, 648)
-
-[node name="SandBlocks249" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5835, 648)
-
-[node name="SandBlocks250" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6029, 648)
-
-[node name="SandBlocks251" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6045, 648)
-
-[node name="SandBlocks252" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6013, 648)
-
-[node name="SandBlocks253" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6061, 648)
-
-[node name="SandBlocks254" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6077, 648)
-
-[node name="SandBlocks255" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5948, 648)
-
-[node name="SandBlocks256" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5964, 648)
-
-[node name="SandBlocks330" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1672, 56)
-
-[node name="SandBlocks329" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1688, 56)
-
-[node name="SandBlocks328" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1704, 56)
-
-[node name="SandBlocks327" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1624, 56)
-
-[node name="SandBlocks326" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1656, 56)
-
-[node name="SandBlocks325" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1640, 56)
-
-[node name="SandBlocks324" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1512, 8)
-
-[node name="SandBlocks257" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5932, 648)
-
-[node name="SandBlocks258" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5980, 648)
-
-[node name="SandBlocks259" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(5996, 648)
-
-[node name="SandBlocks260" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6392, 648)
-
-[node name="SandBlocks261" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6408, 648)
-
-[node name="SandBlocks262" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6328, 648)
-
-[node name="SandBlocks263" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6472, 648)
-
-[node name="SandBlocks264" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6488, 648)
-
-[node name="SandBlocks265" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6168, 648)
-
-[node name="SandBlocks266" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6232, 648)
-
-[node name="SandBlocks267" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6152, 648)
-
-[node name="SandBlocks268" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6248, 648)
-
-[node name="SandBlocks269" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6313, 648)
-
-[node name="SandBlocks270" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6645, 631)
-
-[node name="SandBlocks271" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6661, 631)
-
-[node name="SandBlocks272" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6629, 631)
-
-[node name="SandBlocks273" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6677, 631)
-
-[node name="SandBlocks274" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6694, 631)
-
-[node name="SandBlocks275" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6565, 647)
-
-[node name="SandBlocks276" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6581, 647)
-
-[node name="SandBlocks277" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6549, 647)
-
-[node name="SandBlocks278" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6597, 647)
-
-[node name="SandBlocks279" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6613, 647)
-
-[node name="SandBlocks280" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6807, 615)
-
-[node name="SandBlocks281" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6823, 615)
-
-[node name="SandBlocks282" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6791, 615)
-
-[node name="SandBlocks283" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6839, 615)
-
-[node name="SandBlocks284" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6855, 615)
-
-[node name="SandBlocks285" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6726, 615)
-
-[node name="SandBlocks286" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6742, 615)
-
-[node name="SandBlocks287" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6710, 615)
-
-[node name="SandBlocks288" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6758, 615)
-
-[node name="SandBlocks289" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6774, 615)
-
-[node name="SandBlocks290" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6969, 615)
-
-[node name="SandBlocks291" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6985, 615)
-
-[node name="SandBlocks292" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6953, 615)
-
-[node name="SandBlocks293" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(7001, 615)
-
-[node name="SandBlocks294" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(7017, 615)
-
-[node name="SandBlocks295" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6888, 615)
-
-[node name="SandBlocks296" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6904, 615)
-
-[node name="SandBlocks297" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6872, 615)
-
-[node name="SandBlocks298" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6920, 615)
-
-[node name="SandBlocks299" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(6936, 615)
-
-[node name="SandBlocks305" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(7049, 615)
-
-[node name="SandBlocks306" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(7065, 615)
-
-[node name="SandBlocks307" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(7033, 615)
-
-[node name="SandBlocks308" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(7081, 615)
-
-[node name="SandBlocks309" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(7097, 615)
-
-[node name="SandBlocks310" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4474, 920)
-
-[node name="SandBlocks311" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4490, 920)
-
-[node name="SandBlocks312" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4458, 920)
-
-[node name="SandBlocks313" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4506, 920)
-
-[node name="SandBlocks314" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4522, 920)
-
-[node name="SandBlocks315" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4393, 920)
-
-[node name="SandBlocks316" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4409, 920)
-
-[node name="SandBlocks317" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4377, 920)
-
-[node name="SandBlocks318" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4425, 920)
-
-[node name="SandBlocks319" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(4441, 920)
-
-[node name="SandBlocks320" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1208, 8)
-
-[node name="SandBlocks321" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1240, 8)
-
-[node name="SandBlocks322" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1224, 8)
-
-[node name="SandBlocks332" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1496, 8)
-
-[node name="SandBlocks333" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1576, 8)
-
-[node name="SandBlocks335" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1544, 8)
-
-[node name="SandBlocks334" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1560, 8)
-
-[node name="SandBlocks323" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1368, 8)
-
-[node name="SandBlocks331" parent="." instance=ExtResource("3_l37oo")]
-position = Vector2(1528, 8)
 
 [node name="Label" type="Label" parent="."]
 offset_left = -126.0
@@ -1500,14 +293,1217 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 
-[node name="KillZone" parent="." instance=ExtResource("6_qpwj6")]
-scale = Vector2(1.25294, -26.9769)
+[node name="LavaKillZone" parent="." instance=ExtResource("7_qsp8v")]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="KillZone"]
-position = Vector2(2766.29, -44.3898)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="LavaKillZone"]
+position = Vector2(3466, 1197.5)
+scale = Vector2(1.25294, -26.9769)
 shape = SubResource("RectangleShape2D_qsp8v")
 
-[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="KillZone"]
-stream = ExtResource("9_3p04p")
-volume_db = 24.0
-bus = &"SFX"
+[node name="Sandblocks" type="Node" parent="."]
+
+[node name="SandBlocks356" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(936, 120)
+
+[node name="SandBlocks355" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(904, 120)
+
+[node name="SandBlocks352" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(872, 120)
+
+[node name="SandBlocks30" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(713, 120)
+
+[node name="SandBlocks31" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1063, 56)
+
+[node name="SandBlocks32" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1079, 56)
+
+[node name="SandBlocks33" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1047, 56)
+
+[node name="SandBlocks34" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1095, 56)
+
+[node name="SandBlocks35" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1127, 56)
+
+[node name="SandBlocks36" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1111, 56)
+
+[node name="SandBlocks37" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1802, 143)
+
+[node name="SandBlocks38" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1818, 143)
+
+[node name="SandBlocks39" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1786, 143)
+
+[node name="SandBlocks40" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1834, 143)
+
+[node name="SandBlocks358" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1978, 248)
+
+[node name="SandBlocks359" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1994, 248)
+
+[node name="SandBlocks360" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2010, 248)
+
+[node name="SandBlocks361" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2042, 248)
+
+[node name="SandBlocks363" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2026, 248)
+
+[node name="SandBlocks362" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1962, 248)
+
+[node name="SandBlocks41" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1866, 143)
+
+[node name="SandBlocks42" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1850, 143)
+
+[node name="SandBlocks43" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2152, 344)
+
+[node name="SandBlocks44" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2168, 344)
+
+[node name="SandBlocks45" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2136, 344)
+
+[node name="SandBlocks46" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2184, 344)
+
+[node name="SandBlocks47" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2216, 344)
+
+[node name="SandBlocks48" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2200, 344)
+
+[node name="SandBlocks7" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2440, 472)
+
+[node name="SandBlocks9" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2456, 472)
+
+[node name="SandBlocks49" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2424, 472)
+
+[node name="SandBlocks50" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2472, 472)
+
+[node name="SandBlocks51" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2504, 472)
+
+[node name="SandBlocks52" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2488, 472)
+
+[node name="SandBlocks53" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2360, 472)
+
+[node name="SandBlocks54" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2376, 472)
+
+[node name="SandBlocks55" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2408, 472)
+
+[node name="SandBlocks56" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2392, 472)
+
+[node name="SandBlocks57" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2632, 472)
+
+[node name="SandBlocks58" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2648, 472)
+
+[node name="SandBlocks59" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2616, 472)
+
+[node name="SandBlocks60" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2664, 472)
+
+[node name="SandBlocks61" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2696, 472)
+
+[node name="SandBlocks62" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2680, 472)
+
+[node name="SandBlocks63" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2536, 472)
+
+[node name="SandBlocks64" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2552, 472)
+
+[node name="SandBlocks65" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2520, 472)
+
+[node name="SandBlocks66" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2568, 472)
+
+[node name="SandBlocks67" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2600, 472)
+
+[node name="SandBlocks68" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2584, 472)
+
+[node name="SandBlocks69" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2792, 472)
+
+[node name="SandBlocks70" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2808, 472)
+
+[node name="SandBlocks71" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2776, 472)
+
+[node name="SandBlocks72" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2824, 472)
+
+[node name="SandBlocks73" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2856, 472)
+
+[node name="SandBlocks74" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2840, 472)
+
+[node name="SandBlocks75" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2712, 472)
+
+[node name="SandBlocks76" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2728, 472)
+
+[node name="SandBlocks77" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2760, 472)
+
+[node name="SandBlocks78" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2744, 472)
+
+[node name="SandBlocks79" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2984, 472)
+
+[node name="SandBlocks80" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3000, 472)
+
+[node name="SandBlocks81" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2968, 472)
+
+[node name="SandBlocks82" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3016, 472)
+
+[node name="SandBlocks83" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3048, 472)
+
+[node name="SandBlocks84" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3032, 472)
+
+[node name="SandBlocks85" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2888, 472)
+
+[node name="SandBlocks86" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2904, 472)
+
+[node name="SandBlocks87" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2872, 472)
+
+[node name="SandBlocks88" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2920, 472)
+
+[node name="SandBlocks89" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2952, 472)
+
+[node name="SandBlocks90" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(2936, 472)
+
+[node name="SandBlocks91" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3144, 440)
+
+[node name="SandBlocks92" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3160, 440)
+
+[node name="SandBlocks93" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3128, 440)
+
+[node name="SandBlocks94" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3176, 440)
+
+[node name="SandBlocks95" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3208, 424)
+
+[node name="SandBlocks96" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3192, 424)
+
+[node name="SandBlocks97" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3064, 456)
+
+[node name="SandBlocks98" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3080, 456)
+
+[node name="SandBlocks99" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3112, 456)
+
+[node name="SandBlocks100" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3096, 456)
+
+[node name="SandBlocks365" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3496, 408)
+
+[node name="SandBlocks366" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3512, 408)
+
+[node name="SandBlocks367" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3528, 408)
+
+[node name="SandBlocks368" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3560, 408)
+
+[node name="SandBlocks369" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3544, 408)
+
+[node name="SandBlocks364" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3432, 408)
+
+[node name="SandBlocks370" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3416, 408)
+
+[node name="SandBlocks371" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3448, 408)
+
+[node name="SandBlocks372" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3480, 408)
+
+[node name="SandBlocks373" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3464, 408)
+
+[node name="SandBlocks101" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3336, 392)
+
+[node name="SandBlocks102" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3352, 392)
+
+[node name="SandBlocks103" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3320, 392)
+
+[node name="SandBlocks104" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3368, 392)
+
+[node name="SandBlocks105" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3400, 392)
+
+[node name="SandBlocks106" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3384, 392)
+
+[node name="SandBlocks107" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3240, 424)
+
+[node name="SandBlocks108" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3256, 408)
+
+[node name="SandBlocks109" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3224, 424)
+
+[node name="SandBlocks110" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3272, 408)
+
+[node name="SandBlocks111" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3304, 408)
+
+[node name="SandBlocks112" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3288, 408)
+
+[node name="SandBlocks375" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3636, 632)
+
+[node name="SandBlocks376" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3652, 632)
+
+[node name="SandBlocks377" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3620, 632)
+
+[node name="SandBlocks378" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3668, 632)
+
+[node name="SandBlocks379" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3684, 632)
+
+[node name="SandBlocks374" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3784, 536)
+
+[node name="SandBlocks380" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3800, 536)
+
+[node name="SandBlocks381" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3768, 536)
+
+[node name="SandBlocks382" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3816, 536)
+
+[node name="SandBlocks383" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3832, 536)
+
+[node name="SandBlocks113" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3619, 453)
+
+[node name="SandBlocks114" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3635, 453)
+
+[node name="SandBlocks115" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3651, 453)
+
+[node name="SandBlocks116" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3683, 453)
+
+[node name="SandBlocks117" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3667, 453)
+
+[node name="SandBlocks385" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4809, 920)
+
+[node name="SandBlocks386" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4825, 920)
+
+[node name="SandBlocks387" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4793, 920)
+
+[node name="SandBlocks388" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4841, 920)
+
+[node name="SandBlocks389" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4857, 920)
+
+[node name="SandBlocks390" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4728, 920)
+
+[node name="SandBlocks391" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4744, 920)
+
+[node name="SandBlocks392" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4712, 920)
+
+[node name="SandBlocks393" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4760, 920)
+
+[node name="SandBlocks394" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4776, 920)
+
+[node name="SandBlocks384" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3878, 985)
+
+[node name="SandBlocks395" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3894, 985)
+
+[node name="SandBlocks396" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3910, 985)
+
+[node name="SandBlocks397" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3926, 985)
+
+[node name="SandBlocks398" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3862, 985)
+
+[node name="SandBlocks399" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3797, 985)
+
+[node name="SandBlocks400" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3813, 985)
+
+[node name="SandBlocks401" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3781, 985)
+
+[node name="SandBlocks402" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3829, 985)
+
+[node name="SandBlocks118" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3789, 738)
+
+[node name="SandBlocks119" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3805, 738)
+
+[node name="SandBlocks403" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3845, 985)
+
+[node name="SandBlocks120" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3773, 738)
+
+[node name="SandBlocks121" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3821, 738)
+
+[node name="SandBlocks122" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3837, 738)
+
+[node name="SandBlocks123" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3640, 856)
+
+[node name="SandBlocks124" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3656, 856)
+
+[node name="SandBlocks125" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3624, 856)
+
+[node name="SandBlocks126" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3672, 856)
+
+[node name="SandBlocks127" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3688, 856)
+
+[node name="SandBlocks128" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4040, 985)
+
+[node name="SandBlocks129" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4056, 985)
+
+[node name="SandBlocks130" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4024, 985)
+
+[node name="SandBlocks131" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4072, 985)
+
+[node name="SandBlocks132" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4088, 985)
+
+[node name="SandBlocks133" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3959, 985)
+
+[node name="SandBlocks134" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3975, 985)
+
+[node name="SandBlocks135" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3943, 985)
+
+[node name="SandBlocks136" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(3991, 985)
+
+[node name="SandBlocks137" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4007, 985)
+
+[node name="SandBlocks138" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5545, 984)
+
+[node name="SandBlocks139" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5561, 984)
+
+[node name="SandBlocks140" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5529, 984)
+
+[node name="SandBlocks141" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5577, 984)
+
+[node name="SandBlocks142" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5593, 984)
+
+[node name="SandBlocks143" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5464, 984)
+
+[node name="SandBlocks144" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5480, 984)
+
+[node name="SandBlocks145" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5448, 984)
+
+[node name="SandBlocks146" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5496, 984)
+
+[node name="SandBlocks147" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5512, 984)
+
+[node name="SandBlocks148" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4249, 985)
+
+[node name="SandBlocks149" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4265, 985)
+
+[node name="SandBlocks150" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4233, 985)
+
+[node name="SandBlocks151" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4281, 985)
+
+[node name="SandBlocks152" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4297, 985)
+
+[node name="SandBlocks153" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4168, 985)
+
+[node name="SandBlocks154" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4184, 985)
+
+[node name="SandBlocks155" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4152, 985)
+
+[node name="SandBlocks156" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4200, 985)
+
+[node name="SandBlocks157" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4216, 985)
+
+[node name="SandBlocks158" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4873, 936)
+
+[node name="SandBlocks159" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4889, 936)
+
+[node name="SandBlocks160" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4905, 936)
+
+[node name="SandBlocks161" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4921, 936)
+
+[node name="SandBlocks162" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4938, 953)
+
+[node name="SandBlocks163" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4954, 953)
+
+[node name="SandBlocks164" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4970, 953)
+
+[node name="SandBlocks404" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5002, 969)
+
+[node name="SandBlocks405" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5018, 969)
+
+[node name="SandBlocks406" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5034, 969)
+
+[node name="SandBlocks407" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5050, 969)
+
+[node name="SandBlocks165" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4986, 953)
+
+[node name="SandBlocks166" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5066, 985)
+
+[node name="SandBlocks167" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5082, 985)
+
+[node name="SandBlocks168" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5098, 985)
+
+[node name="SandBlocks169" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5114, 985)
+
+[node name="SandBlocks170" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5384, 984)
+
+[node name="SandBlocks171" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5400, 984)
+
+[node name="SandBlocks172" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5368, 984)
+
+[node name="SandBlocks173" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5416, 984)
+
+[node name="SandBlocks174" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5432, 984)
+
+[node name="SandBlocks175" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5303, 984)
+
+[node name="SandBlocks176" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5319, 984)
+
+[node name="SandBlocks177" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5287, 984)
+
+[node name="SandBlocks178" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5335, 984)
+
+[node name="SandBlocks179" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5351, 984)
+
+[node name="SandBlocks180" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5545, 920)
+
+[node name="SandBlocks181" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5561, 920)
+
+[node name="SandBlocks182" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5529, 920)
+
+[node name="SandBlocks183" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5577, 920)
+
+[node name="SandBlocks184" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5593, 920)
+
+[node name="SandBlocks185" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5464, 920)
+
+[node name="SandBlocks186" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5480, 920)
+
+[node name="SandBlocks187" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5448, 920)
+
+[node name="SandBlocks188" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5496, 920)
+
+[node name="SandBlocks189" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5512, 920)
+
+[node name="SandBlocks190" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5384, 856)
+
+[node name="SandBlocks191" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5400, 856)
+
+[node name="SandBlocks192" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5368, 856)
+
+[node name="SandBlocks193" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5416, 856)
+
+[node name="SandBlocks194" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5432, 856)
+
+[node name="SandBlocks195" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5303, 856)
+
+[node name="SandBlocks196" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5319, 856)
+
+[node name="SandBlocks197" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5287, 856)
+
+[node name="SandBlocks198" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5335, 856)
+
+[node name="SandBlocks199" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5351, 856)
+
+[node name="SandBlocks200" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5543, 792)
+
+[node name="SandBlocks201" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5559, 792)
+
+[node name="SandBlocks202" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5527, 792)
+
+[node name="SandBlocks203" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5575, 792)
+
+[node name="SandBlocks204" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5591, 792)
+
+[node name="SandBlocks205" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5462, 792)
+
+[node name="SandBlocks206" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5478, 792)
+
+[node name="SandBlocks207" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5446, 792)
+
+[node name="SandBlocks208" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5494, 792)
+
+[node name="SandBlocks209" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5510, 792)
+
+[node name="SandBlocks210" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5385, 713)
+
+[node name="SandBlocks211" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5401, 713)
+
+[node name="SandBlocks212" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5369, 713)
+
+[node name="SandBlocks213" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5417, 713)
+
+[node name="SandBlocks214" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5433, 713)
+
+[node name="SandBlocks215" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5304, 713)
+
+[node name="SandBlocks216" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5320, 713)
+
+[node name="SandBlocks217" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5288, 713)
+
+[node name="SandBlocks218" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5336, 713)
+
+[node name="SandBlocks219" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5352, 713)
+
+[node name="SandBlocks220" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5544, 648)
+
+[node name="SandBlocks221" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5560, 648)
+
+[node name="SandBlocks222" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5528, 648)
+
+[node name="SandBlocks223" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5576, 648)
+
+[node name="SandBlocks224" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5592, 648)
+
+[node name="SandBlocks225" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5463, 648)
+
+[node name="SandBlocks226" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5479, 648)
+
+[node name="SandBlocks227" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5447, 648)
+
+[node name="SandBlocks228" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5495, 648)
+
+[node name="SandBlocks229" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5511, 648)
+
+[node name="SandBlocks230" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5706, 648)
+
+[node name="SandBlocks231" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5722, 648)
+
+[node name="SandBlocks232" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5690, 648)
+
+[node name="SandBlocks233" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5738, 648)
+
+[node name="SandBlocks234" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5754, 648)
+
+[node name="SandBlocks235" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5625, 648)
+
+[node name="SandBlocks236" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5641, 648)
+
+[node name="SandBlocks237" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5609, 648)
+
+[node name="SandBlocks238" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5657, 648)
+
+[node name="SandBlocks239" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5673, 648)
+
+[node name="SandBlocks240" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5868, 648)
+
+[node name="SandBlocks241" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5884, 648)
+
+[node name="SandBlocks242" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5852, 648)
+
+[node name="SandBlocks243" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5900, 648)
+
+[node name="SandBlocks244" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5916, 648)
+
+[node name="SandBlocks245" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5787, 648)
+
+[node name="SandBlocks246" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5803, 648)
+
+[node name="SandBlocks247" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5771, 648)
+
+[node name="SandBlocks248" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5819, 648)
+
+[node name="SandBlocks249" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5835, 648)
+
+[node name="SandBlocks250" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6029, 648)
+
+[node name="SandBlocks251" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6045, 648)
+
+[node name="SandBlocks252" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6013, 648)
+
+[node name="SandBlocks253" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6061, 648)
+
+[node name="SandBlocks254" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6077, 648)
+
+[node name="SandBlocks255" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5948, 648)
+
+[node name="SandBlocks256" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5964, 648)
+
+[node name="SandBlocks330" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1672, 56)
+
+[node name="SandBlocks329" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1688, 56)
+
+[node name="SandBlocks328" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1704, 56)
+
+[node name="SandBlocks327" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1624, 56)
+
+[node name="SandBlocks326" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1656, 56)
+
+[node name="SandBlocks325" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1640, 56)
+
+[node name="SandBlocks324" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1512, 8)
+
+[node name="SandBlocks257" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5932, 648)
+
+[node name="SandBlocks258" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5980, 648)
+
+[node name="SandBlocks259" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(5996, 648)
+
+[node name="SandBlocks260" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6392, 648)
+
+[node name="SandBlocks261" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6408, 648)
+
+[node name="SandBlocks262" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6328, 648)
+
+[node name="SandBlocks263" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6472, 648)
+
+[node name="SandBlocks264" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6488, 648)
+
+[node name="SandBlocks265" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6168, 648)
+
+[node name="SandBlocks266" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6232, 648)
+
+[node name="SandBlocks267" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6152, 648)
+
+[node name="SandBlocks268" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6248, 648)
+
+[node name="SandBlocks269" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6313, 648)
+
+[node name="SandBlocks270" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6645, 631)
+
+[node name="SandBlocks271" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6661, 631)
+
+[node name="SandBlocks272" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6629, 631)
+
+[node name="SandBlocks273" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6677, 631)
+
+[node name="SandBlocks274" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6694, 631)
+
+[node name="SandBlocks275" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6565, 647)
+
+[node name="SandBlocks276" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6581, 647)
+
+[node name="SandBlocks277" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6549, 647)
+
+[node name="SandBlocks278" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6597, 647)
+
+[node name="SandBlocks279" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6613, 647)
+
+[node name="SandBlocks280" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6807, 615)
+
+[node name="SandBlocks281" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6823, 615)
+
+[node name="SandBlocks282" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6791, 615)
+
+[node name="SandBlocks283" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6839, 615)
+
+[node name="SandBlocks284" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6855, 615)
+
+[node name="SandBlocks285" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6726, 615)
+
+[node name="SandBlocks286" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6742, 615)
+
+[node name="SandBlocks287" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6710, 615)
+
+[node name="SandBlocks288" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6758, 615)
+
+[node name="SandBlocks289" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6774, 615)
+
+[node name="SandBlocks290" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6969, 615)
+
+[node name="SandBlocks291" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6985, 615)
+
+[node name="SandBlocks292" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6953, 615)
+
+[node name="SandBlocks293" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(7001, 615)
+
+[node name="SandBlocks294" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(7017, 615)
+
+[node name="SandBlocks295" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6888, 615)
+
+[node name="SandBlocks296" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6904, 615)
+
+[node name="SandBlocks297" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6872, 615)
+
+[node name="SandBlocks298" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6920, 615)
+
+[node name="SandBlocks299" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(6936, 615)
+
+[node name="SandBlocks305" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(7049, 615)
+
+[node name="SandBlocks306" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(7065, 615)
+
+[node name="SandBlocks307" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(7033, 615)
+
+[node name="SandBlocks308" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(7081, 615)
+
+[node name="SandBlocks309" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(7097, 615)
+
+[node name="SandBlocks310" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4474, 920)
+
+[node name="SandBlocks311" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4490, 920)
+
+[node name="SandBlocks312" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4458, 920)
+
+[node name="SandBlocks313" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4506, 920)
+
+[node name="SandBlocks314" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4522, 920)
+
+[node name="SandBlocks315" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4393, 920)
+
+[node name="SandBlocks316" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4409, 920)
+
+[node name="SandBlocks317" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4377, 920)
+
+[node name="SandBlocks318" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4425, 920)
+
+[node name="SandBlocks319" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(4441, 920)
+
+[node name="SandBlocks320" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1208, 8)
+
+[node name="SandBlocks321" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1240, 8)
+
+[node name="SandBlocks322" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1224, 8)
+
+[node name="SandBlocks332" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1496, 8)
+
+[node name="SandBlocks333" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1576, 8)
+
+[node name="SandBlocks335" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1544, 8)
+
+[node name="SandBlocks334" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1560, 8)
+
+[node name="SandBlocks323" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1368, 8)
+
+[node name="SandBlocks331" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1528, 8)
+
+[node name="SandBlocks" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(136, 8)
+
+[node name="SandBlocks2" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(152, 8)
+
+[node name="SandBlocks3" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(120, 8)
+
+[node name="SandBlocks337" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1352, 8)
+
+[node name="SandBlocks338" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1416, 8)
+
+[node name="SandBlocks336" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1384, 8)
+
+[node name="SandBlocks339" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1288, 8)
+
+[node name="SandBlocks340" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1256, 8)
+
+[node name="SandBlocks341" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1400, 8)
+
+[node name="SandBlocks342" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1304, 8)
+
+[node name="SandBlocks344" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1272, 8)
+
+[node name="SandBlocks345" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1320, 8)
+
+[node name="SandBlocks343" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(1336, 8)
+
+[node name="SandBlocks4" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(168, 8)
+
+[node name="SandBlocks5" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(200, 8)
+
+[node name="SandBlocks6" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(184, 8)
+
+[node name="SandBlocks8" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(56, 8)
+
+[node name="SandBlocks10" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(72, 8)
+
+[node name="SandBlocks11" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(104, 8)
+
+[node name="SandBlocks12" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(88, 8)
+
+[node name="SandBlocks346" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(489, 72)
+
+[node name="SandBlocks349" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(553, 72)
+
+[node name="SandBlocks350" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(521, 72)
+
+[node name="SandBlocks348" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(473, 72)
+
+[node name="SandBlocks351" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(537, 72)
+
+[node name="SandBlocks347" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(505, 72)
+
+[node name="SandBlocks13" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(328, 8)
+
+[node name="SandBlocks14" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(344, 8)
+
+[node name="SandBlocks15" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(312, 8)
+
+[node name="SandBlocks16" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(360, 8)
+
+[node name="SandBlocks17" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(392, 8)
+
+[node name="SandBlocks18" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(376, 8)
+
+[node name="SandBlocks19" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(232, 8)
+
+[node name="SandBlocks20" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(248, 8)
+
+[node name="SandBlocks21" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(216, 8)
+
+[node name="SandBlocks22" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(264, 8)
+
+[node name="SandBlocks23" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(296, 8)
+
+[node name="SandBlocks24" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(280, 8)
+
+[node name="SandBlocks25" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(665, 120)
+
+[node name="SandBlocks26" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(681, 120)
+
+[node name="SandBlocks27" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(649, 120)
+
+[node name="SandBlocks28" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(697, 120)
+
+[node name="SandBlocks29" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(729, 120)
+
+[node name="SandBlocks353" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(888, 120)
+
+[node name="SandBlocks354" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(856, 120)
+
+[node name="SandBlocks357" parent="Sandblocks" instance=ExtResource("3_l37oo")]
+position = Vector2(920, 120)

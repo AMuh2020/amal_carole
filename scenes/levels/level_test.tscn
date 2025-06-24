@@ -229,7 +229,6 @@ position = Vector2(-181, 43)
 position = Vector2(-367, 49)
 
 [node name="Dragon" parent="." instance=ExtResource("10_nxmka")]
-visible = false
 position = Vector2(-539, 75)
 
 [node name="Player" parent="." instance=ExtResource("11_s0ovu")]

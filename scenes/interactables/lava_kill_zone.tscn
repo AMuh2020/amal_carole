@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://cey3bnvm36da7"]
+
+[ext_resource type="Script" uid="uid://dfm5wq5k111ae" path="res://scripts/lava_kill_zone.gd" id="1_7u0l7"]
+[ext_resource type="AudioStream" uid="uid://74grbf0fs1xr" path="res://sfx/heavy-bubbles-35889.mp3" id="2_sc3th"]
+
+[node name="LavaKillZone" type="Area2D"]
+collision_mask = 2
+script = ExtResource("1_7u0l7")
+
+[node name="Timer" type="Timer" parent="."]
+one_shot = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_sc3th")
+volume_db = 20.0
+bus = &"SFX"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_WaitTimer_timeout"]
