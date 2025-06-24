@@ -2,12 +2,12 @@
 
 [ext_resource type="Script" uid="uid://54sw2qrcmnnv" path="res://scripts/main_menu.gd" id="1_ob46e"]
 [ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="2_uqeha"]
-[ext_resource type="Script" path="res://scenes/main_menu/panel.gd" id="3_thkx5"]
+[ext_resource type="Script" uid="uid://bgsqmaufyegnu" path="res://scenes/main_menu/panel.gd" id="3_thkx5"]
 [ext_resource type="PackedScene" uid="uid://cewppiy5ctkeo" path="res://scenes/options_menu/options_menu.tscn" id="3_wem23"]
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="4_uqeha"]
 [ext_resource type="PackedScene" uid="uid://dap6y3ljuei43" path="res://scenes/players_and_enemies/main_menu_player.tscn" id="5_3ovsr"]
 [ext_resource type="PackedScene" uid="uid://mn1b5goqhlul" path="res://scenes/players_and_enemies/samurai_player.tscn" id="6_thkx5"]
-[ext_resource type="Script" path="res://scripts/main_menu_player_2.gd" id="7_x2yjq"]
+[ext_resource type="Script" uid="uid://cdaxv1071gbuq" path="res://scripts/main_menu_player_2.gd" id="7_x2yjq"]
 [ext_resource type="Texture2D" uid="uid://21yx7w8cl4nw" path="res://logo/Knight-Samurai-Pet-Quest-6-23-2025.png" id="9_thkx5"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_thkx5"]
