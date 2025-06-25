@@ -12,7 +12,7 @@
 [ext_resource type="PackedScene" uid="uid://ct20g567hani0" path="res://scenes/miscellaneous/RoamWall.tscn" id="7_oc4kc"]
 [ext_resource type="PackedScene" uid="uid://c6lwpthns7ndf" path="res://scenes/interactables/potion.tscn" id="8_s8va5"]
 [ext_resource type="PackedScene" uid="uid://catk8242vibfi" path="res://scenes/interactables/cat_food.tscn" id="10_qxy0u"]
-[ext_resource type="PackedScene" path="res://scenes/interactables/spike.tscn" id="12_iav0o"]
+[ext_resource type="PackedScene" uid="uid://duid5ll74gb3x" path="res://scenes/interactables/spike.tscn" id="12_iav0o"]
 [ext_resource type="PackedScene" uid="uid://cey3bnvm36da7" path="res://scenes/interactables/lava_kill_zone.tscn" id="13_bahl2"]
 [ext_resource type="PackedScene" uid="uid://dqmx0454dl7c2" path="res://scenes/interactables/next_level_portal.tscn" id="13_dnkej"]
 [ext_resource type="AudioStream" uid="uid://d3x7lo0cvft1v" path="res://music/DuringBattles.mp3" id="14_mm8aj"]
