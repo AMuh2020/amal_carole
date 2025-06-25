@@ -16,7 +16,7 @@ func unregister_area(area: InteractionArea):
 	if index != -1:
 		active_areas.remove_at(index)
 
-func _process(delta):
+func _process(_delta):
 	if not player:
 		player = get_tree().get_first_node_in_group("player")
 	if active_areas.size() > 0 && can_interact:

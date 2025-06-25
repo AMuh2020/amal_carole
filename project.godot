@@ -23,7 +23,6 @@ TransitionScene="*res://scenes/levels/transition_scene.tscn"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="viewport"
 
 [global_group]

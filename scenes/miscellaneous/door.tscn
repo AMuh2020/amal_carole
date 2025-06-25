@@ -51,6 +51,4 @@ frame_progress = 0.63903
 position = Vector2(-0.5, 16)
 shape = SubResource("RectangleShape2D_08t25")
 
-[node name="DoorOpening" type="Timer" parent="."]
-
-[connection signal="timeout" from="DoorOpening" to="." method="_on_door_opening_timeout"]
+[connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
