@@ -1,7 +1,7 @@
 [gd_scene load_steps=22 format=3 uid="uid://dihl4ylc1f354"]
 
-[ext_resource type="Script" uid="uid://b33txadj4xr1c" path="res://pet_cat.gd" id="1_y06uf"]
-[ext_resource type="Texture2D" uid="uid://cpl5mvnes47iw" path="res://pet_cat/Cat Sprite Sheet.png" id="2_vm7rp"]
+[ext_resource type="Script" uid="uid://b33txadj4xr1c" path="res://scripts/pet_cat.gd" id="1_y06uf"]
+[ext_resource type="Texture2D" uid="uid://cpl5mvnes47iw" path="res://assets/pet_cat/Cat Sprite Sheet.png" id="2_vm7rp"]
 [ext_resource type="AudioStream" uid="uid://ds1qle0xd1m4y" path="res://sfx/cat-meow-6226.mp3" id="3_vm7rp"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_dp05x"]

@@ -601,8 +601,8 @@ text = "!"
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_AnimatedSprite2D_animation_finished"]
 [connection signal="frame_changed" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_frame_changed"]
-[connection signal="area_entered" from="AnimatedSprite2D/AttackDetection" to="." method="_on_skeleton_damage_area_entered"]
 [connection signal="area_entered" from="AnimatedSprite2D/AttackDetection" to="." method="_on_AttackDetection_area_entered"]
+[connection signal="area_entered" from="AnimatedSprite2D/AttackDetection" to="." method="_on_skeleton_damage_area_entered"]
 [connection signal="area_exited" from="AnimatedSprite2D/AttackDetection" to="." method="_on_skeleton_damage_area_exited"]
 [connection signal="timeout" from="DirectionTimer" to="." method="_on_direction_timer_timeout"]
 [connection signal="area_entered" from="SkeletonHitbox" to="." method="_on_skeleton_hitbox_area_entered"]
