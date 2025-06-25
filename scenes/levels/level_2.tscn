@@ -199,12 +199,14 @@ tile_map_data = PackedByteArray("AAACAP//AAADAAgAAAACAP7/AAADAAcAAAACAPz/AAACAAQ
 tile_set = SubResource("TileSet_pxj5x")
 
 [node name="Player" parent="." instance=ExtResource("1_fiq81")]
+z_index = 2
 collision_layer = 3
+JUMP_VELOCITY = -350
 SPEED = 500.0
 can_crouch = false
 
 [node name="Camera2D" type="Camera2D" parent="Player"]
-zoom = Vector2(3, 3)
+zoom = Vector2(2, 2)
 
 [node name="NextLevelPortal" parent="." instance=ExtResource("1_l37oo")]
 position = Vector2(7148, 575)
@@ -1031,7 +1033,7 @@ position = Vector2(5369, 713)
 position = Vector2(5417, 713)
 
 [node name="SandBlocks214" parent="Sandblocks" instance=ExtResource("3_l37oo")]
-position = Vector2(5433, 713)
+position = Vector2(5432, 731)
 
 [node name="SandBlocks215" parent="Sandblocks" instance=ExtResource("3_l37oo")]
 position = Vector2(5304, 713)

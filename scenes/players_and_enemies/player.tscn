@@ -444,10 +444,6 @@ size = Vector2(20, 24)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_y6ler"]
 bg_color = Color(0, 0, 0, 1)
-corner_radius_top_left = 1
-corner_radius_top_right = 1
-corner_radius_bottom_right = 1
-corner_radius_bottom_left = 1
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_0iqnh"]
 bg_color = Color(1.29953e-06, 0.721263, 0.308939, 1)
@@ -550,6 +546,6 @@ target_position = Vector2(4, -7)
 
 [connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
 [connection signal="area_entered" from="AnimatedSprite2D/PlayerAttackArea" to="." method="_on_attack_area_area_entered"]
-[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="Timer" to="." method="_on_attack_timer_timeout"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="timeout" from="StaminaRecover" to="." method="_on_stamina_recover_timeout"]

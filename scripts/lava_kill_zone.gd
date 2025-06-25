@@ -8,12 +8,14 @@ func _on_body_entered(body: Node2D) -> void:
 		print("you died")
 		body.take_damage(200)
 		lava_sfx.play()
-		$CollisionShape2D.disabled = true
+		
+		$CollisionShape2D.set_deferred("disabled", true)
 		visible = false
 
 		# Set timer to sound duration, then start it
 		timer.wait_time = lava_sfx.stream.get_length()
-		timer.start()
+		#timer.start()
 
 func _on_WaitTimer_timeout() -> void:
-	get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)
+	pass
+	#get_tree().change_scene_to_file(get_tree().current_scene.scene_file_path)

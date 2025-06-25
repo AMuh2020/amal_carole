@@ -351,7 +351,7 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_vmkp1")
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ogj6a"]
-size = Vector2(1043, 1011)
+size = Vector2(1043, 1555)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_rej77"]
 atlas = ExtResource("4_pmra4")
@@ -456,6 +456,7 @@ animations = [{
 }]
 
 [sub_resource type="WorldBoundaryShape2D" id="WorldBoundaryShape2D_anwe6"]
+distance = -26.0
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_glw47"]
 size = Vector2(64, 43)
@@ -488,12 +489,12 @@ speed = 50.0
 collision_mask = 3
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Storm/StormDamageArea"]
-position = Vector2(-328.5, -186.5)
+position = Vector2(-328.5, 85.5)
 shape = SubResource("RectangleShape2D_ogj6a")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="Storm/StormDamageArea"]
-position = Vector2(-312, -185)
-scale = Vector2(3.15625, 3.15625)
+position = Vector2(-312, 86)
+scale = Vector2(3.15625, 4.85)
 sprite_frames = SubResource("SpriteFrames_glw47")
 animation = &"new_animation_1"
 autoplay = "new_animation_1"
@@ -564,7 +565,7 @@ position = Vector2(3216, -111)
 position = Vector2(33, 102)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Killzones/fall_killzone"]
-position = Vector2(-28, 547)
+position = Vector2(-28, 837)
 shape = SubResource("WorldBoundaryShape2D_anwe6")
 
 [node name="LavaKillZone" parent="Killzones" instance=ExtResource("12_beuva")]
@@ -600,7 +601,7 @@ can_crouch = false
 [node name="Camera2D" type="Camera2D" parent="Samurai"]
 position = Vector2(-0.551605, -16.397)
 zoom = Vector2(2, 2)
-limit_bottom = 700
+limit_bottom = 1200
 position_smoothing_enabled = true
 
 [node name="UI_Container" type="CanvasLayer" parent="."]
@@ -664,6 +665,9 @@ position = Vector2(4465, 732)
 
 [node name="Potion" parent="Potions" instance=ExtResource("4_qvnao")]
 position = Vector2(2696, 80)
+
+[node name="Potion2" parent="Potions" instance=ExtResource("4_qvnao")]
+position = Vector2(2636, -29)
 
 [connection signal="body_entered" from="Storm/StormDamageArea" to="Storm" method="_on_body_entered"]
 [connection signal="body_exited" from="Storm/StormDamageArea" to="Storm" method="_on_storm_damage_area_body_exited"]

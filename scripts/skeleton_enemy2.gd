@@ -23,6 +23,7 @@ extends CharacterBody2D
 @onready var attack_detection_area: Area2D = $AnimatedSprite2D/AttackDetection # Area2D for detecting attack range.
 @onready var attack_damage_timer: Timer = $AttackDamageTimer # Timer for when to apply attack damage
 @onready var health_bar: ProgressBar = $ProgressBar
+@onready var player_spotted_label: Label = $PlayerSpottedLabel
 
 # --- State Management ---
 enum State { IDLE, WALKING, CHASING, ATTACKING, TAKING_DAMAGE, DEAD } # Define the possible states for the enemy.
@@ -132,6 +133,7 @@ func _change_state(new_state: State) -> void:
 
 	match current_state:
 		State.IDLE:
+			player_spotted_label.visible = false
 			# Set a random idle duration and start the idle timer.
 			idle_duration_timer.wait_time = _pick_random_duration(idle_times)
 			idle_duration_timer.start()
@@ -148,6 +150,7 @@ func _change_state(new_state: State) -> void:
 			# --- MODIFICATION END ---
 			print("Enemy State: IDLE for ", idle_duration_timer.wait_time, " seconds")
 		State.WALKING:
+			player_spotted_label.visible = false
 			# Set a random walk duration and start the walk timer.
 			walk_duration_timer.wait_time = _pick_random_duration(walk_times)
 			walk_duration_timer.start()
@@ -168,8 +171,8 @@ func _change_state(new_state: State) -> void:
 			
 			# When chasing, you'd likely want to play the "walk" or a "run" animation.
 			_play_animation("walk") # Assuming "walk" is suitable for chasing for now.
-			if attack_cooldown_timer.is_stopped():
-				attack_cooldown_timer.start() # Start cooldown, so enemy can attack after duration
+			#if attack_cooldown_timer.is_stopped():
+				#attack_cooldown_timer.start() # Start cooldown, so enemy can attack after duration
 			print("Enemy State: CHASING Player!")
 		State.ATTACKING:
 			# Stop chasing related movement. Play attack animation.
@@ -221,6 +224,7 @@ func _play_animation(anim_name: String) -> void:
 
 # Handles the enemy's walking behavior, including movement and turning.
 func _roam() -> void:
+	#player_spotted_label.visible = false
 	# Set horizontal velocity based on direction and speed.
 	velocity.x = speed * direction
 
@@ -263,6 +267,7 @@ func _turn_around() -> void:
 # This function will contain the logic for the enemy to chase the player.
 # You will implement this in a later step based on your game's needs.
 func _chase_player() -> void:
+	player_spotted_label.visible = true
 	# For now, just stop movement when chasing (as a basic placeholder).
 	# You would typically calculate direction towards player here and move.
 	#velocity.x = 0
@@ -282,7 +287,7 @@ func _chase_player() -> void:
 				anim_sprite.scale.x = 1
 		elif direction == -1:
 			anim_sprite.scale.x = -1
-		velocity.x = speed * direction
+		velocity.x = speed * direction * 1.1
 	else:
 		velocity.x = 0 # Stop if directly above/below player
 	if attack_detection_area.overlaps_area(player_node.get_node("PlayerHitbox")) and attack_cooldown_timer.is_stopped():

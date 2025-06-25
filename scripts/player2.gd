@@ -1,7 +1,5 @@
 extends CharacterBody2D
 
-
-
 ## Constants
 const CROUCH_SPEED_MULTIPLIER = 0.5
 const GRAVITY = 980 # Define a gravity constant for consistency
@@ -54,8 +52,10 @@ func _ready() -> void:
 	# Set initial state
 	transition_to_state(PlayerState.IDLE)
 	current_health = max_health
-	collectibles_needed = next_level_portal.collectibles_needed
-	item_count_label.text = "Item count: " + str(collectible_count) + "/" + str(collectibles_needed)
+	if next_level_portal:
+		collectibles_needed = next_level_portal.collectibles_needed
+	if item_count_label:
+		item_count_label.text = "Item count: " + str(collectible_count) + "/" + str(collectibles_needed)
 
 func _physics_process(delta: float) -> void:
 	# Apply gravity if not on floor
@@ -223,7 +223,7 @@ func handle_idle_input(event: InputEvent) -> void:
 			stamina_bar.update_stamina(stamina)
 			transition_to_state(PlayerState.ATTACKING)
 
-func handle_idle_physics(delta: float) -> void:
+func handle_idle_physics(_delta: float) -> void:
 	var direction = Input.get_axis("move_left", "move_right")
 
 	if direction != 0:
@@ -246,7 +246,7 @@ func handle_walking_input(event: InputEvent) -> void:
 	elif event.is_action_pressed("attack"):
 		transition_to_state(PlayerState.ATTACKING)
 
-func handle_walking_physics(delta: float) -> void:
+func handle_walking_physics(_delta: float) -> void:
 	var direction = Input.get_axis("move_left", "move_right")
 
 	if direction == 0:
@@ -269,11 +269,11 @@ func _enter_crouching_state() -> void:
 	_play_animation("crouch")
 	velocity.x = 0 # Stop horizontal movement when entering crouch
 
-func handle_crouching_input(event: InputEvent) -> void:
+func handle_crouching_input(_event: InputEvent) -> void:
 	# No jump or attack while crouching in this implementation
 	pass
 
-func handle_crouching_physics(delta: float) -> void:
+func handle_crouching_physics(_delta: float) -> void:
 	if (not Input.is_action_pressed("crouch") or not is_on_floor()) and not crouch_bug_ray_check():
 		# If you release crouch or walk off a ledge
 		if Input.get_axis("move_left", "move_right") != 0:
@@ -312,10 +312,10 @@ func _exit_attacking_state() -> void:
 	if attack_timer.time_left > 0: # Stop timer if it's still running
 		attack_timer.stop()
 
-func handle_attacking_input(event: InputEvent) -> void:
+func handle_attacking_input(_event: InputEvent) -> void:
 	pass # Cannot initiate new actions while attacking
 
-func handle_attacking_physics(delta: float) -> void:
+func handle_attacking_physics(_delta: float) -> void:
 	# No horizontal movement during attack, just gravity
 	velocity.x = 0
 
@@ -324,10 +324,10 @@ func _enter_jumping_state() -> void:
 	print("PLAYER: enter jumping")
 	_play_animation("jump")
 
-func handle_jumping_input(event: InputEvent) -> void:
+func handle_jumping_input(_event: InputEvent) -> void:
 	pass # Cannot jump again or attack in mid-jump here
 
-func handle_jumping_physics(delta: float) -> void:
+func handle_jumping_physics(_delta: float) -> void:
 	var direction = Input.get_axis("move_left", "move_right")
 	velocity.x = direction * SPEED
 
@@ -347,10 +347,10 @@ func handle_jumping_physics(delta: float) -> void:
 func _enter_falling_state() -> void:
 	_play_animation("jump_falling")
 
-func handle_falling_input(event: InputEvent) -> void:
+func handle_falling_input(_event: InputEvent) -> void:
 	pass # No input actions while falling (e.g., double jump or attack in air)
 
-func handle_falling_physics(delta: float) -> void:
+func handle_falling_physics(_delta: float) -> void:
 	var direction = Input.get_axis("move_left", "move_right")
 	velocity.x = direction * SPEED
 
@@ -373,16 +373,20 @@ func _enter_death_state() -> void:
 	# Wait for animation to finish then reload scene
 	await animated_sprite.animation_finished
 	await get_tree().create_timer(1.0).timeout # A small delay
+	TransitionScene.transition()
+
+	# Wait for transition to finish (adjust timing if needed)
+	await get_tree().create_timer(0.5).timeout
 	get_tree().reload_current_scene()
 
 func _exit_death_state() -> void:
 	# This might be called if the scene reloads, or if you had a respawn mechanic
 	pass
 
-func handle_death_input(event: InputEvent) -> void:
+func handle_death_input(_event: InputEvent) -> void:
 	pass # Ignore all input when dead
 
-func handle_death_physics(delta: float) -> void:
+func handle_death_physics(_delta: float) -> void:
 	pass # Do nothing when dead
 
 
