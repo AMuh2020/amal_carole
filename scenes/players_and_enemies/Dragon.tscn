@@ -695,7 +695,7 @@ size = Vector2(46, 43)
 size = Vector2(27, 48)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ft08n"]
-size = Vector2(66, 61.875)
+size = Vector2(66, 56.9375)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1he8f"]
 size = Vector2(832, 466)
@@ -715,7 +715,7 @@ corner_radius_bottom_right = 3
 corner_radius_bottom_left = 3
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_j22hj"]
-size = Vector2(66, 62)
+size = Vector2(66, 57)
 
 [node name="Dragon" type="CharacterBody2D" groups=["enemy"]]
 collision_layer = 7
@@ -747,7 +747,7 @@ shape = SubResource("RectangleShape2D_j6sx1")
 position = Vector2(-29, -3)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="." groups=["enemy"]]
-position = Vector2(0, 2)
+position = Vector2(0, 4.46875)
 shape = SubResource("RectangleShape2D_ft08n")
 
 [node name="Detection" type="Area2D" parent="."]
@@ -786,7 +786,7 @@ collision_layer = 4
 collision_mask = 0
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DragonHitbox"]
-position = Vector2(0, 2)
+position = Vector2(0, 4.5)
 shape = SubResource("RectangleShape2D_j22hj")
 
 [connection signal="timeout" from="FireballCooldownTimer" to="." method="_on_fireball_cooldown_timer_timeout"]

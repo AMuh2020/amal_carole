@@ -1,6 +1,6 @@
 [gd_scene load_steps=20 format=4 uid="uid://h0dg0j1q4t5t"]
 
-[ext_resource type="Script" uid="uid://brpbd5gwe2hcl" path="res://scenes/levels/level_1.gd" id="1_iwr0g"]
+[ext_resource type="Script" path="res://scenes/levels/level_1.gd" id="1_iwr0g"]
 [ext_resource type="PackedScene" uid="uid://jg383sevgif8" path="res://scenes/players_and_enemies/skeleton_enemy.tscn" id="1_nsrm0"]
 [ext_resource type="PackedScene" uid="uid://bam1sden6qo4f" path="res://scenes/pause_menu.tscn" id="2_bahl2"]
 [ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="2_dga24"]

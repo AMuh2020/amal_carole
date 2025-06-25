@@ -8,8 +8,8 @@ extends CharacterBody2D
 @export var gravity: float = 980.0 # Gravity applied to the boss.
 @export var max_health: int = 400 # Maximum health of the boss. (Significantly increased)
 @export var melee_damage: int = 20 # Damage dealt by the boss's melee attack.
-@export var breath_damage: int = 50 # Damage per tick dealt by the boss's breath attack.
-@export var fireball_damage: int = 60
+@export var breath_damage: int = 60 # Damage per tick dealt by the boss's breath attack.
+@export var fireball_damage: int = 50
 @export var melee_attack_cooldown: float = 2.0 # Time between melee attacks.
 @export var breath_attack_cooldown: float = 3.0 # Time between breath attacks.
 @export var fireball_cooldown: float = 5.0
