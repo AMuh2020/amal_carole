@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=4 uid="uid://c82telybq8pjv"]
+[gd_scene load_steps=18 format=4 uid="uid://c82telybq8pjv"]
 
 [ext_resource type="Script" uid="uid://bsl83kcy3vnmp" path="res://scenes/levels/level_3.gd" id="1_o8c3j"]
 [ext_resource type="PackedScene" uid="uid://bam1sden6qo4f" path="res://scenes/pause_menu.tscn" id="2_f6egh"]
@@ -385,6 +385,15 @@ position = Vector2(1411, 1073)
 [node name="Potion14" parent="Potions" instance=ExtResource("4_f6egh")]
 position = Vector2(1431, 1168)
 
+[node name="Potion15" parent="Potions" instance=ExtResource("4_f6egh")]
+position = Vector2(1033, 150)
+
+[node name="Potion16" parent="Potions" instance=ExtResource("4_f6egh")]
+position = Vector2(574, -9)
+
+[node name="Potion17" parent="Potions" instance=ExtResource("4_f6egh")]
+position = Vector2(986, -72)
+
 [node name="Enemy Group" type="Node" parent="."]
 script = ExtResource("5_f6egh")
 
@@ -474,7 +483,7 @@ script = ExtResource("5_f6egh")
 [node name="enemies" type="Node" parent="Dragon Group"]
 
 [node name="Dragon" parent="Dragon Group/enemies" instance=ExtResource("9_t4txi")]
-position = Vector2(1039, 1230)
+position = Vector2(1035, 1229)
 
 [node name="Door" parent="Dragon Group" instance=ExtResource("8_josfm")]
 position = Vector2(409, 1217)
