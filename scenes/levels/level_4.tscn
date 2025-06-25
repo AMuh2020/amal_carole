@@ -1,7 +1,8 @@
-[gd_scene load_steps=39 format=4 uid="uid://bag5qxtq8lejf"]
+[gd_scene load_steps=40 format=4 uid="uid://bag5qxtq8lejf"]
 
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_06474"]
 [ext_resource type="Script" uid="uid://dw5fdysk053hg" path="res://scenes/levels/level_4.gd" id="1_glw47"]
+[ext_resource type="PackedScene" uid="uid://bam1sden6qo4f" path="res://scenes/pause_menu.tscn" id="2_vq5n0"]
 [ext_resource type="Script" uid="uid://n0j66o4vl0ud" path="res://scripts/sand_storm.gd" id="3_ov8fk"]
 [ext_resource type="Texture2D" uid="uid://68kinyg37mt8" path="res://assets/random_stuff/sandstorm 2x2.png" id="4_pmra4"]
 [ext_resource type="PackedScene" uid="uid://c6lwpthns7ndf" path="res://scenes/interactables/potion.tscn" id="4_qvnao"]
@@ -465,6 +466,7 @@ size = Vector2(48, 27.5)
 
 [node name="Level_4" type="Node2D"]
 script = ExtResource("1_glw47")
+pause_menu_packed_scene = ExtResource("2_vq5n0")
 
 [node name="TileMapLayer1" type="TileMapLayer" parent="."]
 z_index = -2
