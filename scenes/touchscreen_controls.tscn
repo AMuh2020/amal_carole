@@ -1,0 +1,58 @@
+[gd_scene load_steps=4 format=3 uid="uid://ynraxcnu0r7l"]
+
+[ext_resource type="Texture2D" uid="uid://cf4hbunsjoo2f" path="res://assets/random_stuff/fit_direction_button.png" id="1_t5ov1"]
+[ext_resource type="Texture2D" uid="uid://cdqpsdltx7823" path="res://assets/random_stuff/fit_attack_button.png" id="2_pxkdt"]
+[ext_resource type="Texture2D" uid="uid://r1w036u25po7" path="res://assets/random_stuff/fit_interact_button.png" id="3_4rhlt"]
+
+[node name="TouchscreenControls" type="CanvasLayer"]
+
+[node name="left" type="TouchScreenButton" parent="."]
+position = Vector2(62, 606)
+rotation = -1.5708
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("1_t5ov1")
+texture_pressed = ExtResource("1_t5ov1")
+action = "move_left"
+visibility_mode = 1
+
+[node name="jump" type="TouchScreenButton" parent="."]
+position = Vector2(928, 349)
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("1_t5ov1")
+texture_pressed = ExtResource("1_t5ov1")
+action = "jump"
+visibility_mode = 1
+
+[node name="crouch" type="TouchScreenButton" parent="."]
+position = Vector2(1049, 629)
+rotation = 3.14159
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("1_t5ov1")
+texture_pressed = ExtResource("1_t5ov1")
+action = "crouch"
+visibility_mode = 1
+
+[node name="right" type="TouchScreenButton" parent="."]
+position = Vector2(368, 485)
+rotation = 1.5708
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("1_t5ov1")
+texture_pressed = ExtResource("1_t5ov1")
+action = "move_right"
+visibility_mode = 1
+
+[node name="attack" type="TouchScreenButton" parent="."]
+position = Vector2(799, 423)
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("2_pxkdt")
+texture_pressed = ExtResource("2_pxkdt")
+action = "attack"
+visibility_mode = 1
+
+[node name="interact" type="TouchScreenButton" parent="."]
+position = Vector2(683, 516)
+scale = Vector2(0.8, 0.8)
+texture_normal = ExtResource("3_4rhlt")
+texture_pressed = ExtResource("3_4rhlt")
+action = "interact"
+visibility_mode = 1

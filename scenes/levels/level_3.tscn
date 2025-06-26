@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://c82telybq8pjv"]
+[gd_scene load_steps=19 format=4 uid="uid://c82telybq8pjv"]
 
 [ext_resource type="Script" uid="uid://bsl83kcy3vnmp" path="res://scenes/levels/level_3.gd" id="1_o8c3j"]
 [ext_resource type="PackedScene" uid="uid://bam1sden6qo4f" path="res://scenes/pause_menu.tscn" id="2_f6egh"]
@@ -14,6 +14,7 @@
 [ext_resource type="PackedScene" uid="uid://catk8242vibfi" path="res://scenes/interactables/cat_food.tscn" id="13_f6egh"]
 [ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="14_o3ttr"]
 [ext_resource type="PackedScene" uid="uid://dqmx0454dl7c2" path="res://scenes/interactables/next_level_portal.tscn" id="15_apo5x"]
+[ext_resource type="PackedScene" uid="uid://ynraxcnu0r7l" path="res://scenes/touchscreen_controls.tscn" id="15_josfm"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0qepi"]
 texture = ExtResource("3_n6eey")
@@ -547,3 +548,5 @@ position = Vector2(545, 74)
 
 [node name="CatFood3" parent="CatFood" instance=ExtResource("13_f6egh")]
 position = Vector2(34, 1254)
+
+[node name="TouchscreenControls" parent="." instance=ExtResource("15_josfm")]

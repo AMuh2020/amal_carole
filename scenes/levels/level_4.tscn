@@ -1,4 +1,4 @@
-[gd_scene load_steps=40 format=4 uid="uid://bag5qxtq8lejf"]
+[gd_scene load_steps=41 format=4 uid="uid://bag5qxtq8lejf"]
 
 [ext_resource type="Texture2D" uid="uid://dun7lt5jfg3fn" path="res://assets/brackeys_platformer_assets/sprites/world_tileset.png" id="1_06474"]
 [ext_resource type="Script" uid="uid://dw5fdysk053hg" path="res://scenes/levels/level_4.gd" id="1_glw47"]
@@ -18,6 +18,7 @@
 [ext_resource type="PackedScene" uid="uid://mn1b5goqhlul" path="res://scenes/players_and_enemies/samurai_player.tscn" id="13_05se8"]
 [ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="14_fcb7b"]
 [ext_resource type="PackedScene" uid="uid://clu1uj0aq4442" path="res://scenes/interactables/bamboo.tscn" id="16_pmra4"]
+[ext_resource type="PackedScene" uid="uid://ynraxcnu0r7l" path="res://scenes/touchscreen_controls.tscn" id="19_xt2o7"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_glw47"]
 texture = ExtResource("1_06474")
@@ -670,6 +671,8 @@ position = Vector2(2696, 80)
 
 [node name="Potion2" parent="Potions" instance=ExtResource("4_qvnao")]
 position = Vector2(2636, -29)
+
+[node name="TouchscreenControls" parent="." instance=ExtResource("19_xt2o7")]
 
 [connection signal="body_entered" from="Storm/StormDamageArea" to="Storm" method="_on_body_entered"]
 [connection signal="body_exited" from="Storm/StormDamageArea" to="Storm" method="_on_storm_damage_area_body_exited"]

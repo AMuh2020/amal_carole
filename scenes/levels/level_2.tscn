@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=4 uid="uid://cpr7ftjp8lfv"]
+[gd_scene load_steps=15 format=4 uid="uid://cpr7ftjp8lfv"]
 
 [ext_resource type="Script" uid="uid://0hu6a62i2rnk" path="res://scenes/levels/level_2.gd" id="1_8qukl"]
 [ext_resource type="PackedScene" uid="uid://mn1b5goqhlul" path="res://scenes/players_and_enemies/samurai_player.tscn" id="1_fiq81"]
@@ -10,6 +10,7 @@
 [ext_resource type="FontFile" uid="uid://b1kfprq32h1w4" path="res://assets/brackeys_platformer_assets/fonts/PixelOperator8.ttf" id="7_ibugp"]
 [ext_resource type="PackedScene" uid="uid://cey3bnvm36da7" path="res://scenes/interactables/lava_kill_zone.tscn" id="7_qsp8v"]
 [ext_resource type="PackedScene" uid="uid://clu1uj0aq4442" path="res://scenes/interactables/bamboo.tscn" id="9_3p04p"]
+[ext_resource type="PackedScene" uid="uid://ynraxcnu0r7l" path="res://scenes/touchscreen_controls.tscn" id="11_nt80m"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_8qukl"]
 texture = ExtResource("1_ra442")
@@ -1551,3 +1552,5 @@ position = Vector2(5870, 624)
 
 [node name="Bamboo9" parent="Bamboo" instance=ExtResource("9_3p04p")]
 position = Vector2(7037, 588)
+
+[node name="TouchscreenControls" parent="." instance=ExtResource("11_nt80m")]
