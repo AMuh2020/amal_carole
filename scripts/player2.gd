@@ -34,6 +34,7 @@ var attack_damage: int = 20
 var max_stamina:int = 100
 var stamina:int = 100
 var attack_stamina_drain: int = 20
+var stamina_recovery_value:int = 20
 ## Player States Enum
 
 enum PlayerState {
@@ -218,7 +219,7 @@ func handle_idle_input(event: InputEvent) -> void:
 	if event.is_action_pressed("jump") and is_on_floor():
 		transition_to_state(PlayerState.JUMPING)
 	elif event.is_action_pressed("attack"):
-		if stamina-attack_stamina_drain > 0:
+		if stamina-attack_stamina_drain >= 0:
 			stamina -= attack_stamina_drain
 			stamina_bar.update_stamina(stamina)
 			transition_to_state(PlayerState.ATTACKING)
@@ -393,10 +394,10 @@ func handle_death_physics(_delta: float) -> void:
 func _on_stamina_recover_timeout() -> void:
 	#print("recovering check")
 	if stamina < max_stamina:
-		if stamina + 5 > max_stamina:
+		if stamina + stamina_recovery_value > max_stamina:
 			stamina = max_stamina
 			
 		else:
-			stamina += 5
+			stamina += stamina_recovery_value
 			print("Updating stamina to", stamina)
 		stamina_bar.update_stamina(stamina)
