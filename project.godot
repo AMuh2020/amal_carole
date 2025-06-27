@@ -13,7 +13,7 @@ config_version=5
 config/name="amal_carole"
 run/main_scene="uid://pmogs2p4flmd"
 config/features=PackedStringArray("4.4", "Forward Plus")
-config/icon="res://icon.svg"
+config/icon="uid://dsvxa3s868wdb"
 
 [autoload]
 

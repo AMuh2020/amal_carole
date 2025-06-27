@@ -626,7 +626,7 @@ offset_right = 343.0
 offset_bottom = 78.0
 theme_override_colors/font_color = Color(0.544001, 0.171451, 0.158577, 1)
 theme_override_fonts/font = ExtResource("14_fcb7b")
-text = "Level 3: Avoid the storm
+text = "Level 4: Avoid the storm
 and reach the end!
 "
 
