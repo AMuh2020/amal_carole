@@ -34,7 +34,7 @@ var attack_damage: int = 20
 var max_stamina:int = 100
 var stamina:int = 100
 var attack_stamina_drain: int = 20
-var stamina_recovery_value:int = 20
+var stamina_recovery_value:int = 15
 ## Player States Enum
 
 enum PlayerState {
