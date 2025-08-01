@@ -4,7 +4,7 @@ A classic platformer adventure where a Knight and a Samurai embark on perilous j
 
 %% *A captivating visual of your game in action\! Consider a GIF for dynamic gameplay.* %%
 
-[Watch the Gameplay Video on YouTube](https://www.youtube.com/watch?v=5ReoRoki8Sg&ab_channel=AMALWorks)
+![Watch the Gameplay Video on YouTube](https://www.youtube.com/watch?v=5ReoRoki8Sg&ab_channel=AMALWorks)
 
 ## **Table of Contents**
 
@@ -101,7 +101,7 @@ Developing Knight & Samurai: Pet Quest presented several challenges, primarily d
 ## **What We Learned**
 
 * **Amal:** I learned about the multiplying effect of teamwork, which allowed us to achieve results that would have taken me 3-4 times longer individually. Different perspectives truly add depth and quality to a final product, something I believe is evident in our game. I also learned about the fascinating concept of state machines and generously employed them for our game characters to ensure discrete, smooth, and well-compartmentalized actions, saving me from the pain of nested if/else hell.  
-%% * **Carole:** \[Add Carole's specific learning points here, if any were provided or can be inferred, or remove if not applicable.\] %%
+<!-- * **Carole:** \[Add Carole's specific learning points here, if any were provided or can be inferred, or remove if not applicable.\] -->
 
 ## **What's Next for Knight & Samurai: Pet Quest**
 
@@ -114,7 +114,7 @@ This game was collaboratively developed by the following team members during the
 * **Amal** ([GitHub Profile](https://github.com/AMuh2020)) \- Developer
 * **Carole** ([GitHub Profile](https://github.com/CaroleRofaeel)) \- Developer
 
-%% ## **Contributing**
+<!-- ## **Contributing**
 
 We welcome contributions to Knight & Samurai: Pet Quest\! If you'd like to help improve the game, please follow these guidelines:
 
@@ -123,7 +123,7 @@ We welcome contributions to Knight & Samurai: Pet Quest\! If you'd like to help 
 3. **Make your changes** and commit them with clear, concise messages.  
 4. **Push** your changes to your forked repository.  
 5. **Open a Pull Request** against the main branch of this repository, describing your changes in detail.
- %%
+-->
 ## **License**
 
 This project is distributed under the MIT License. See the LICENSE.md file in the repository for more details.
