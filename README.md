@@ -2,9 +2,9 @@
 
 A classic platformer adventure where a Knight and a Samurai embark on perilous journeys to rescue their beloved lost pets from a global storm.
 
-%% *A captivating visual of your game in action\! Consider a GIF for dynamic gameplay.* %%
-
-![Watch the Gameplay Video on YouTube](https://www.youtube.com/watch?v=5ReoRoki8Sg&ab_channel=AMALWorks)
+<!-- *A captivating visual of your game in action\! Consider a GIF for dynamic gameplay.* -->
+![Image](https://d112y698adiu2z.cloudfront.net/photos/production/software_photos/003/508/833/datas/gallery.jpg)
+[Watch the Gameplay Video on YouTube](https://www.youtube.com/watch?v=5ReoRoki8Sg&ab_channel=AMALWorks)
 
 ## **Table of Contents**
 
