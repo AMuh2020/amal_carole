@@ -56,7 +56,7 @@ Getting started with Knight & Samurai: Pet Quest is simple\!
 
 * **Movement:** Use **W, A, S, D** or **Arrow Keys** to move.  
 * **Jump:** Press **Spacebar**.  
-* **\[Special Ability 1\]:** Use **E** to use items in the game.  
+* **Interact:** Use **E** to interact with items in the game.  
 * **Pause/Menu:** Press **\[Key/Input, e.g., Esc or P\]**.
 
 ### **Objective:**
